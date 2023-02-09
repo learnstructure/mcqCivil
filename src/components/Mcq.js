@@ -25,12 +25,12 @@ export default function Mcq(props) {
         <div className="mcq">
             <div>{props.serialno}. {props.question}</div>
             <div className="option">
-                <div onClick={handleClickA} className={optClassA}> a) {props.optionA}</div>
-                <div onClick={handleClickB} className={optClassB}> b) {props.optionB}</div>
-                <div onClick={handleClickC} className={optClassC}> c) {props.optionC}</div>
-                <div onClick={handleClickD} className={optClassD}> d) {props.optionD}</div>
+                <p onClick={handleClickA} className={optClassA}> a) {props.optionA}</p>
+                <p onClick={handleClickB} className={optClassB}> b) {props.optionB}</p>
+                <p onClick={handleClickC} className={optClassC}> c) {props.optionC}</p>
+                <p onClick={handleClickD} className={optClassD}> d) {props.optionD}</p>
             </div>
-            <hr></hr>
+
         </div>
     )
 }
