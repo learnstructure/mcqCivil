@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import '../css/testpage.css'
 
 let count = 0;
 function Test(props) {
 
-    const [answer, setAnswer] = useState([])
+    useMemo(() => {
+        count = 0;
+    }, [props.testClicked])
+    const [answer, setAnswer] = useState()
 
-    if (props.submitClicked && answer === props.correct) {
-        count = count + 1
-        /* console.log("correct answer " + count) */
-        /* props.getCount(count) */
-    }
-
-    useEffect(() => {
-        props.setRightAns(count)
+    useMemo(() => {
+        if (props.submitClicked && answer === props.correct) {
+            count = count + 1
+            /* console.log("correct answer " + count + answer) */
+            /* props.getCount(count) */
+            props.setRightAns(count)
+        }
     }, [props.submitClicked])
+
+
+
 
     return (
         <div className="mcq" >

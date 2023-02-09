@@ -5,6 +5,7 @@ import { structureRandom } from '../data/dataStructure'
 import { somRandom } from '../data/dataSOM'
 import { surveyingRandom } from '../data/dataSurveying'
 import Test from './Test'
+import Timer from './Timer'
 const allRandom = [...rccRandom, ...structureRandom, ...somRandom, ...surveyingRandom]
 
 function Testpage() {
@@ -26,19 +27,29 @@ function Testpage() {
             optionD={mcq.optionD}
             correct={mcq.correct}
             submitClicked={submitClicked}
+            testClicked={testClicked}
             setRightAns={setRightAns}
             /* getCount={getCount} */ />)
     })
     return (
         <div className='mainBody'>
+            {testClicked &&
+                <Timer
+                    setSubmitClicked={setSubmitClicked}
+                    testClicked={testClicked}
+                    submitClicked={submitClicked}
+                    rightAns={rightAns}
+                    totalQuestions={allRandom.length} />}
             {testClicked && randomQuestions}
+
             {!testClicked && <div style={{ textAlign: "center" }}>
                 <div>Please get ready and click on start below. </div>
 
                 <button onClick={() => setTestClicked(true)}>Start</button>
 
             </div>}
-            {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }}>Submit</button>}
+
+            {/* {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }}>Submit</button>} */}
             {submitClicked &&
                 <div className='result'>
                     <p>Number of correct answers = {rightAns}</p>
