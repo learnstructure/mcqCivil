@@ -1,0 +1,55 @@
+import React, { useState } from 'react'
+import '../css/testpage.css'
+
+function Test(props) {
+
+    /*  const [colorClass, changeColorClass] = useState("unticked")
+     function changeColor() {
+         changeColorClass(prevState => prevState === "unticked" ? "ticked" : "unticked")
+ 
+     } */
+
+    const [classA, changeClassA] = useState("unticked")
+    const [classB, changeClassB] = useState("unticked")
+    const [classC, changeClassC] = useState("unticked")
+    const [classD, changeClassD] = useState("unticked")
+    function changeColorA() {
+        changeClassB("unticked")
+        changeClassC("unticked")
+        changeClassD("unticked")
+        changeClassA(prevState => prevState === "unticked" ? "ticked" : "unticked")
+    }
+    function changeColorB() {
+        changeClassA("unticked")
+        changeClassC("unticked")
+        changeClassD("unticked")
+        changeClassB(prevState => prevState === "unticked" ? "ticked" : "unticked")
+    }
+    function changeColorC() {
+        changeClassA("unticked")
+        changeClassB("unticked")
+        changeClassD("unticked")
+        changeClassC(prevState => prevState === "unticked" ? "ticked" : "unticked")
+    }
+    function changeColorD() {
+        changeClassA("unticked")
+        changeClassB("unticked")
+        changeClassC("unticked")
+        changeClassD(prevState => prevState === "unticked" ? "ticked" : "unticked")
+    }
+
+    return (
+        <div className="mcq" >
+            <div>{props.serialno}. {props.question}</div>
+            <div className="option">
+                <div className={classA} onClick={changeColorA}> a) {props.optionA}</div>
+                <div className={classB} onClick={changeColorB}> b) {props.optionB}</div>
+                <div className={classC} onClick={changeColorC}> c) {props.optionC}</div>
+                <div className={classD} onClick={changeColorD}> d) {props.optionD}</div>
+            </div>
+            <hr></hr>
+        </div>
+    )
+}
+
+export default Test

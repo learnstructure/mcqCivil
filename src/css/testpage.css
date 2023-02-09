@@ -1,0 +1,53 @@
+.mainBody {
+    margin-left: 20px;
+}
+
+.unticked {
+    color: black
+}
+
+.ticked {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+/* input[type="radio"] {
+    visibility: hidden;
+} */
+
+input[type="radio"]:checked+label {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+button {
+    background-color: #4CAF50;
+
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #236725;
+}
+
+.correctAnswer {
+    color: green;
+    font-weight: bold;
+}
+
+.result {
+    background-color: #dfe8df;
+
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+}

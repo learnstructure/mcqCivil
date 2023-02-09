@@ -1,0 +1,13 @@
+.option {
+    margin-left: 40px;
+    width: fit-content;
+}
+
+.correctAnswer {
+    color: green;
+    font-weight: bolder;
+}
+
+.wrongAnswer {
+    color: red;
+}
