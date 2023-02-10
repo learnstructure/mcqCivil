@@ -1,7 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .mcq {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     width: 70%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
     padding: 1rem;
     margin-bottom: 0.5rem;
@@ -19,4 +24,10 @@
 
 .wrongAnswer {
     color: red;
+}
+
+@media screen and (max-width: 768px) {
+    .mcq {
+        width: 90%;
+    }
 }

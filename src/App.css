@@ -2,13 +2,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  font-family: "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 
-.App {
-  min-height: 100vh;
-  font-size: 1.1rem;
-}
-
-.marginAll {
-  margin-left: 0%;
 }

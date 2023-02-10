@@ -23,15 +23,15 @@ function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQu
         <>
             <div className='container' style={{ display: submitClicked ? "none" : "null" }}>
                 {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }}>Submit</button>}
-                {!submitClicked && <span>Time elapsed = {minute < 10 ? "0" + minute : minute} : {second < 10 ? "0" + second : second}</span>}
+                {!submitClicked && <span className='marginRight'>Time elapsed = {minute < 10 ? "0" + minute : minute} : {second < 10 ? "0" + second : second}</span>}
 
             </div>
             {submitClicked &&
                 <div className='container'>
                     {/* <p>Number of correct answers = {rightAns}</p>
                 <p>Total questions = {totalQuestions}</p> */}
-                    <div>Score = {rightAns} / {totalQuestions}</div>
-                    <div>% Score = {rightAns * 100 / totalQuestions}</div>
+                    <div className='marginLeft'>Score = {rightAns} / {totalQuestions}</div>
+                    <div className='marginRight'>% Score = {rightAns * 100 / totalQuestions}</div>
                 </div>}
         </>
     )
