@@ -14,6 +14,14 @@ const dataSOM = [
         question: "If a three hinged parabolic arch carries a uniformly distributed load on its entire span, every section of the arch resists-",
         optionA: "Compressive force", optionB: "Tensile force", optionC: "Shear force", optionD: "Bending moment", correct: "a"
     },
+    {
+        question: "According to Lami's theorem",
+        optionA: "Three forces acting at a point will be in equilibrium",
+        optionB: "Three forces acting at a point can be represented by a triangle, each side being proportional to force",
+        optionC: "If three forces acting upon a particle are represented in magnitude and direction by the sides of a triangle, taken in order, they will be in equilibrium",
+        optionD: "If three forces acting at a point are in equilibrium, each force is proportional to the sine of the angle between the other two",
+        correct: "d"
+    }
 
 ]
 const Random = (data) => {
