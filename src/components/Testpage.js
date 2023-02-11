@@ -4,9 +4,14 @@ import { rccRandom } from '../data/dataRCC'
 import { structureRandom } from '../data/dataStructure'
 import { somRandom } from '../data/dataSOM'
 import { surveyingRandom } from '../data/dataSurveying'
+import { estimatingRandom } from '../data/dataEstimating'
+import { buildingMatRandom } from '../data/dataBuildingMat'
+import { constructionManagementRandom } from '../data/dataConstructionManagement'
+
 import Test from './Test'
 import Timer from './Timer'
-const allRandom = [...rccRandom, ...structureRandom, ...somRandom, ...surveyingRandom]
+const allRandom = [...rccRandom, ...structureRandom, ...somRandom, ...surveyingRandom, ...estimatingRandom,
+...buildingMatRandom, ...constructionManagementRandom]
 
 function Testpage() {
     const [testClicked, setTestClicked] = useState(false)

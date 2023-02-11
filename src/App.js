@@ -12,6 +12,9 @@ import { dataSurveying } from './data/dataSurveying';
 import { dataStructure } from './data/dataStructure';
 import { dataSOM } from './data/dataSOM'
 import { dataRCC } from './data/dataRCC'
+import { dataEstimating } from './data/dataEstimating'
+import { dataBuildingMat } from './data/dataBuildingMat'
+import { dataConstructionManagement } from './data/dataConstructionManagement'
 
 function App() {
 
@@ -23,6 +26,9 @@ function App() {
         <Route path='/structure' element={<McqAll data={dataStructure} />}></Route>
         <Route path='/rcc' element={<McqAll data={dataRCC} />}></Route>
         <Route path='/surveying' element={<McqAll data={dataSurveying} />}></Route>
+        <Route path='/estimation' element={<McqAll data={dataEstimating} />}></Route>
+        <Route path='/buildingMaterials' element={<McqAll data={dataBuildingMat} />}></Route>
+        <Route path='/constructionManagement' element={<McqAll data={dataConstructionManagement} />}></Route>
         <Route path='/test' element={<Testpage />}></Route>
       </Routes>
     </>

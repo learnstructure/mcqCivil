@@ -12,7 +12,7 @@ function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQu
                 setMinute(minute + 1);
                 setSecond(0);
             }
-            if (minute === 10) {
+            if (minute === 10) {    //time duration of test
                 setSubmitClicked(true)
             }
 
@@ -31,7 +31,7 @@ function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQu
                     {/* <p>Number of correct answers = {rightAns}</p>
                 <p>Total questions = {totalQuestions}</p> */}
                     <div className='marginLeft'>Score = {rightAns} / {totalQuestions}</div>
-                    <div className='marginRight'>% Score = {rightAns * 100 / totalQuestions}</div>
+                    <div className='marginRight'>% Score = {parseFloat((rightAns * 100 / totalQuestions).toFixed(2))}</div>
                 </div>}
         </>
     )

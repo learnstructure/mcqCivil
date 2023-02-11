@@ -11,6 +11,7 @@ export default function Title() {
                 <NavLink to='/surveying'>Surveying</NavLink>
                 <NavLink to='/buildingMaterials'>Building Materials</NavLink>
                 <NavLink to='/estimation'>Estimation</NavLink>
+                <NavLink to='/constructionManagement'>Construction management</NavLink>
                 <NavLink to='/test'>Online Test</NavLink>
             </nav>
 
