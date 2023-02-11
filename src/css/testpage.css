@@ -20,7 +20,7 @@ button {
     background-color: #4CAF50;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 0.5rem;
     color: rgb(251, 247, 247);
     padding: 10px 20px;
     text-align: center;
@@ -45,4 +45,9 @@ button:hover {
     border: none;
     border-radius: 12px;
     padding: 10px;
+}
+
+.submitLower {
+    display: block;
+    margin: auto;
 }

@@ -17,13 +17,14 @@ body {
     cursor: pointer;
 }
 
-.correctAnswer {
+#correctAnswer {
     color: green;
     font-weight: bolder;
 }
 
-.wrongAnswer {
+#wrongAnswer {
     color: red;
+    font-weight: normal;
 }
 
 @media screen and (max-width: 768px) {

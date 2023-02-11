@@ -49,7 +49,7 @@ function Testpage() {
 
             </div>}
 
-            {/* {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }}>Submit</button>} */}
+            {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }} className='submitLower'>Submit</button>}
             {submitClicked &&
                 <div className='result'>
                     <p>Number of correct answers = {rightAns}</p>
