@@ -41,13 +41,19 @@ button:hover {
 }
 
 .result {
+    text-align: center;
     background-color: #dfe8df;
     border: none;
-    border-radius: 12px;
-    padding: 10px;
+    padding: 0.5rem;
 }
 
 .submitLower {
     display: block;
     margin: auto;
+}
+
+.testInfo {
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 2rem;
 }

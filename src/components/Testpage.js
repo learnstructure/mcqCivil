@@ -47,11 +47,10 @@ function Testpage() {
                     totalQuestions={allRandom.length} />}
             {testClicked && randomQuestions}
 
-            {!testClicked && <div style={{ textAlign: "center" }}>
-                <div>Please get ready and click on start below. </div>
-
+            {!testClicked && <div className='testInfo'>
+                <div>Please get ready and click on start below. <br />
+                </div>
                 <button onClick={() => setTestClicked(true)}>Start</button>
-
             </div>}
 
             {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }} className='submitLower'>Submit</button>}
