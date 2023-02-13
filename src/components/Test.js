@@ -13,6 +13,7 @@ function Test(props) {
         if (props.submitClicked && answer === props.correct) {
             count = count + 1
             /* console.log("correct answer " + count + answer) */
+
             /* props.getCount(count) */
             props.setRightAns(count)
         }

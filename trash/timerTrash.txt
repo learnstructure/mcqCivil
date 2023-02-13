@@ -4,16 +4,15 @@ import '../css/timer.css'
 function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQuestions }) {
     const [minute, setMinute] = useState(0)
     const [second, setSecond] = useState(0)
-
+    var timer;
     useEffect(() => {
-        var timer = setInterval(() => {
-
+        timer = setInterval(() => {
             setSecond(second + 1)
             if (second === 59) {
                 setMinute(minute + 1);
                 setSecond(0);
             }
-            if (minute === 45) {    //time duration of test
+            if (minute === 10) {    //time duration of test
                 setSubmitClicked(true)
             }
 

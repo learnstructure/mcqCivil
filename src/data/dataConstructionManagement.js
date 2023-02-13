@@ -157,7 +157,7 @@ const dataConstructionManagement = [
         optionB: "67% at the site and 33% under procurement ",
         optionC: "50% at the site and 50% under procurement ",
         optionD: "33% at the site and 67% under procurement ",
-        correct: "d"
+        correct: "b"
     },
     /* {
         question: "",
@@ -170,7 +170,7 @@ const dataConstructionManagement = [
 
 ]
 const Random = (data) => {
-    const num = 2;
+    const num = 5;
     const res = [];
     for (let i = 0; i < num;) {
         const random = Math.floor(Math.random() * data.length);

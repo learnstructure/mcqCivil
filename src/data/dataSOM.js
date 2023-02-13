@@ -145,7 +145,7 @@ const dataSOM = [
 
 ]
 const Random = (data) => {
-    const num = 2;
+    const num = 5;
     const res = [];
     for (let i = 0; i < num;) {
         const random = Math.floor(Math.random() * data.length);

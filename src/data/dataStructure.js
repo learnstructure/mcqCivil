@@ -149,12 +149,255 @@ const dataStructure = [
         correct: "c"
     },
     {
+        question: "The degree of static indeterminacy of a rigid-jointed space frame is",
+        optionA: "(m + 3r) - 3j",
+        optionB: "(m + 6r) - 6j",
+        optionC: "(3m + r) - 3j",
+        optionD: "(6m + r) - 6j",
+        correct: "d"
+    },
+    {
+        question: "Degree of kinematic indeterminacy of a pin-jointed plane frame is given by",
+        optionA: "2j - r",
+        optionB: "j - 2r",
+        optionC: "3j - r",
+        optionD: "2j + r",
+        correct: "a"
+    },
+    {
+        question: "A pin-jointed plane frame is unstable if",
+        optionA: "(m + r) < 2j",
+        optionB: "(m + r) = 2j",
+        optionC: "(m + r) > 2j",
+        optionD: "None of the above",
+        correct: "a"
+    },
+
+
+    {
+        question: "Degree of kinematic indeterminacy of a pin-jointed space frame is given by",
+        optionA: "2j - r",
+        optionB: "j - 2r",
+        optionC: "3j - r",
+        optionD: "2j + r",
+        correct: "c"
+    },
+
+    {
         question: "In moment distribution method, the sum of distribution factors of all the members meeting at any joint is always",
         optionA: "0",
         optionB: "less than 1",
         optionC: "1",
         optionD: "greater than 1",
         correct: "c"
+    },
+    {
+        question: "When a uniformly distributed load, shorter than the span of the girder, moves from left to right, then the conditions for maximum bending moment at a section is that",
+        optionA: "The head of the load reaches the section",
+        optionB: "The tail of the load reaches the section",
+        optionC: "The load position should be such that the section divides it equally on both sides",
+        optionD: "The load position should be such that the section divides the load in the same ratio as it divides the span",
+        correct: "d"
+    },
+    {
+        question: "Muller Breslau's principle for obtaining influence lines is applicable to",
+        optionA: "Statically determinate structures",
+        optionB: "Statically indeterminate structures",
+        optionC: "Statically determinate and indeterminate structures, material of which is elastic and follows Hooke's law",
+        optionD: "Any structure",
+        correct: "c"
+    },
+    {
+        question: "The number of independent equations to be satisfied for static equilibrium of a plane structure is",
+        optionA: "3",
+        optionB: "4",
+        optionC: "5",
+        optionD: "6",
+        correct: "a"
+    },
+    {
+        question: "While using three moments equation, a fixed end of a continuous beam is replaced by an additional span of",
+        optionA: "Zero length",
+        optionB: "Infinite length",
+        optionC: "Zero moment of inertia",
+        optionD: "None of the above",
+        correct: "a"
+    },
+    {
+        question: "While using three moments equation, a fixed end of a continuous beam is replaced by an additional span of",
+        optionA: "Infinite length",
+        optionB: "Infinite stiffness",
+        optionC: "Zero stiffness",
+        optionD: "Both a and b",
+        correct: "b"
+    },
+    {
+        question: "Select the correct statement",
+        optionA: "Flexibility matrix is a square symmetrical matrix ",
+        optionB: "Stiffness matrix is a square symmetrical matrix ",
+        optionC: "Both (A) and (B)",
+        optionD: "None of the above",
+        correct: "c"
+    },
+    {
+        question: "For a single point load w moving on a symmetrical three hinged parabolic arch of span l, the maximum sagging moment occurs at a distance x from ends. The value of x is",
+        optionA: "0.11 L",
+        optionB: "0.21 L",
+        optionC: "0.25 L",
+        optionD: "0.31 L",
+        correct: "b"
+    },
+    {
+        question: "Select the correct statement",
+        optionA: "The displacement method is more useful when degree of kinematic indeterminacy is greater than the degree of static indeterminacy",
+        optionB: "The force method is more useful when degree of static indeterminacy is greater than the degree of kinematic indeterminacy.",
+        optionC: "The displacement method is more useful when degree of kinematic indeterminacy is less than the degree of static indeterminacy.",
+        optionD: "None of the above",
+        correct: "c"
+    },
+    {
+        question: "Bending moment at any section in a conjugate beam gives in the actual beam",
+        optionA: "Slope",
+        optionB: "Curvature",
+        optionC: "Deflection",
+        optionD: "All of the above",
+        correct: "c"
+    },
+    {
+        question: "Shear force at any section in a conjugate beam gives in the actual beam",
+        optionA: "Slope",
+        optionB: "Curvature",
+        optionC: "Deflection",
+        optionD: "All of the above",
+        correct: "a"
+    },
+    {
+        question: "The number of independent displacement components at each joint of a rigid-jointed space frame is",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "6",
+        correct: "d"
+    },
+    {
+        question: "Independent displacement components at each joint of a rigid-jointed plane frame are",
+        optionA: "Three linear movements",
+        optionB: "Two linear movements and one rotation",
+        optionC: "One linear movement and two rotations",
+        optionD: "Three rotations",
+        correct: "b"
+    },
+    {
+        question: "The carryover factor in a prismatic member whose far end is fixed is",
+        optionA: "0",
+        optionB: "0.5",
+        optionC: "0.75",
+        optionD: "1",
+        correct: "b"
+    },
+    {
+        question: "Effects of shear force and axial force on plastic moment capacity of a structure are respectively to",
+        optionA: "Increase and decrease",
+        optionB: "Increase and increase",
+        optionC: "Decrease and increase",
+        optionD: "Decrease and decrease",
+        correct: "d"
+    },
+    {
+        question: "The maximum bending moment due to a train of wheel loads on a simply supported girder",
+        optionA: "Always occurs at centre of span",
+        optionB: "Always occurs under a wheel load",
+        optionC: "Always occurs under a leading wheel load",
+        optionD: "Always occurs under a trailing wheel load",
+        correct: "b"
+    },
+    {
+        question: "When a series of wheel loads crosses a simply supported girder, the maximum bending moment under any given wheel load occurs when",
+        optionA: "The centre of gravity of the load system is midway between the centre of span and wheel load under consideration",
+        optionB: "The centre of span is midway between the centre of gravity of the load system and the wheel load under consideration",
+        optionC: "The wheel load under consideration is midway between the centre of span and the centre of gravity of the load system",
+        optionD: "Any of the above",
+        correct: "b"
+    },
+    {
+        question: "Sinking of an intermediate support of a continuous beam",
+        optionA: "reduces the negative moment at support",
+        optionB: "increases the negative moment at support",
+        optionC: "reduces the positive moment at support",
+        optionD: "increases the positive moment at support",
+        correct: "a"
+    },
+    {
+        question: "Castigliano's first theorem is applicable",
+        optionA: "For statically determinate structures only",
+        optionB: "When the system behaves elastically",
+        optionC: "Only when principle of superposition is valid",
+        optionD: "For any type of structures",
+        correct: "c"
+    },
+    {
+        question: "Number of unknown internal forces in each member of a rigid jointed plane frame is",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "6",
+        correct: "c"
+    },
+    {
+        question: "The number of independent equations to be satisfied for static equilibrium in a space structure is",
+        optionA: "2",
+        optionB: "3",
+        optionC: "4",
+        optionD: "6",
+        correct: "d"
+    },
+    {
+        question: "A simply supported beam deflects by 5 mm when it is subjected to a concentrated load of 10 kN at its centre. What will be deflection in a 1/10 model of the beam if the model is subjected to a 1 kN load at its centre?",
+        optionA: "5 mm",
+        optionB: "0.5 mm",
+        optionC: "0.05 mm",
+        optionD: "0.005 mm",
+        correct: "a"
+    },
+    {
+        question: "Degree of static indeterminacy of a rigid-jointed plane frame having 15 members, 3 reaction components and 14 joints is",
+        optionA: "2",
+        optionB: "3",
+        optionC: "6",
+        optionD: "8",
+        correct: "c"
+    },
+    {
+        question: "In the slope deflection equations, the deformations are considered to be caused by",
+        optionA: "Bending moment",
+        optionB: "Shear force",
+        optionC: "Axial force",
+        optionD: "All of the above",
+        correct: "a"
+    },
+    {
+        question: "A single rolling load of 8 kN rolls along a girder of 15 m span. The absolute maximum bending moment will be",
+        optionA: "8 kN.m ",
+        optionB: "15 kN.m ",
+        optionC: "30 kN.m ",
+        optionD: "60 kN.m ",
+        correct: "c"
+    },
+    {
+        question: "The deformation of a spring produced by unit load is called",
+        optionA: "Stiffness",
+        optionB: "Flexibility",
+        optionC: "Influence coefficient",
+        optionD: "Unit strain",
+        correct: "b"
+    },
+    {
+        question: "The force required on a spring to produce unit deformation is called",
+        optionA: "Stiffness",
+        optionB: "Flexibility",
+        optionC: "Influence coefficient",
+        optionD: "Unit strain",
+        correct: "a"
     },
     /* {
         question: "",
@@ -166,7 +409,7 @@ const dataStructure = [
     }, */
 ]
 const Random = (data) => {
-    const num = 2;
+    const num = 5;
     const res = [];
     for (let i = 0; i < num;) {
         const random = Math.floor(Math.random() * data.length);
