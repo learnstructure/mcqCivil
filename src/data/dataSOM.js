@@ -134,6 +134,182 @@ const dataSOM = [
         optionD: "A stanchion",
         correct: "a"
     },
+    {
+        question: "The property of a material by which it can be drawn to a smaller section due to tension is called",
+        optionA: "Plasticity",
+        optionB: "Ductility",
+        optionC: "Elasticity",
+        optionD: "Malleability",
+        correct: "b"
+    },
+    {
+        question: "A bending moment may be defined as:",
+        optionA: "Arithmetic sum of the moments of all the forces on either side of the section",
+        optionB: "Arithmetic sum of the forces on either side of the section",
+        optionC: "Algebraic sum of the moments of all the forces on either side of the section",
+        optionD: "None of these",
+        correct: "c"
+    },
+    {
+        question: "The resolved part of the resultant of two forces inclined at an angle θ in a given direction is equal to",
+        optionA: "The algebraic sum of the resolved parts of the forces in the given direction",
+        optionB: "The sum of the forces multiplied by the sinθ",
+        optionC: "The difference of the forces multiplied by the cosθ",
+        optionD: "None of these",
+        correct: "a"
+    },
+    {
+        question: "For structural analysis, Maxwell's reciprocal theorem can be applied to",
+        optionA: "Plastic structures",
+        optionB: "Elastic structures",
+        optionC: "Symmetrical structures",
+        optionD: "All the above",
+        correct: "b"
+    },
+    {
+        question: "If all the dimensions of a bar are increased in the proportion n : 1, the proportion with which the maximum stress produced in the prismatic bar by its own weight, will increase in the ratio",
+        optionA: "1 : n",
+        optionB: "n : 1",
+        optionC: "1 : 1/n",
+        optionD: "1 : √n",
+        correct: "b"
+    },
+    {
+        question: "A heavy ladder resting on floor and against a vertical wall may not be in equilibrium if",
+        optionA: "The floor is smooth, the wall is rough",
+        optionB: "The floor is rough, the wall is smooth",
+        optionC: "The floor and wall both are smooth surfaces",
+        optionD: "The floor and wall both are rough surfaces",
+        correct: "c"
+    },
+    {
+        question: "A triangular section having base b, height h, is placed with its base horizontal. If the shear force at the section is S, the maximum shear stress is",
+        optionA: "S/bh",
+        optionB: "2S/bh",
+        optionC: "3S/bh",
+        optionD: "4S/bh",
+        correct: "c"
+    },
+    {
+        question: "Maximum deflection of a",
+        optionA: "Cantilever beam carrying a concentrated load W at its free end is WL³/3EI",
+        optionB: "Simply supported beam carrying a concentrated load W at mid-span is WL³/48EI",
+        optionC: "Cantilever beam carrying a uniformly distributed load w over span is wL⁴/8EI",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "If two tensile forces mutually perpendicular act on a rectangular parallelepiped bar are equal, the resulting elongation of the pipe is (m is Poisson's ratio)",
+        optionA: "(1 + m)(P/E)",
+        optionB: "(1 - m)(P/E)",
+        optionC: "(1 + m)(E/P)",
+        optionD: "(1 - m)(E/P)",
+        correct: "b"
+    },
+    {
+        question: "On a ladder resting on smooth ground and leaning against vertical wall, the force of friction will be",
+        optionA: "Towards the wall at its upper end",
+        optionB: "Away from the wall at its upper end",
+        optionC: "Upwards at its upper end",
+        optionD: "Downwards at its upper end",
+        correct: "c"
+    },
+    {
+        question: "If three forces acting in one plane upon a rigid body, keep it in equilibrium, then they must either",
+        optionA: "Meet in a point",
+        optionB: "Be all parallel",
+        optionC: "At least two of them must meet",
+        optionD: "All of the above",
+        correct: "d"
+    },
+    {
+        question: "In a three hinged arch, the shear force is usually",
+        optionA: "Maximum at crown",
+        optionB: "Maximum at springing (support)",
+        optionC: "Maximum at quarter points",
+        optionD: "Varies with slope",
+        correct: "b"
+    },
+    {
+        question: "A beam of length L supported on two intermediate rollers carries a uniformly distributed load on its entire length. If sagging B.M. and hogging B.M. of the beam are equal, the length of each overhang is",
+        optionA: "0.107 L",
+        optionB: "0.207 L",
+        optionC: "0.307 L",
+        optionD: "0.407 L",
+        correct: "b"
+    },
+    {
+        question: "In a bar of large length when held vertically and subjected to a load at its lower end, its own- weight produces additional stress. The maximum stress will be",
+        optionA: "At the lower cross-section",
+        optionB: "At the built-in upper cross-section",
+        optionC: "At the central cross-section ",
+        optionD: "At every point of the bar ",
+        correct: "b"
+    },
+    {
+        question: "The value of Poisson's ratio always remains",
+        optionA: "more than 1",
+        optionB: "more than 0.5",
+        optionC: "less than 0.5",
+        optionD: "less than 0",
+        correct: "c"
+    },
+    {
+        question: "Center of gravity of a thin hollow cone lies on the axis at a height of",
+        optionA: "One-fourth of the total height above base",
+        optionB: "One-third of the total height above base",
+        optionC: "One-half of the total height above base",
+        optionD: "Three-eighth of the total height above the base",
+        correct: "b"
+    },
+    {
+        question: "A rectangular bar of width b and height h is being used as a cantilever. The loading is in a plane parallel to the side b. The section modulus is",
+        optionA: "bh³/12",
+        optionB: "hb³/12",
+        optionC: "b²h/6",
+        optionD: "bh²/6",
+        correct: "c"
+    },
+    {
+        question: "The coefficient of friction depends on",
+        optionA: "Area of contact",
+        optionB: "Shape of surfaces",
+        optionC: "Strength of surfaces",
+        optionD: "Nature of surface",
+        correct: "d"
+    },
+    {
+        question: "The intensity of direct longitudinal stress in the cross-section at any point distant r from the neutral axis is proportional to",
+        optionA: "r",
+        optionB: "1/r",
+        optionC: "r²",
+        optionD: "1/r²",
+        correct: "a"
+    },
+    {
+        question: "When loads are applied proportionately to a frame structure containing its members in one plane, the structure is called",
+        optionA: "Grid frame",
+        optionB: "Plane frame",
+        optionC: "Space frame",
+        optionD: "Truss frame",
+        correct: "b"
+    },
+    {
+        question: "The maximum stress intensity due to a suddenly applied load is x-times the stress intensity produced by the load of the same magnitude applied gradually. The value of x is",
+        optionA: "1/2",
+        optionB: "1",
+        optionC: "2",
+        optionD: "3",
+        correct: "c"
+    },
+    {
+        question: "The maximum bending moment due to a moving load on a simply supported beam occurs",
+        optionA: "At the mid span",
+        optionB: "At the supports",
+        optionC: "Under the load",
+        optionD: "Anywhere on the beam",
+        correct: "c"
+    },
     /* {
         question: "",
         optionA: "",
