@@ -1,4 +1,5 @@
 import '../css/title.css';
+import logo from './logo.JPG'
 import Hamburger from 'hamburger-react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -7,7 +8,10 @@ export default function Title() {
 
     return (
         < >
-            <h1 className="siteInfo">Civil Engineering Mcq</h1>
+            {/* <h1 className="siteInfo">Civil Engineering Mcq</h1> */}
+            <div className="siteInfo">
+                <img src={logo} alt="Civil Engineering Mcq" style={{ width: '20rem' }}></img>
+            </div>
             <div className='mainNav'>
                 <nav className={
                     showMenu ? 'topNav responsive' : 'topNav'

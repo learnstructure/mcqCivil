@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "civil-engineering-mcq-8b943"
-  }
+    "default": "civilengineering-mcq",
+    "development": "civil-engineering-mcq-8b943"
+  },
+  "targets": {},
+  "etags": {}
 }
