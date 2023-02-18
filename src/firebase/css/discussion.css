@@ -1,0 +1,12 @@
+.showDiscussion {
+    background-color: inherit;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: rgb(152, 148, 148);
+    padding: 0.5rem;
+    border-radius: 0rem;
+    font-size: 1rem;
+}
+
+.showDiscussion:hover {
+    background-color: rgb(243, 239, 239);
+}

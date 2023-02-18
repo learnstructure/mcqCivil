@@ -1,6 +1,8 @@
 import '../css/mcq.css';
 import { useState } from 'react';
+import Discussion from '../firebase/Discussion';
 export default function Mcq(props) {
+
     const [optClassA, setOptClassA] = useState(null)
     function handleClickA() {
         if (props.correct === "a") { setOptClassA("correctAnswer") }
@@ -52,7 +54,8 @@ export default function Mcq(props) {
                 <p onClick={handleClickC} className={optClassC}> c) {props.optionC}</p>
                 <p onClick={handleClickD} className={optClassD}> d) {props.optionD}</p> */}
             </div>
-
+            <hr></hr>
+            <Discussion id={props.id} />
         </div>
     )
 }
