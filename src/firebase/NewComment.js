@@ -24,13 +24,15 @@ function NewComment({ id }) {
                 await addDoc(subCollectionRef, {
                     name: newComment.name,
                     comment: newComment.comment
-                }, { merge: true });
-                //console.log("Document written with ID: ", docRef.id);
+                });
+
             } catch (e) {
                 console.error("Error adding document: ", e);
             }
         }
         addData();
+        setDiscussion((prev) => [...prev, <p><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></p>])
+
         setNewComment({ name: "", comment: "" })
     }
     //reading the existing data
@@ -40,16 +42,17 @@ function NewComment({ id }) {
             try {
                 const querySnapshot = await getDocs(collection(db, pathname, id, "comments"));
 
-                /* if (querySnapshot.exists()) {
-                    console.log("document data found")
-                    //setDiscussion((prev) => [...prev, <p key={querySnapshot.id}>{querySnapshot.data().name}: {querySnapshot.data().comment}</p>])
-                } else {
-                    console.log("no such document")
-                } */
-                querySnapshot.forEach(doc => {
-                    //console.log(`${doc.id} => ${doc.data().name} : ${doc.data().comment}`) 
-                    setDiscussion((prev) => [...prev, <p key={doc.id}>{doc.data().name}: {doc.data().comment}</p>])
-                })
+                if (!querySnapshot.empty) {
+                    querySnapshot.forEach(doc => {
+                        var userName = doc.data().name;
+                        var UserName = userName.charAt(0).toUpperCase() + userName.slice(1)
+                        setDiscussion((prev) => [...prev, <p key={doc.id}><span className='userName'>{UserName}</span> <br /> <div className='userComment'> {doc.data().comment}</div> <hr></hr></p>])
+
+                    })
+                }
+                else {
+                    setDiscussion("No previous comments. Feel free to reply.")
+                }
 
             } catch (e) {
                 console.error("Could not find", e);
@@ -60,12 +63,13 @@ function NewComment({ id }) {
 
     return (
         <>
-            <div>{discussion}</div>
-            <div>Your Reply</div>
-            <form onSubmit={handleSubmit}>
-                <textarea rows={2} cols={40} placeholder="Your name" name='name' value={newComment.name} onChange={handleChange} />
+            <div className='oldCommentSection'>{discussion}</div>
+
+            <form onSubmit={handleSubmit} className='commentSection'>
+                <div className='yourReply'>Place your comment below</div>
+                <textarea className='nameTextarea' rows={1} cols={40} placeholder="Your name..." name='name' value={newComment.name} onChange={handleChange} required />
                 <br />
-                <textarea rows={4} cols={40} placeholder="Your comment here" name='comment' value={newComment.comment} onChange={handleChange} />
+                <textarea className='commentTextarea' rows={3} cols={40} placeholder="Your comment here..." name='comment' value={newComment.comment} onChange={handleChange} required />
                 <br />
                 <input type="submit" value="Submit" />
 
