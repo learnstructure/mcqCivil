@@ -50,7 +50,7 @@ function Test(props) {
                 </p>
             </div>
             {/* {props.submitClicked && <p>Selected option is {answer}</p>} */}
-            <hr></hr>
+
 
             {/* {props.submitClicked &&
                 <div className='result'>

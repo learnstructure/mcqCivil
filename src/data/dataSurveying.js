@@ -395,13 +395,94 @@ const dataSurveying = [
         optionD: "All of the above",
         correct: "b"
     },
-
-
-
-
-
-
-
+    {
+        question: "Angles to a given pivot station observed from a number of traverse stations when plotted, the lines to the pivot station intersect at a common point",
+        optionA: "Angular measurements are correct and not the linear measurements",
+        optionB: "Linear measurements are correct and not the angular measurements",
+        optionC: "Angular and linear measurements are correct and not the plotting of traverse ",
+        optionD: "Angular and linear measurements and also plotting of the traverse are correct ",
+        correct: "d"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "The horizontal angle between magnetic meridian and true meridian at a place is called magnetic declination or variance of the compass",
+        optionB: "The imaginary lines which pass through points at which the magnetic declinations are equal at a given time are called isogonic lines",
+        optionC: "The isogonic lines through places at which the declination is zero are agonic lines",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Straight, parallel and widely spaced contours represent",
+        optionA: "A steep surface",
+        optionB: "A flat surface",
+        optionC: "An inclined  plane surface",
+        optionD: "Curved surface",
+        correct: "c"
+    },
+    {
+        question: "The real image of an object formed by the objective must lie ",
+        optionA: "In the plane of cross hairs",
+        optionB: "At the centre of the telescope",
+        optionC: "At the optical centre of the eye-piece",
+        optionD: "Anywhere inside the telescope",
+        correct: "a",
+    },
+    {
+        question: "For a tachometer the additive and multiplying constants are respectively",
+        optionA: "0 and 100",
+        optionB: "100 and 0",
+        optionC: "0 and 0",
+        optionD: "100 and 100",
+        correct: "a"
+    },
+    {
+        question: "Correct distance obtained by an erroneous chain is:",
+        optionA: "(Erroneous chain length/Correct chain length) × Observed distance",
+        optionB: "(Correct chain length/Erroneous chain length) × Observed distance",
+        optionC: "(Correct chain length/Observed distance) × Erroneous chain length",
+        optionD: "None of these",
+        correct: "a"
+    },
+    {
+        question: "An imaginary line lying throughout on the surface of the earth and preserving a constant inclination to the horizontal is called",
+        optionA: "Contour line",
+        optionB: "Contour gradient",
+        optionC: "Level line",
+        optionD: "Line of gentle scope",
+        correct: "b"
+    },
+    {
+        question: "The constant vertical distance between  two adjacent contours is called",
+        optionA: "Horizontal interval",
+        optionB: "Horizontal equivalent",
+        optionC: "Vertical equivalent",
+        optionD: "Contour interval",
+        correct: "d"
+    },
+    {
+        question: "If a 30 m chain diverges through a perpendicular distance d from its correct alignment, the error in length is",
+        optionA: "(d²/60) m",
+        optionB: "(d²/30) m",
+        optionC: "(d²/40) m",
+        optionD: "(d/30) m",
+        correct: "a"
+    },
+    {
+        question: "The sensitivity of a bubble tube can be increased by",
+        optionA: "Increasing the diameter of the tube",
+        optionB: "Decreasing the length of bubble",
+        optionC: "Increasing the viscosity of liquid",
+        optionD: "Decreasing the radius of curvature of tube",
+        correct: "a"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "It is difficult to eliminate an error completely at first trial",
+        optionB: "Instability of the instrument makes it almost impossible to adjust it satisfactorily",
+        optionC: "Adjustment screws must be left bearing firmly but should never be forced",
+        optionD: "All the above",
+        correct: "d"
+    },
     /* {
         question: "",
         optionA: "",

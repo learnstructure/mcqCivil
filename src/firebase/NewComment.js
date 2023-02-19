@@ -31,7 +31,7 @@ function NewComment({ id }) {
             }
         }
         addData();
-        setDiscussion((prev) => [...prev, <p><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></p>])
+        setDiscussion((prev) => [...prev, <div><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></div>])
 
         setNewComment({ name: "", comment: "" })
     }
@@ -46,7 +46,7 @@ function NewComment({ id }) {
                     querySnapshot.forEach(doc => {
                         var userName = doc.data().name;
                         var UserName = userName.charAt(0).toUpperCase() + userName.slice(1)
-                        setDiscussion((prev) => [...prev, <p key={doc.id}><span className='userName'>{UserName}</span> <br /> <div className='userComment'> {doc.data().comment}</div> <hr></hr></p>])
+                        setDiscussion((prev) => [...prev, <div key={doc.id}><span className='userName'>{UserName}</span> <br /> <div className='userComment'> {doc.data().comment}</div> <hr></hr></div>])
 
                     })
                 }

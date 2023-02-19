@@ -19,11 +19,15 @@ export default function Title() {
                     <NavLink to='/'>SOM</NavLink>
                     <NavLink to='/structure'>Structure</NavLink>
                     <NavLink to='/rcc'>RCC</NavLink>
+                    <NavLink to='/geotechnical'>Geotechnical</NavLink>
                     <NavLink to='/surveying'>Surveying</NavLink>
                     <NavLink to='/buildingMaterials'>Building Materials</NavLink>
                     <NavLink to='/estimation'>Estimation</NavLink>
-                    <NavLink to='/constructionManagement'>Construction management</NavLink>
+                    <NavLink to='/constructionManagement'>Const. management</NavLink>
+                    <NavLink to='/economics'>Economics</NavLink>
+                    <NavLink to='/drawing'>Drawing</NavLink>
                     <NavLink to='/test'>Online Test</NavLink>
+                    <NavLink to='/contact'>Contact Us</NavLink>
 
                 </nav>
 
