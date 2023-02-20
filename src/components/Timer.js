@@ -23,7 +23,7 @@ function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQu
     return (
         <>
             <div className='container' style={{ display: submitClicked ? "none" : "null" }}>
-                {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }}>Submit</button>}
+                {testClicked && !submitClicked && <button className='btn1' onClick={() => { setSubmitClicked(true); }}>Submit</button>}
                 {!submitClicked && <span className='marginRight'>Time elapsed = {minute < 10 ? "0" + minute : minute} : {second < 10 ? "0" + second : second}</span>}
 
             </div>
