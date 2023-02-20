@@ -28,8 +28,23 @@ body {
     font-weight: normal;
 }
 
+.arrows {
+    position: fixed;
+    bottom: -0.3rem;
+    color: rgb(20, 107, 104);
+    width: 100%;
+
+    display: none;
+    justify-content: space-between;
+}
+
+
 @media screen and (max-width: 768px) {
     .mcq {
         width: 90%;
+    }
+
+    .arrows {
+        display: flex;
     }
 }

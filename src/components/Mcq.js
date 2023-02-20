@@ -2,25 +2,40 @@ import '../css/mcq.css';
 import { useState } from 'react';
 import Discussion from '../firebase/Discussion';
 export default function Mcq(props) {
-
+    const audio = new Audio();
+    audio.src = "./correctOption.wav";
     const [optClassA, setOptClassA] = useState(null)
+
     function handleClickA() {
-        if (props.correct === "a") { setOptClassA("correctAnswer") }
+        if (props.correct === "a") {
+            audio.play();
+            setOptClassA("correctAnswer")
+
+        }
         else { setOptClassA("wrongAnswer") }
     }
     const [optClassB, setOptClassB] = useState(null)
     function handleClickB() {
-        if (props.correct === "b") { setOptClassB("correctAnswer") }
+        if (props.correct === "b") {
+            audio.play();
+            setOptClassB("correctAnswer");
+        }
         else { setOptClassB("wrongAnswer") }
     }
     const [optClassC, setOptClassC] = useState(null)
     function handleClickC() {
-        if (props.correct === "c") { setOptClassC("correctAnswer") }
+        if (props.correct === "c") {
+            audio.play();
+            setOptClassC("correctAnswer");
+        }
         else { setOptClassC("wrongAnswer") }
     }
     const [optClassD, setOptClassD] = useState(null)
     function handleClickD() {
-        if (props.correct === "d") { setOptClassD("correctAnswer") }
+        if (props.correct === "d") {
+            audio.play();
+            setOptClassD("correctAnswer");
+        }
         else { setOptClassD("wrongAnswer") }
     }
     return (

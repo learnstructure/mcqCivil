@@ -1,5 +1,6 @@
 
 import Mcq from './Mcq';
+import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs'
 import '../App.css';
 export default function McqAll(props) {
     const mcqElements = props.data.map((mcq, index) => {
@@ -18,9 +19,14 @@ export default function McqAll(props) {
 
     return (
         <div className="App">
-            <div className="marginAll">
+            <div >
                 {mcqElements}
             </div>
+            <div className='arrows'>
+                <div onClick={() => window.scrollBy({ top: -6 * window.innerHeight, left: 0, behavior: 'smooth' })}><BsFillArrowLeftSquareFill size={"2rem"} title="About 20 questions backward" /></div>
+                <div onClick={() => window.scrollBy({ top: 6 * window.innerHeight, left: 0, behavior: 'smooth' })}><BsFillArrowRightSquareFill size={"2rem"} title="About 20 questions forward" /></div>
+            </div>
+
         </div>
     )
 }
