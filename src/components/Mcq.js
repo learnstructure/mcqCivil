@@ -1,6 +1,7 @@
 import '../css/mcq.css';
 import { useState } from 'react';
 import Discussion from '../firebase/Discussion';
+
 export default function Mcq(props) {
     const audio = new Audio();
     audio.src = "./correctOption.wav";
@@ -40,6 +41,7 @@ export default function Mcq(props) {
     }
     return (
         <div className="mcq">
+
             <div>{props.serialno}. {props.question}</div>
             <div className="option">
                 <p>

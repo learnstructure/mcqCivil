@@ -2,6 +2,8 @@
 import Mcq from './Mcq';
 import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs'
 import '../App.css';
+import { Helmet } from 'react-helmet';
+
 export default function McqAll(props) {
     const mcqElements = props.data.map((mcq, index) => {
         const id = (index + mcq.question.substring(1, 20) + mcq.optionA.substring(1, 10) + mcq.question.slice(-20) + mcq.optionB.substring(1, 10)).replaceAll(' ', '')
@@ -19,6 +21,10 @@ export default function McqAll(props) {
 
     return (
         <div className="App">
+            <Helmet>
+                <title>{props.description}</title>
+                <meta name="description" content={"Practise civil engineering " + props.description + " multiple choice questions (mcq) loksewa, NEC license preparation"} />
+            </Helmet>
             <div >
                 {mcqElements}
             </div>
