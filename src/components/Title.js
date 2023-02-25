@@ -5,6 +5,9 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 export default function Title() {
     const [showMenu, setShowMenu] = useState(false)
+    function handleClick() {
+        setShowMenu(false);
+    }
 
     return (
         < >
@@ -16,18 +19,18 @@ export default function Title() {
                 <nav className={
                     showMenu ? 'topNav responsive' : 'topNav'
                 }>
-                    <NavLink to='/'>SOM</NavLink>
-                    <NavLink to='/structure'>Structure</NavLink>
-                    <NavLink to='/rcc'>RCC</NavLink>
-                    <NavLink to='/geotechnical'>Geotechnical</NavLink>
-                    <NavLink to='/surveying'>Surveying</NavLink>
-                    <NavLink to='/buildingMaterials'>Building Materials</NavLink>
-                    <NavLink to='/estimation'>Estimation</NavLink>
-                    <NavLink to='/constructionManagement'>Const. management</NavLink>
-                    <NavLink to='/economics'>Economics</NavLink>
-                    <NavLink to='/drawing'>Drawing</NavLink>
-                    <NavLink to='/test'>Online Test</NavLink>
-                    <NavLink to='/contact'>Contact Us</NavLink>
+                    <NavLink to='/' onClick={handleClick}>SOM</NavLink>
+                    <NavLink to='/structure' onClick={handleClick}>Structure</NavLink>
+                    <NavLink to='/rcc' onClick={handleClick}>RCC</NavLink>
+                    <NavLink to='/geotechnical' onClick={handleClick}>Geotechnical</NavLink>
+                    <NavLink to='/surveying' onClick={handleClick}>Surveying</NavLink>
+                    <NavLink to='/buildingMaterials' onClick={handleClick}>Building Materials</NavLink>
+                    <NavLink to='/estimation' onClick={handleClick}>Estimation</NavLink>
+                    <NavLink to='/constructionManagement' onClick={handleClick}>Const. management</NavLink>
+                    <NavLink to='/economics' onClick={handleClick}>Economics</NavLink>
+                    <NavLink to='/drawing' onClick={handleClick}>Drawing</NavLink>
+                    <NavLink to='/test' onClick={handleClick}>Online Test</NavLink>
+                    <NavLink to='/contact' onClick={handleClick}>Contact Us</NavLink>
 
                 </nav>
 
