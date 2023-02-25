@@ -1,0 +1,32 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: black;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(220, 226, 225), rgb(244, 244, 244));
+}
+
+.home-link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+    transform: translateX(-40%)
+}
+
+.home-link a {
+    text-decoration: none;
+    transform: translateX(50%);
+}
+
+.focusText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #999;
+    line-height: 1.2;
+}

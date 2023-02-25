@@ -1,10 +1,10 @@
 
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Helmet } from 'react-helmet';
-import Title from './components/Title'
 
-//import McqSurveying from './components/McqSurveying';
+import Title from './components/Title'
+import Home from './components/Home';
+
 import McqAll from './components/McqAll';
 import Testpage from './components/Testpage'
 import Contact from './components/Contact';
@@ -39,7 +39,8 @@ function App() {
     <>
       <Title />
       <Routes>
-        <Route path='/' element={<McqAll data={dataSOM} description={"Strength of materials"} />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/som' element={<McqAll data={dataSOM} description={"Strength of materials"} />}></Route>
         <Route path='/structure' element={<McqAll data={dataStructure} description={"Structure"} />}></Route>
         <Route path='/rcc' element={<McqAll data={dataRCC} description={"Reincorced cement concrete RCC"} />}></Route>
         <Route path='/geotechnical' element={<McqAll data={dataGeotechnical} description={"Geotechnical engineering"} />}></Route>

@@ -5,7 +5,7 @@ import { addDoc, collection, getDocs } from 'firebase/firestore'
 function NewComment({ id }) {
     const usePathName = () => {                         //to get path so as to store data in respective collection
         var location = useLocation().pathname.slice(1)
-        if (location === '') { location = "som" }
+
         return location
     }
     const pathname = usePathName();

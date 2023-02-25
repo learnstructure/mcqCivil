@@ -9,17 +9,18 @@ export default function Title() {
         setShowMenu(false);
     }
 
+
     return (
         < >
             {/* <h1 className="siteInfo">Civil Engineering Mcq</h1> */}
             <div className="siteInfo">
-                <img src={logo} alt="Civil Engineering Mcq" style={{ width: '20rem' }}></img>
+                <img src={logo} alt="Civil Engineering Mcq" style={{ width: '15rem' }}></img>
             </div>
             <div className='mainNav'>
                 <nav className={
                     showMenu ? 'topNav responsive' : 'topNav'
                 }>
-                    <NavLink to='/' onClick={handleClick}>SOM</NavLink>
+                    <NavLink to='/som' onClick={handleClick}>SOM</NavLink>
                     <NavLink to='/structure' onClick={handleClick}>Structure</NavLink>
                     <NavLink to='/rcc' onClick={handleClick}>RCC</NavLink>
                     <NavLink to='/geotechnical' onClick={handleClick}>Geotechnical</NavLink>
