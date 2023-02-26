@@ -18,9 +18,6 @@ function Testpage() {
     const [submitClicked, setSubmitClicked] = useState(false)
     const [rightAns, setRightAns] = useState(0)
 
-    /* function getCount(data) {
-        setRightAns(data)
-    } */
     const randomQuestions = allRandom.map((mcq, index) => {
         return (<Test
             key={index + mcq.question.substring(1, 10) + mcq.optionA.substring(1, 10) + mcq.optionB.substring(1, 10)}
@@ -34,7 +31,7 @@ function Testpage() {
             submitClicked={submitClicked}
             testClicked={testClicked}
             setRightAns={setRightAns}
-            /* getCount={getCount} */ />)
+        />)
     })
     return (
         <div className='mainBody'>

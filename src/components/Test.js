@@ -1,13 +1,11 @@
 import React, { useState, useMemo } from 'react'
 import '../css/testpage.css'
 
-//let count = 0;
 let count;
 function Test(props) {
     useMemo(() => {
         if (props.testClicked) {
             count = 0;
-            console.log("count set 0")
         }
     }, [props.testClicked])
 
@@ -18,8 +16,7 @@ function Test(props) {
             count = count + 1
             props.setRightAns(count)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.submitClicked/* , answer, props */])
+    }, [props.submitClicked])
 
     return (
         <div className="mcq" >
