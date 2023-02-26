@@ -14,7 +14,9 @@ export default function Title() {
         < >
             {/* <h1 className="siteInfo">Civil Engineering Mcq</h1> */}
             <div className="siteInfo">
-                <img src={logo} alt="Civil Engineering Mcq" style={{ width: '15rem' }}></img>
+                <NavLink to='/'>
+                    <img src={logo} alt="Civil Engineering Mcq" style={{ width: '15rem' }}></img>
+                </NavLink>
             </div>
             <div className='mainNav'>
                 <nav className={

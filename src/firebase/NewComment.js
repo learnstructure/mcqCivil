@@ -31,7 +31,7 @@ function NewComment({ id }) {
             }
         }
         addData();
-        setDiscussion((prev) => [...prev, <div><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></div>])
+        setDiscussion((prev) => [...prev, <div key={id}><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></div>])
 
         setNewComment({ name: "", comment: "" })
     }
