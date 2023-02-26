@@ -1,0 +1,10 @@
+[
+    {
+        "question": "Which country do you live?",
+        "optionA": "nepal",
+        "optionB": "india",
+        "optionC": "china",
+        "optionD": "bhutan",
+        "correct": "a"
+    }
+]

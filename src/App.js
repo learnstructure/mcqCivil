@@ -22,18 +22,6 @@ import { dataEconomics } from './data/dataEconomics'
 import Thanks from './components/Thanks';
 
 function App() {
-  /* const description = {
-    som: ["Strength of materials", "Practice strength of materials multiple choice questions (mcq) "],
-    structure: ["Structure", "Practice structure multiple choice questions (mcq)"],
-    rcc: ["Reincorced cement concrete", "Practice reinforced cement concrete (rcc) multiple choice questions (mcq)"],
-    geotechnical: ["Geotechnical", "Practice geotechnical multiple choice questions (mcq)"],
-    surveying: ["Surveying", "Practice surveying multiple choice questions (mcq)"],
-    estimation: ["Estimation", "Practice Estimation and costing multiple choice questions (mcq)"],
-    buildingMaterials: ["Building Materials", "Practice building materials multiple choice questions (mcq)"],
-    cm: ["Construction management", "Practice construction management multiple choice questions (mcq)"],
-    economics: ["Engineering Economics", "Practice engineering economics multiple choice questions (mcq)"],
-    drawing: ["Engineering drawing", "Practice engineering drawing multiple choice questions (mcq)"],
-  } */
 
   return (
     <>

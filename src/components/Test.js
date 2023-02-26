@@ -1,26 +1,25 @@
 import React, { useState, useMemo } from 'react'
 import '../css/testpage.css'
 
-let count = 0;
+//let count = 0;
+let count;
 function Test(props) {
-
     useMemo(() => {
-        count = 0;
+        if (props.testClicked) {
+            count = 0;
+            console.log("count set 0")
+        }
     }, [props.testClicked])
+
     const [answer, setAnswer] = useState()
 
     useMemo(() => {
         if (props.submitClicked && answer === props.correct) {
             count = count + 1
-            /* console.log("correct answer " + count + answer) */
-
-            /* props.getCount(count) */
             props.setRightAns(count)
         }
-    }, [props.submitClicked])
-
-
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.submitClicked/* , answer, props */])
 
     return (
         <div className="mcq" >
@@ -50,8 +49,6 @@ function Test(props) {
                 </p>
             </div>
             {/* {props.submitClicked && <p>Selected option is {answer}</p>} */}
-
-
             {/* {props.submitClicked &&
                 <div className='result'>
                     <p>Number of correct answers = {count}</p>
