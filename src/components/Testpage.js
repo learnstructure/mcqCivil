@@ -7,11 +7,14 @@ import { surveyingRandom } from '../data/dataSurveying'
 import { estimatingRandom } from '../data/dataEstimating'
 import { buildingMatRandom } from '../data/dataBuildingMat'
 import { constructionManagementRandom } from '../data/dataConstructionManagement'
+import { geotechnicalRandom } from '../data/dataGeotechnical'
+import { economicsRandom } from '../data/dataEconomics'
+import { drawingRandom } from '../data/dataDrawing'
 
 import Test from './Test'
 import Timer from './Timer'
 const allRandom = [...rccRandom, ...structureRandom, ...somRandom, ...surveyingRandom, ...estimatingRandom,
-...buildingMatRandom, ...constructionManagementRandom]
+...buildingMatRandom, ...constructionManagementRandom, ...geotechnicalRandom, ...economicsRandom, ...drawingRandom]
 
 function Testpage() {
     const [testClicked, setTestClicked] = useState(false)

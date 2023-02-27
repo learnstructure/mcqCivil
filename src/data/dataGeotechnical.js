@@ -351,6 +351,14 @@ const dataGeotechnical = [
         optionD: "All the above",
         correct: "d"
     },
+    {
+        question: "The angle of internal friction of soil mass is the angle whose",
+        optionA: "Tangent is equal to the rate of the maximum resistance to sliding on any internal inclined plane to the normal pressure acting on the plane",
+        optionB: "Sine is equal to the ratio of the maximum resistance to sliding on any internal inclined plane to the normal pressure acting on the plane",
+        optionC: "Cosine is equal to the ratio of the maximum resistance sliding on any internal inclined plane to the normal pressure acting on the plane",
+        optionD: "None of these",
+        correct: "a"
+    },
 
 
 
