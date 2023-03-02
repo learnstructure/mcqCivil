@@ -1,6 +1,6 @@
 const dataProfessional = [
     {
-        question: "Labour act was introduce/founded in",
+        question: "Labour act was introduced in",
         optionA: "2038",
         optionB: "2048",
         optionC: "2043",

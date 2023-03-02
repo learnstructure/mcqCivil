@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { db } from './firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
-function NewComment({ id }) {
+import { McqContext } from '../components/Mcq'
+function NewComment() {
+    const { id } = useContext(McqContext)
     const usePathName = () => {                         //to get path so as to store data in respective collection
         var location = useLocation().pathname.slice(1)
 

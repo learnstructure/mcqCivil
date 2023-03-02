@@ -1,7 +1,8 @@
 import '../css/mcq.css';
 import { useState } from 'react';
 import Discussion from '../firebase/Discussion';
-
+import { createContext } from 'react';
+export const McqContext = createContext();
 export default function Mcq(props) {
     const audio = new Audio();
     audio.src = "./correctOption.wav";
@@ -39,6 +40,7 @@ export default function Mcq(props) {
         }
         else { setOptClassD("wrongAnswer") }
     }
+
     return (
         <div className="mcq">
 
@@ -72,9 +74,13 @@ export default function Mcq(props) {
                 <p onClick={handleClickD} className={optClassD}> d) {props.optionD}</p> */}
             </div>
             <hr></hr>
-            <Discussion id={props.id} />
+            <McqContext.Provider value={{ id: props.id }}>
+                <Discussion />
+            </McqContext.Provider>
+
         </div>
     )
 }
+
 
 //className={props.correct == "a" ? 'correctAnswer' : null}
