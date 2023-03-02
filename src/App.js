@@ -19,6 +19,7 @@ import { dataConstructionManagement } from './data/dataConstructionManagement'
 import { dataGeotechnical } from './data/dataGeotechnical'
 import { dataDrawing } from './data/dataDrawing'
 import { dataEconomics } from './data/dataEconomics'
+import { dataProfessional } from './data/dataProfessional';
 import Thanks from './components/Thanks';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/constructionManagement' element={<McqAll data={dataConstructionManagement} description={"Construction management"} />}></Route>
         <Route path='/economics' element={<McqAll data={dataEconomics} description={"Engineering Economics"} />}></Route>
         <Route path='/drawing' element={<McqAll data={dataDrawing} description={"Engineering drawing"} />}></Route>
+        <Route path='/professional' element={<McqAll data={dataProfessional} description={"Professional practice"} />}></Route>
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/thanks' element={<Thanks />}></Route>

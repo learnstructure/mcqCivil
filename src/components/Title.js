@@ -32,6 +32,7 @@ export default function Title() {
                     <NavLink to='/constructionManagement' onClick={handleClick}>Const. management</NavLink>
                     <NavLink to='/economics' onClick={handleClick}>Economics</NavLink>
                     <NavLink to='/drawing' onClick={handleClick}>Drawing</NavLink>
+                    <NavLink to='/professional' onClick={handleClick}>Professional Practice</NavLink>
                     <NavLink to='/test' onClick={handleClick}>Online Test</NavLink>
                     <NavLink to='/contact' onClick={handleClick}>Contact Us</NavLink>
 
