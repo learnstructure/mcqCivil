@@ -1,16 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { db } from './firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 import { McqContext } from '../components/Mcq'
-function NewComment() {
-    const { id } = useContext(McqContext)
-    const usePathName = () => {                         //to get path so as to store data in respective collection
+function NewComment({ pathname }) {
+    /* var { id } = useContext(McqContext)
+    id = id.slice(1)
+    console.log(id) */
+    let { id } = useParams()
+    //console.log(params)
+    //const id = params.slice(1)
+    /* const usePathName = () => {                         //to get path so as to store data in respective collection
         var location = useLocation().pathname.slice(1)
 
         return location
     }
-    const pathname = usePathName();
+    const pathname = usePathName(); */
+    pathname = pathname.slice(1)
     /* const randomId = Math.floor(Math.random() * Date.now()).toString(); */
 
     const [newComment, setNewComment] = useState({ name: "", comment: "" })

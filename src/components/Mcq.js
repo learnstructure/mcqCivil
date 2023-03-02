@@ -74,7 +74,7 @@ export default function Mcq(props) {
                 <p onClick={handleClickD} className={optClassD}> d) {props.optionD}</p> */}
             </div>
             <hr></hr>
-            <McqContext.Provider value={{ id: props.id }}>
+            <McqContext.Provider value={{ id: props.id, ques: props.question }}>
                 <Discussion />
             </McqContext.Provider>
 

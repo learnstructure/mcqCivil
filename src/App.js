@@ -21,6 +21,7 @@ import { dataDrawing } from './data/dataDrawing'
 import { dataEconomics } from './data/dataEconomics'
 import { dataProfessional } from './data/dataProfessional';
 import Thanks from './components/Thanks';
+import NewComment from './firebase/NewComment';
 
 function App() {
 
@@ -30,6 +31,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/som' element={<McqAll data={dataSOM} description={"Strength of materials"} />}></Route>
+        <Route path='/som/:id' element={<NewComment pathname='/som' />}></Route>
+
+
         <Route path='/structure' element={<McqAll data={dataStructure} description={"Structure"} />}></Route>
         <Route path='/rcc' element={<McqAll data={dataRCC} description={"Reincorced cement concrete RCC"} />}></Route>
         <Route path='/geotechnical' element={<McqAll data={dataGeotechnical} description={"Geotechnical engineering"} />}></Route>
