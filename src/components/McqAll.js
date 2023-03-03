@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 
 export default function McqAll(props) {
     const mcqElements = props.data.map((mcq, index) => {
-        const id = (index + mcq.question.substring(1, 20) + mcq.optionA.substring(1, 10) + mcq.question.slice(-20) + mcq.optionB.substring(1, 10)).replaceAll(' ', '')
+        const id = (index + mcq.question.substring(1, 20) + mcq.optionA.substring(1, 10) + mcq.question.slice(-20) + mcq.optionB.substring(1, 10)).replaceAll(' ', '').replaceAll('  ', '').replaceAll('/', '')
         return (<Mcq
             key={id}
             id={id}
