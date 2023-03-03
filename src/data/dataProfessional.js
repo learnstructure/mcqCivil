@@ -201,9 +201,9 @@ const dataProfessional = [
         correct: "c"
     },
     {
-        question: "The minimum qulification and experience required for the registration of foreigner engineers is",
+        question: "The minimum qualification and experience required for the registration of foreigner engineers is",
         optionA: "bacheclor in engineering and 5 years exprerience",
-        optionB: "bachelor in negineering and 10yrs experience",
+        optionB: "bachelor in engineering and 10yrs experience",
         optionC: "master in engineering and 5 yrs experience",
         optionD: "master in engineering and 10yrs experience",
         correct: "b"
@@ -219,7 +219,7 @@ const dataProfessional = [
     {
         question: "NEC publishes the name of registered engineers each year as well as every forth year. The name of foreigner engineers publish",
         optionA: "each year",
-        optionB: "every forth year",
+        optionB: "every fourth year",
         optionC: "both (a) and (b)",
         optionD: "none of the above",
         correct: "d"
@@ -247,6 +247,142 @@ const dataProfessional = [
         optionC: "Professional Engineer",
         optionD: "Non-Nepali Regd. Engineer",
         correct: "a"
+    },
+    {
+        question: "Which one is not concerned with NEC",
+        optionA: "licensing (registration) of Engineers",
+        optionB: "accreditation of certificates of academic institution",
+        optionC: "recognition of the academic institution",
+        optionD: "authoriry of opening engineering college",
+        correct: "d"
+    },
+    {
+        question: "Which one is not concerned with NEC",
+        optionA: "acredition of academic certificate",
+        optionB: "licensing (registration) of Engineers",
+        optionC: "appointment of teacher",
+        optionD: "none of the above",
+        correct: "c"
+    },
+    {
+        question: "NEC does not approach for",
+        optionA: "engineer",
+        optionB: "overseer to engineer",
+        optionC: "minimum degree B.E",
+        optionD: "all of the above",
+        correct: "b"
+    },
+    {
+        question: "The abbreviation PWD stands for",
+        optionA: "public work directives",
+        optionB: "public work department",
+        optionC: "private work directives",
+        optionD: "private work department",
+        correct: "a"
+    },
+    {
+        question: "Prequilification is not required if the costing to buy an equipment is",
+        optionA: "less then 20 million",
+        optionB: "more then 20 million",
+        optionC: "less than 2 million",
+        optionD: "any amount",
+        correct: "a"
+    },
+    {
+        question: "The minimun and maximum no. of members in the user's committee should be",
+        optionA: "15 and 17",
+        optionB: "17 and 19",
+        optionC: "9 and 15",
+        optionD: "7 and 9",
+        correct: "c"
+    },
+    {
+        question: "What percent of interest is taken for the advance amount paid to the contractor by employer?",
+        optionA: "1 of advance amount",
+        optionB: "2 of advance amount",
+        optionC: "3 of advance amount",
+        optionD: "none of above",
+        correct: "d"
+    },
+    {
+        question: "In case of the National Competitive Bidding, the prices shall be quoted in",
+        optionA: "Nepalese ruppes",
+        optionB: "American dollar",
+        optionC: "Quatari Riyal",
+        optionD: "Dhiram",
+        correct: "a"
+    },
+    {
+        question: "The employer's have right to",
+        optionA: "accept the bid",
+        optionB: "reject the bid",
+        optionC: "both (a) and (b) of above",
+        optionD: "none of the above",
+        correct: "c"
+    },
+    {
+        question: "The number of members in dispute resolution committee are",
+        optionA: "2",
+        optionB: "3",
+        optionC: "4",
+        optionD: "5",
+        correct: "b"
+    },
+    {
+        question: "Engineer shall practices:",
+        optionA: "in favour of client",
+        optionB: "in favour of contractor",
+        optionC: "in favour of him/herself ",
+        optionD: "impartial and efficient proffessional relationship with client, contractor and fellow personnels",
+        correct: "d"
+    },
+    {
+        question: "Engineering ethics is the field of applied ethics and system of moral principles that relates to",
+        optionA: "practice engineering",
+        optionB: "responsibility engineering",
+        optionC: "management engineering",
+        optionD: "accountability engineering",
+        correct: "a"
+    },
+    {
+        question: "Code of conduct is not related with",
+        optionA: "making the advice of the engineer impartial",
+        optionB: "building code",
+        optionC: "ensuring the quality of advice",
+        optionD: "making the advice untained by any personal consideration",
+        correct: "b"
+    },
+    {
+        question: "Time extension may need to be granted due to",
+        optionA: "causes by force majeure",
+        optionB: "causes by purchaser",
+        optionC: "both a) and b) of above",
+        optionD: "none of the above",
+        correct: "a"
+    },
+    {
+        question: "What is the abbreviation used for German Technical Co-operation? ",
+        optionA: "GTZ",
+        optionB: "GTC",
+        optionC: "GTCo",
+        optionD: "none of the above",
+        correct: "a"
+    },
+    {
+        question: "Which action does not fall under the priciple of public procurement?",
+        optionA: "procurement should be economic and efficient",
+        optionB: "procurement should be always be lowest cost",
+        optionC: "information and equal oppartunities to all",
+        optionD: "procurement process should be trasparent",
+        correct: "b"
+    },
+    {
+        question: "The variation exceeding 15% of the contract amount is approved by",
+        optionA: "gazetted 2nd class",
+        optionB: "gazetted 1st class",
+        optionC: "department head",
+        optionD: "any of the above",
+        correct: "c"
     },
     /* {
         question: "",
