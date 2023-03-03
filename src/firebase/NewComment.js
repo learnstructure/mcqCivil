@@ -1,28 +1,25 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet';
+import './css/discussion.css'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { db } from './firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
-import { McqContext } from '../components/Mcq'
-function NewComment({ pathname }) {
-    /* var { id } = useContext(McqContext)
-    id = id.slice(1)
-    console.log(id) */
-    let { id } = useParams()
-    //console.log(params)
-    //const id = params.slice(1)
-    /* const usePathName = () => {                         //to get path so as to store data in respective collection
-        var location = useLocation().pathname.slice(1)
+import McqOne from './McqOne'
 
-        return location
-    }
-    const pathname = usePathName(); */
-    pathname = pathname.slice(1)
-    /* const randomId = Math.floor(Math.random() * Date.now()).toString(); */
+function NewComment(props) {
+    const randomNumber = Math.floor(Math.random() * Date.now()).toString();
+    const location = useLocation()
+
+    const { id, path, ques, quesno, ansA, ansB, ansC, ansD, correct } = location.state
+
+
+    const pathname = path.slice(1)
 
     const [newComment, setNewComment] = useState({ name: "", comment: "" })
     function handleChange(e) {
         setNewComment(prevState => ({ ...prevState, [e.target.name]: e.target.value, [e.target.comment]: e.target.value }))
     }
+
     function handleSubmit(e) {
         e.preventDefault();
         const addData = async () => {
@@ -39,7 +36,7 @@ function NewComment({ pathname }) {
             }
         }
         addData();
-        setDiscussion((prev) => [...prev, <div key={id}><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></div>])
+        setDiscussion((prev) => [...prev, <div key={randomNumber}><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> <hr></hr></div>])
 
         setNewComment({ name: "", comment: "" })
     }
@@ -68,13 +65,23 @@ function NewComment({ pathname }) {
         }
         fetchData();
     }, [])
-
+    const navigate = useNavigate()
     return (
-        <>
-            <div className='oldCommentSection'>{discussion}</div>
+        <div className='mcq'>
+            <Helmet>
+                <meta name="description" content={ques} />
+            </Helmet>
+            <button onClick={() => navigate(-1)} className="showDiscussion" style={{ marginBottom: "0.3rem", color: 'brown' }}>&lt;&lt; Go back</button>
+
+            <McqOne ques={ques} quesno={quesno} ansA={ansA} ansB={ansB} ansC={ansC} ansD={ansD} correct={correct} />
+            <div className='oldCommentSection'>
+                <p className='comment-heading'>Discussion forum</p>
+
+                {discussion}
+            </div>
 
             <form onSubmit={handleSubmit} className='commentSection'>
-                <div className='yourReply'>Place your comment below</div>
+                <div className='comment-heading'>Place your comment below</div>
                 <textarea className='nameTextarea' rows={1} cols={40} placeholder="Your name..." name='name' value={newComment.name} onChange={handleChange} required />
                 <br />
                 <textarea className='commentTextarea' rows={3} cols={40} placeholder="Your comment here..." name='comment' value={newComment.comment} onChange={handleChange} required />
@@ -83,7 +90,7 @@ function NewComment({ pathname }) {
 
             </form>
 
-        </>
+        </div>
     )
 }
 

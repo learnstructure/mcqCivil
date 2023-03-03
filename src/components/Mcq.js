@@ -67,14 +67,9 @@ export default function Mcq(props) {
                         onClick={handleClickD} id={optClassD}>d) {props.optionD}</label>
                 </p>
 
-
-                {/* <p onClick={handleClickA} className={optClassA}> a) {props.optionA}</p>
-                <p onClick={handleClickB} className={optClassB}> b) {props.optionB}</p>
-                <p onClick={handleClickC} className={optClassC}> c) {props.optionC}</p>
-                <p onClick={handleClickD} className={optClassD}> d) {props.optionD}</p> */}
             </div>
-            <hr></hr>
-            <McqContext.Provider value={{ id: props.id, ques: props.question }}>
+
+            <McqContext.Provider value={{ id: props.id, ques: props.question, quesno: props.serialno, ansA: props.optionA, ansB: props.optionB, ansC: props.optionC, ansD: props.optionD, correct: props.correct }}>
                 <Discussion />
             </McqContext.Provider>
 
@@ -82,5 +77,3 @@ export default function Mcq(props) {
     )
 }
 
-
-//className={props.correct == "a" ? 'correctAnswer' : null}

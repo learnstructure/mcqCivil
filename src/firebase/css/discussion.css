@@ -2,9 +2,10 @@
     background-color: inherit;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     color: rgb(152, 148, 148);
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 0rem;
     font-size: 1rem;
+    text-decoration: none;
 }
 
 .showDiscussion:hover {
@@ -13,12 +14,13 @@
 
 .oldCommentSection {
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: 0 1rem 0.5rem 1rem;
     margin-top: 0.2rem;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    line-height: 1.2;
 }
 
 .userName {
@@ -31,10 +33,10 @@
     margin-left: 1rem;
 }
 
-.yourReply {
+.comment-heading {
     text-align: center;
     font-weight: bold;
-    color: #4CAF50;
+
 }
 
 .commentSection {

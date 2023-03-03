@@ -4,13 +4,13 @@ body {
 }
 
 .mcq {
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     width: 70%;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19); */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin: auto;
     padding: 1rem;
-    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
 }
 
 .option {
