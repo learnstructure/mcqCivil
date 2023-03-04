@@ -3,6 +3,7 @@ import logo from './logo.JPG'
 import Hamburger from 'hamburger-react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { IoIosArrowDropdownCircle } from 'react-icons/io'
 export default function Title() {
     const [showMenu, setShowMenu] = useState(false)
     function handleClick() {
@@ -22,19 +23,28 @@ export default function Title() {
                 <nav className={
                     showMenu ? 'topNav responsive' : 'topNav'
                 }>
-                    <NavLink to='/som' onClick={handleClick}>SOM</NavLink>
-                    <NavLink to='/structure' onClick={handleClick}>Structure</NavLink>
-                    <NavLink to='/rcc' onClick={handleClick}>RCC</NavLink>
-                    <NavLink to='/geotechnical' onClick={handleClick}>Geotechnical</NavLink>
-                    <NavLink to='/surveying' onClick={handleClick}>Surveying</NavLink>
-                    <NavLink to='/buildingMaterials' onClick={handleClick}>Building Materials</NavLink>
-                    <NavLink to='/estimation' onClick={handleClick}>Estimation</NavLink>
-                    <NavLink to='/constructionManagement' onClick={handleClick}>Const. management</NavLink>
-                    <NavLink to='/economics' onClick={handleClick}>Economics</NavLink>
-                    <NavLink to='/drawing' onClick={handleClick}>Drawing</NavLink>
-                    <NavLink to='/professional' onClick={handleClick}>Professional Practice</NavLink>
+                    <div className='dropdown'>
+                        <div className='link-copy'>
+                            <div> Civil Engineering MCQs <IoIosArrowDropdownCircle className='drop-icon' /></div>
+
+                        </div>
+                        <div className="dropdown-content"  >
+                            <NavLink to='/som' onClick={handleClick}>Strength of Materials</NavLink>
+                            <NavLink to='/structure' onClick={handleClick}>Structure</NavLink>
+                            <NavLink to='/rcc' onClick={handleClick}>RCC</NavLink>
+                            <NavLink to='/geotechnical' onClick={handleClick}>Geotechnical</NavLink>
+                            <NavLink to='/surveying' onClick={handleClick}>Surveying</NavLink>
+                            <NavLink to='/buildingMaterials' onClick={handleClick}>Building Materials</NavLink>
+                            <NavLink to='/estimation' onClick={handleClick}>Estimation</NavLink>
+                            <NavLink to='/constructionManagement' onClick={handleClick}>Const. management</NavLink>
+                            <NavLink to='/economics' onClick={handleClick}>Engineering Economics</NavLink>
+                            <NavLink to='/drawing' onClick={handleClick}>Engineering Drawing</NavLink>
+                            <NavLink to='/professional' onClick={handleClick}>Professional Practice</NavLink>
+                        </div>
+                    </div>
+                    <NavLink to='/gk' onClick={handleClick} style={{ color: 'blue' }}>Gk (Coming soon)</NavLink>
                     <NavLink to='/test' onClick={handleClick}>Online Test</NavLink>
-                    <NavLink to='/contact' onClick={handleClick}>Contact Us</NavLink>
+                    <NavLink to='/contact' onClick={handleClick} className="contact-us">Contact Us</NavLink>
 
                 </nav>
 

@@ -71,7 +71,7 @@ function NewComment(props) {
             <Helmet>
                 <meta name="description" content={ques} />
             </Helmet>
-            <button onClick={() => navigate(-1)} className="showDiscussion" style={{ marginBottom: "0.3rem", color: 'brown' }}>&lt;&lt; Go back</button>
+            <button onClick={() => navigate(-1)} className="showDiscussion" style={{ marginBottom: "0.3rem", }}>&lt;&lt; Go back</button>
 
             <McqOne ques={ques} quesno={quesno} ansA={ansA} ansB={ansB} ansC={ansC} ansD={ansD} correct={correct} />
             <div className='oldCommentSection'>

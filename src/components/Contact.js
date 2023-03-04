@@ -1,8 +1,13 @@
 import React from 'react'
 import '../css/contact.css';
+import { Helmet } from 'react-helmet';
 function Contact() {
     return (
         <>
+            <Helmet>
+                <title>Contact Civil Mcq</title>
+                <meta name="description" content="contact us page" />
+            </Helmet>
             <form className='contactform' action="https://formsubmit.co/abinashmandal33486@gmail.com" method="POST">
                 <textarea rows={3} cols={40} placeholder="Your message here..." type="text" name="name" required />
                 <br />

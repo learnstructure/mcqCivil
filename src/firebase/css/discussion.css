@@ -2,14 +2,15 @@
     background-color: inherit;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     color: rgb(152, 148, 148);
-    padding: 0.5rem 1.5rem;
-    border-radius: 0rem;
+    padding: 0.4rem 1.5rem;
+
+    border-radius: 0.2rem;
     font-size: 1rem;
     text-decoration: none;
 }
 
 .showDiscussion:hover {
-    background-color: rgb(243, 239, 239);
+    background-color: #f3f3f3;
 }
 
 .oldCommentSection {

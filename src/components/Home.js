@@ -29,6 +29,7 @@ function Home() {
                     <NavLink to='/constructionManagement' >Constrution management</NavLink>
                     <NavLink to='/economics' >Engineering Economics</NavLink>
                     <NavLink to='/drawing' >Engineering Drawing</NavLink>
+                    <NavLink to='/professional' >Professional Practice</NavLink>
                 </div>
                 <p>Give us feedback or <NavLink to='/contact' >contact us.</NavLink></p>
             </section>

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import '../css/testpage.css'
-
+import { Helmet } from 'react-helmet';
 let count;
 function Test(props) {
     useMemo(() => {
@@ -20,6 +20,10 @@ function Test(props) {
 
     return (
         <div className="mcq" >
+            <Helmet>
+                <title>Online Test</title>
+                <meta name="description" content="civil engineering loksewa NEC license MCQ test" />
+            </Helmet>
             <div>{props.serialno}. {props.question}</div>
             <div className="option" >
 
