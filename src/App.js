@@ -20,9 +20,12 @@ import { dataGeotechnical } from './data/dataGeotechnical'
 import { dataDrawing } from './data/dataDrawing'
 import { dataEconomics } from './data/dataEconomics'
 import { dataProfessional } from './data/dataProfessional';
+import { dataGk } from './data/dataGk';
 import Thanks from './components/Thanks';
 import NewComment from './firebase/NewComment';
+import Blog from './blogs/Blog';
 
+import BlogOne from './blogs/BlogOne';
 function App() {
 
   return (
@@ -63,6 +66,11 @@ function App() {
         <Route path='/professional' element={<McqAll data={dataProfessional} description={"Professional practice"} />}></Route>
         <Route path='/professional/:id' element={<NewComment />}></Route>
 
+        <Route path='/gk' element={<McqAll data={dataGk} description={"General knowledge"} />}></Route>
+        <Route path='/gk/:id' element={<NewComment />}></Route>
+
+        <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/blog/:id' element={<BlogOne />}></Route>
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/thanks' element={<Thanks />}></Route>

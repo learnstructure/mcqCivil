@@ -1,0 +1,43 @@
+.blog-container {
+    width: 70%;
+    margin: auto;
+}
+
+.blog-container h1 {
+    font-size: 1.5rem;
+    color: royalblue;
+    line-height: 1;
+}
+
+.blog-container h2 {
+    font-size: 1.3rem;
+    line-height: 0.9;
+}
+
+.blog-container h3 {
+    font-size: 1.2rem;
+    line-height: 0.8;
+}
+
+.blog-container li {
+    line-height: 1.8;
+}
+
+/* .blog-link {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 0.2rem;
+    padding: 0.4rem 1.5rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
+.blog-link a {
+    text-decoration: none;
+} */
+
+@media screen and (max-width: 768px) {
+    .blog-container {
+        width: 95%;
+    }
+
+}

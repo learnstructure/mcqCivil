@@ -4,6 +4,7 @@ import Hamburger from 'hamburger-react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
+//import favicon from ''
 export default function Title() {
     const [showMenu, setShowMenu] = useState(false)
     function handleClick() {
@@ -23,9 +24,11 @@ export default function Title() {
                 <nav className={
                     showMenu ? 'topNav responsive' : 'topNav'
                 }>
+                    {/* <img src='/favicon.JPG' alt="website logo" className='logo' /> */}
+                    <div className='logo'>civilengineering-mcq</div>
                     <div className='dropdown'>
                         <div className='link-copy'>
-                            <div> Civil Engineering MCQs <IoIosArrowDropdownCircle className='drop-icon' /></div>
+                            <div> Technical MCQs <IoIosArrowDropdownCircle className='drop-icon' /></div>
 
                         </div>
                         <div className="dropdown-content"  >
@@ -42,7 +45,8 @@ export default function Title() {
                             <NavLink to='/professional' onClick={handleClick}>Professional Practice</NavLink>
                         </div>
                     </div>
-                    <NavLink to='/gk' onClick={handleClick} style={{ color: 'blue' }}>Gk (Coming soon)</NavLink>
+                    <NavLink to='/gk' onClick={handleClick} >General knowledge</NavLink>
+                    <NavLink to='/blog' onClick={handleClick}>Structure Blogs</NavLink>
                     <NavLink to='/test' onClick={handleClick}>Online Test</NavLink>
                     <NavLink to='/contact' onClick={handleClick} className="contact-us">Contact Us</NavLink>
 

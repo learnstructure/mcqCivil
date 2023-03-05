@@ -25,7 +25,8 @@
 }
 
 .topNav a,
-.link-copy {
+.link-copy,
+.logo {
     display: flex;
     flex-direction: column;
 
@@ -44,8 +45,7 @@
 }
 
 .topNav a.active {
-    color: white;
-    background-color: #04AA6D;
+    color: blueviolet;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -82,6 +82,10 @@
     transform: translateY(2px);
 }
 
+.logo {
+    font-weight: bold;
+}
+
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
 Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
@@ -89,18 +93,21 @@ Show the link that contains should open and close the topnav (.icon) */
         justify-content: space-between;
     }
 
-    .topNav a:not(.active) {
+    /* .topNav a:not(.active) {
+        display: none;
+    } */
+    .topNav a {
         display: none;
     }
 
 
-    .dropdown-content a:not(.active) {
+    /* .dropdown-content a:not(.active) {
         display: none;
     }
 
     .dropdown-content a.active {
         display: block;
-    }
+    } */
 
     .icon {
         float: right;
@@ -108,6 +115,10 @@ Show the link that contains should open and close the topnav (.icon) */
     }
 
     .drop-icon {
+        display: none;
+    }
+
+    .link-copy {
         display: none;
     }
 
@@ -130,14 +141,19 @@ This class makes the topnav look good on small screens (display the links vertic
     }
 
     .topNav.responsive .dropdown-content a {
-
         display: flex;
-
         text-align: right;
-
     }
 
     .topNav.responsive .drop-icon {
         display: inline-block;
+    }
+
+    .topNav.responsive .link-copy {
+        display: flex;
+    }
+
+    .topNav.responsive .logo {
+        display: none;
     }
 }

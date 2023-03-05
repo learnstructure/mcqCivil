@@ -16,7 +16,7 @@ function Home() {
                     <h2 className='focusText'>Let's <span style={{ color: "green" }}>Crack</span> Civil Engineering Competitive <span style={{ color: "green" }}>Exams</span></h2>
                     <p>Prepare for your civil engineering exams with our collection of multiple choice questions.</p>
                     <p>Click to give a test. <NavLink to='/test' >Online Test</NavLink></p>
-                    <p>Or choose a subject below to practise.</p>
+                    <p>Choose a civil engineering subject below to practise.</p>
                 </div>
                 <div className='home-link'>
                     <NavLink to='/som' >Strength of Materials</NavLink>
@@ -31,7 +31,16 @@ function Home() {
                     <NavLink to='/drawing' >Engineering Drawing</NavLink>
                     <NavLink to='/professional' >Professional Practice</NavLink>
                 </div>
+                <p>Practise general knowledge questions here.</p>
+                <div className='home-link'>
+                    <NavLink to='/gk' >General knowledge</NavLink>
+                </div>
+                <p>See our blogs here.</p>
+                <div className='home-link'>
+                    <NavLink to='/blog' >Structure blogs</NavLink>
+                </div>
                 <p>Give us feedback or <NavLink to='/contact' >contact us.</NavLink></p>
+
             </section>
             <footer>
                 <p>&copy; 2023 Civil Engineering MCQ. All rights reserved.</p>
