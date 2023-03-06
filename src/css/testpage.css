@@ -16,23 +16,18 @@ input[type="radio"]:checked+label {
     font-weight: bold;
 }
 
-button {
+.btn-test {
     background-color: #4CAF50;
-
     border: none;
     border-radius: 0.5rem;
     color: rgb(251, 247, 247);
     padding: 0.8rem 2rem;
     text-align: center;
-
-
-    font-size: 1.2rem;
-
+    font-size: 1rem;
     cursor: pointer;
 }
 
-button:hover {
-    /* background-color: #236725; */
+.btn-test:hover {
     background-color: #2ca036;
 }
 

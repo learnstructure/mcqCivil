@@ -1,5 +1,5 @@
 import Blog1 from './Blog1'
-//import modelrsa from '/images/model.JPG'
+
 const blog = [{
     id: 1,
     title: "Response spectrum analysis in ETABS",
@@ -7,18 +7,21 @@ const blog = [{
     image: '/images/model.JPG',
     content: <Blog1 />,
 },
-    /* {
+    /*
+    {
         id: 2,
-        title: "new blog 2",
+        title: "What actually are axial force, shear force and bending moment? 🤔",
         preview: "this is my second blog",
+        image: '/images/model.JPG',
         content: <Blog1 />
     },
-    {
-        id: 3,
-        title: "new blog 3",
-        preview: "this is my third blog",
-        content: <Blog1 />
-    }, */
+        
+        {
+            id: 3,
+            title: "new blog 3",
+            preview: "this is my third blog",
+            content: <Blog1 />
+        }, */
 
 ]
 export default blog

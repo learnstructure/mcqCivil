@@ -12,13 +12,16 @@ function Blog() {
                 <meta name="description" content={"structure analysis blogs etabs sap2000 staad pro midas civil"} />
             </Helmet>
 
-            {blogSummary.map(blog => (<div key={blog.id}>
+            {blogSummary.map(blog => (<div key={blog.id} className="blog-container-one" >
                 <h2>{blog.title}</h2>
-                <img src={blog.image} alt="3D model of structure" style={{ maxWidth: '100%' }} />
-                <div>{blog.preview}....<Link to={`/blog/${blog.id}`}  >See more</Link>
+                <div className='blog-summary-container'>
+                    <div>
+                        <img src={blog.image} alt="3D model of structure" />
+                    </div>
+                    <div>{blog.preview}... <Link to={`/blog/${blog.id}`}  >See more</Link>
+                    </div>
                 </div>
 
-                <hr />
             </div>))}
 
         </div>

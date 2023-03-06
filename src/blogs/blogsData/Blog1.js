@@ -79,7 +79,7 @@ function Blog1() {
             <p>Finally we can see other results like bending moment diagram, base reactions, displacements, etc. and compare with similar models if available.</p>
             <p>We can also define load combinations according to building codes and design the structure.</p>
             <hr />
-            <p>Hope this was helpful. Thanks for reading.</p>
+
 
         </main>
     )

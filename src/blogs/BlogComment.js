@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Helmet } from 'react-helmet';
-import './css/discussion.css'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { db } from './firebaseConfig'
+import './css/blog.css'
+import { useNavigate } from 'react-router-dom'
+import { db } from '../firebase/firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
-import McqOne from './McqOne'
 
-function NewComment(props) {
+function BlogComment({ id }) {
     const randomNumber = Math.floor(Math.random() * Date.now()).toString();
-    const location = useLocation()
-
-    const { id, path, ques, quesno, ansA, ansB, ansC, ansD, correct } = location.state
-
-
-    const pathname = path.slice(1)
 
     const [newComment, setNewComment] = useState({ name: "", comment: "" })
     function handleChange(e) {
@@ -25,7 +17,7 @@ function NewComment(props) {
         const addData = async () => {
             try {
 
-                const subCollectionRef = collection(db, pathname, id, "comments")       //id is unique for each question
+                const subCollectionRef = collection(db, "blog", id, "comments")
                 await addDoc(subCollectionRef, {
                     name: newComment.name,
                     comment: newComment.comment
@@ -45,14 +37,13 @@ function NewComment(props) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const querySnapshot = await getDocs(collection(db, pathname, id, "comments"));
+                const querySnapshot = await getDocs(collection(db, "blog", id, "comments"));
 
                 if (!querySnapshot.empty) {
                     querySnapshot.forEach(doc => {
                         var userName = doc.data().name;
                         var UserName = userName.charAt(0).toUpperCase() + userName.slice(1)
                         setDiscussion((prev) => [...prev, <div key={doc.id}><span className='userName'>{UserName}</span> <br /> <div className='userComment'> {doc.data().comment}</div> <hr></hr></div>])
-
                     })
                 }
                 else {
@@ -64,34 +55,34 @@ function NewComment(props) {
             }
         }
         fetchData();
-    }, [])
+    }, [id])
     const navigate = useNavigate()
+    const [showFeedback, setShowFeedback] = useState(false)
     return (
-        <div className='mcq'>
-            <Helmet>
-                <meta name="description" content={ques} />
-            </Helmet>
-            <button onClick={() => navigate(-1)} className="showDiscussion" style={{ marginBottom: "0.3rem", }}>👈 Go back</button>
+        <div>
 
-            <McqOne ques={ques} quesno={quesno} ansA={ansA} ansB={ansB} ansC={ansC} ansD={ansD} correct={correct} />
             <div className='oldCommentSection'>
-                <p className='comment-heading'>Discussion forum</p>
+                <p className='comment-heading'>Feedback</p>
 
                 {discussion}
             </div>
-
-            <form onSubmit={handleSubmit} className='commentSection'>
-                <div className='comment-heading'>Place your comment below</div>
+            <div className='new-comment-btn-container'>
+                <button className="new-comment-btn" onClick={() => setShowFeedback(!showFeedback)}>New Comment</button>
+                <button onClick={() => navigate(-1)} className="new-comment-btn" >👈 Go back</button>
+            </div>
+            {showFeedback && <form onSubmit={handleSubmit} className='commentSection'>
+                {/* <div className='comment-heading'></div> */}
                 <textarea className='nameTextarea' rows={1} cols={40} placeholder="Your name..." name='name' value={newComment.name} onChange={handleChange} required />
                 <br />
-                <textarea className='commentTextarea' rows={3} cols={40} placeholder="Your comment here..." name='comment' value={newComment.comment} onChange={handleChange} required />
+                <textarea className='commentTextarea' rows={2} cols={40} placeholder="Your comment here..." name='comment' value={newComment.comment} onChange={handleChange} required />
                 <br />
                 <input type="submit" value="Submit" />
 
-            </form>
+            </form>}
+
 
         </div>
     )
 }
 
-export default NewComment
+export default BlogComment

@@ -8,14 +8,11 @@
     top: 0;
     z-index: 999;
     display: flex;
-
     background-color: #f3f3f3;
     align-items: center;
     justify-content: space-around;
     padding-right: 1rem;
-
 }
-
 
 .topNav {
     list-style-type: none;
@@ -32,12 +29,8 @@
 
     color: #666;
     text-align: center;
-    padding: 14px 20px;
+    padding: 0.8rem 1rem;
     text-decoration: none;
-}
-
-.link-copy.active {
-    color: red;
 }
 
 .topNav a:hover:not(.active) {
@@ -48,7 +41,6 @@
     color: blueviolet;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
 .icon {
     display: none;
 }
@@ -58,19 +50,16 @@
     position: absolute;
 
     background-color: #f9f9f9;
-    min-width: 13rem;
+    min-width: 10rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
-
-    padding: 12px 16px;
+    padding: 0.7rem 1rem;
     text-decoration: none;
     display: block;
-    text-align: right;
-
+    text-align: left;
 }
-
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -80,34 +69,21 @@
 .drop-icon {
     color: #04AA6D;
     transform: translateY(2px);
+
 }
 
 .logo {
     font-weight: bold;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
-Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
     .mainNav {
         justify-content: space-between;
     }
 
-    /* .topNav a:not(.active) {
-        display: none;
-    } */
     .topNav a {
         display: none;
     }
-
-
-    /* .dropdown-content a:not(.active) {
-        display: none;
-    }
-
-    .dropdown-content a.active {
-        display: block;
-    } */
 
     .icon {
         float: right;
@@ -124,8 +100,6 @@ Show the link that contains should open and close the topnav (.icon) */
 
 }
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
-This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
     .topNav.responsive {
         display: flex;
@@ -137,12 +111,12 @@ This class makes the topnav look good on small screens (display the links vertic
         display: block;
 
         text-align: right;
-        padding-left: 3rem;
+        padding-left: 2rem;
     }
 
     .topNav.responsive .dropdown-content a {
         display: flex;
-        text-align: right;
+        text-align: left;
     }
 
     .topNav.responsive .drop-icon {
@@ -151,6 +125,7 @@ This class makes the topnav look good on small screens (display the links vertic
 
     .topNav.responsive .link-copy {
         display: flex;
+        transform: translateX(0.5rem);
     }
 
     .topNav.responsive .logo {

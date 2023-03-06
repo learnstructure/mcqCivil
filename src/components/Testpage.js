@@ -50,10 +50,10 @@ function Testpage() {
             {!testClicked && <div className='testInfo'>
                 <div>Please get ready and click on start below. <br />
                 </div>
-                <button onClick={() => setTestClicked(true)}>Start</button>
+                <button onClick={() => setTestClicked(true)} className="btn-test">Start</button>
             </div>}
 
-            {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }} className='submitLower'>Submit</button>}
+            {testClicked && !submitClicked && <button onClick={() => { setSubmitClicked(true); }} className='btn-test submitLower'>Submit</button>}
             {submitClicked &&
                 <div className='result'>
                     <p>Number of correct answers = {rightAns}</p>

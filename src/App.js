@@ -24,13 +24,14 @@ import { dataGk } from './data/dataGk';
 import Thanks from './components/Thanks';
 import NewComment from './firebase/NewComment';
 import Blog from './blogs/Blog';
-
+import ScrollToTop from './components/ScrollToTop';
 import BlogOne from './blogs/BlogOne';
 function App() {
 
   return (
     <>
       <Title />
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/som' element={<McqAll data={dataSOM} description={"Strength of materials"} />}></Route>
