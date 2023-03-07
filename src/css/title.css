@@ -22,11 +22,8 @@
 }
 
 .topNav a,
-.link-copy,
-.logo {
+.link-copy {
     display: flex;
-    flex-direction: column;
-
     color: #666;
     text-align: center;
     padding: 0.8rem 1rem;
@@ -73,8 +70,19 @@
 }
 
 .logo {
+    color: rgb(5, 143, 223);
     font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px #1674df;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
 }
+
+.logo span {
+    color: #17a7b7;
+}
+
 
 @media screen and (max-width: 600px) {
     .mainNav {
@@ -96,6 +104,10 @@
 
     .link-copy {
         display: none;
+    }
+
+    .logo {
+        margin-left: 0.5rem;
     }
 
 }

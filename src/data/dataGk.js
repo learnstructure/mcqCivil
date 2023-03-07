@@ -231,6 +231,214 @@ const dataGk = [
         optionD: "1128 km",
         correct: "c"
     },
+    {
+        question: "Which is the third nearest country from Nepal?",
+        optionA: "Bhutan ",
+        optionB: "India",
+        optionC: "China",
+        optionD: "Bangladesh",
+        correct: "d"
+    },
+    {
+        question: "Which peak is the basic hor standard time in Nepal?",
+        optionA: "Mount Everest",
+        optionB: "Machhapuchhre",
+        optionC: "Gaurishankar",
+        optionD: "Lhotse",
+        correct: "c"
+    },
+    {
+        question: "What is the nearest peak from Kathmandu?",
+        optionA: "Jugal",
+        optionB: "Amodeblum",
+        optionC: "Gaurishankar",
+        optionD: "Lhotse",
+        correct: "a"
+    },
+    {
+        question: "Each degree of longitude has a time difference of ....",
+        optionA: "2 minutes",
+        optionB: "4 minutes",
+        optionC: "6 minutes",
+        optionD: "8 minutes",
+        correct: "b"
+    },
+    {
+        question: "The time of Nepal is ..... faster than GMT.",
+        optionA: "5:45 faster than Equator",
+        optionB: "5:45 faster than international Date line",
+        optionC: "5:45 faster than prime meridian",
+        optionD: "5:45 late than GMT",
+        correct: "c"
+    },
+    {
+        question: "The time of Nepal is ...... than that of India and Sri Lanka.",
+        optionA: "15 minutes slower",
+        optionB: "15 minutes faster",
+        optionC: "20 minutes slower",
+        optionD: "30 minutes faster",
+        correct: "b"
+    },
+    {
+        question: "The time of Nepal is ...... than that of Bhutan and Bangladesh.",
+        optionA: "15 minutes slower",
+        optionB: "15 minutes faster",
+        optionC: "20 minutes slower",
+        optionD: "30 minutes faster",
+        correct: "a"
+    },
+    {
+        question: "The time of Nepal is ...... than that of Pakistan and Maldives.",
+        optionA: "30 minutes slower",
+        optionB: "30 minutes faster",
+        optionC: "45 minutes slower",
+        optionD: "45 minutes faster",
+        correct: "d"
+    },
+    {
+        question: "The time of Nepal is ...... than that of Afghanistan.",
+        optionA: "1 hour & 15 minutes slower",
+        optionB: "1 hour & 15 minutes faster",
+        optionC: "1 hour & 30 minutes slower",
+        optionD: "1 hour & 30 minutes faster",
+        correct: "b"
+    },
+    {
+        question: "The time of Nepal is ...... than that of China.",
+        optionA: "2 hour & 15 minutes slower",
+        optionB: "2 hour & 15 minutes faster",
+        optionC: "2 hour & 30 minutes slower",
+        optionD: "2 hour & 30 minutes faster",
+        correct: "a"
+    },
+    {
+        question: "Guarishankar peak is situated in which district and province of Nepal?",
+        optionA: "Dolakha / Bagmati province",
+        optionB: "Dolakha / Gandaki province",
+        optionC: "Sindhupalchowk / Bagmati province",
+        optionD: "Sindhupalchowk / Gandaki province",
+        correct: "a"
+    },
+    {
+        question: "What is the lowest point of Nepal?",
+        optionA: "Kechanakabal",
+        optionB: "Jaleshwor",
+        optionC: "Mushaharaniya",
+        optionD: "Biratnagar",
+        correct: "c"
+    },
+    {
+        question: "When was Nepal divided into Mountain, Hill and Terai?",
+        optionA: "2018/01/01",
+        optionB: "2029/03/13",
+        optionC: "2037/06/26",
+        optionD: "2072/06/03",
+        correct: "a"
+    },
+    {
+        question: "When did 77 district come into operation?",
+        optionA: "2074 Bhadra 4",
+        optionB: "2074 Bhadra 25",
+        optionC: "2075 Falgun 19",
+        optionD: "2074 Bhadra 5",
+        correct: "d"
+    },
+    {
+        question: "Which is the largest district of Nepal among the following?",
+        optionA: "Humla",
+        optionB: "Taplejung",
+        optionC: "Gorkha",
+        optionD: "Mugu",
+        correct: "a"
+    },
+    {
+        question: "Which is the following district is not upgraded to Mountainous district from Hill?",
+        optionA: "Dolakha",
+        optionB: "Ramechhap",
+        optionC: "Dhading",
+        optionD: "Gorkha",
+        correct: "a",
+    },
+    {
+        question: "Which is the last district upgraded from Hilly region to Mountainous region?",
+        optionA: "East Rukum",
+        optionB: "West Rukum",
+        optionC: "Myagdi",
+        optionD: "Kalikot",
+        correct: "c"
+    },
+    {
+        question: "Which district of Nepal is expanded to Himalayas in the north and Mahabharata in the south?",
+        optionA: "Dhading",
+        optionB: "Nuwakot",
+        optionC: "Sindhupalchowk",
+        optionD: "Dolakha",
+        correct: "a"
+    },
+    {
+        question: "Which district touches both India and China?",
+        optionA: "Darchula",
+        optionB: "Acchham",
+        optionC: "Bajhang",
+        optionD: "Bajura",
+        correct: "a"
+    },
+    {
+        question: "How many districts of Nepal are linked to India?",
+        optionA: "23",
+        optionB: "25",
+        optionC: "27",
+        optionD: "29",
+        correct: "c"
+    },
+    {
+        question: "How many districts of Nepal are connected to China?",
+        optionA: "11",
+        optionB: "13",
+        optionC: "15",
+        optionD: "17",
+        correct: "c"
+    },
+    {
+        question: "How many districts of Nepal are connected to both India and China?",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "4",
+        correct: "b"
+    },
+    {
+        question: "In order to protect Chure Area 'Rastrapati Chure program' has been launched in how many districts?",
+        optionA: "33",
+        optionB: "34",
+        optionC: "35",
+        optionD: "37",
+        correct: "d"
+    },
+    {
+        question: "Where are Kalapani, Limpiyadhura and Lipulekh located? ",
+        optionA: "Bhajhang",
+        optionB: "Kanchanpur",
+        optionC: "Darchula",
+        optionD: "Baitadi",
+        correct: "c"
+    },
+    {
+        question: "Which of the following religious spot is situated in Khotang?",
+        optionA: "Pathibhara Devi",
+        optionB: "Haleshi",
+        optionC: "Mehuli Devi",
+        optionD: "Sworgadwari",
+        correct: "b"
+    },
+    {
+        question: "What separates Nepal and India?",
+        optionA: "Purbi Ghyanch",
+        optionB: "11ᵗʰ Parallel",
+        optionC: "Chicken Neck Corridor",
+        optionD: "Dasgaja",
+        correct: "d"
+    },
 
     /* {
         question: "",

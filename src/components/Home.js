@@ -21,12 +21,12 @@ function Home() {
                 <div className='home-link'>
                     <NavLink to='/som' >Strength of Materials</NavLink>
                     <NavLink to='/structure' >Structural Analysis</NavLink>
-                    <NavLink to='/rcc' >Reincorced Cement Concrete</NavLink>
-                    <NavLink to='/geotechnical' >Geotechnical Engineering</NavLink>
+                    <NavLink to='/rcc' >Reinforced Cement Concrete</NavLink>
+                    <NavLink to='/geotechnical' >Geo-technical Engineering</NavLink>
                     <NavLink to='/surveying' >Surveying</NavLink>
                     <NavLink to='/buildingMaterials' >Building Materials</NavLink>
                     <NavLink to='/estimation' >Estimation and costing</NavLink>
-                    <NavLink to='/constructionManagement' >Constrution management</NavLink>
+                    <NavLink to='/constructionManagement' >Construction management</NavLink>
                     <NavLink to='/economics' >Engineering Economics</NavLink>
                     <NavLink to='/drawing' >Engineering Drawing</NavLink>
                     <NavLink to='/professional' >Professional Practice</NavLink>

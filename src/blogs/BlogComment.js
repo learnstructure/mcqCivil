@@ -57,20 +57,21 @@ function BlogComment({ id }) {
         fetchData();
     }, [id])
     const navigate = useNavigate()
-    const [showFeedback, setShowFeedback] = useState(false)
+
     return (
         <div>
+            <div className='new-comment-btn-container'>
 
+                <button onClick={() => navigate(-1)} className="new-comment-btn" >👈 Go back</button>
+
+            </div>
             <div className='oldCommentSection'>
                 <p className='comment-heading'>Feedback</p>
 
                 {discussion}
             </div>
-            <div className='new-comment-btn-container'>
-                <button className="new-comment-btn" onClick={() => setShowFeedback(!showFeedback)}>New Comment</button>
-                <button onClick={() => navigate(-1)} className="new-comment-btn" >👈 Go back</button>
-            </div>
-            {showFeedback && <form onSubmit={handleSubmit} className='commentSection'>
+
+            <form onSubmit={handleSubmit} className='commentSection' >
                 {/* <div className='comment-heading'></div> */}
                 <textarea className='nameTextarea' rows={1} cols={40} placeholder="Your name..." name='name' value={newComment.name} onChange={handleChange} required />
                 <br />
@@ -78,7 +79,7 @@ function BlogComment({ id }) {
                 <br />
                 <input type="submit" value="Submit" />
 
-            </form>}
+            </form>
 
 
         </div>

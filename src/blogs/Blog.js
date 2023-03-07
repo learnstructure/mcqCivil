@@ -18,7 +18,7 @@ function Blog() {
                     <div>
                         <img src={blog.image} alt="3D model of structure" />
                     </div>
-                    <div>{blog.preview}... <Link to={`/blog/${blog.id}`}  >See more</Link>
+                    <div style={{ fontSize: "1.2rem" }}>{blog.preview}... <Link to={`/blog/${blog.id}`}  >See more</Link>
                     </div>
                 </div>
 
