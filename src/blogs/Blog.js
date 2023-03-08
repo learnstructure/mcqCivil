@@ -16,7 +16,7 @@ function Blog() {
                 <h2>{blog.title}</h2>
                 <div className='blog-summary-container'>
                     <div>
-                        <img src={blog.image} alt="3D model of structure" />
+                        <img src={blog.image} alt={blog.imageAlt} style={{ maxWidth: '100%' }} />
                     </div>
                     <div style={{ fontSize: "1.2rem" }}>{blog.preview}... <Link to={`/blog/${blog.id}`}  >See more</Link>
                     </div>
