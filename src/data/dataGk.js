@@ -1,6 +1,6 @@
 const dataGk = [
     {
-        question: "Nepal is geographically situated at _____ zone of of the world map.",
+        question: "Nepal is geographically situated at _____ zone of the world map.",
         optionA: "north south",
         optionB: "north east",
         optionC: "north west",
@@ -160,7 +160,7 @@ const dataGk = [
         correct: "d"
     },
     {
-        question: "Which is the deepest valley of Nepal, which is also teh deepest valley in the world?",
+        question: "Which is the deepest valley of Nepal, which is also the deepest valley in the world?",
         optionA: "Arun valley",
         optionB: "Waipio valley",
         optionC: "Nubra valley",

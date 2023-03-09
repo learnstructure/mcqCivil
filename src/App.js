@@ -27,7 +27,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
 
         <Route path="/:subject" element={<SharedLayout />}>
-          <Route index element={<McqAll description={"Strength of materials"} />} />
+          <Route index element={<McqAll />} />
           <Route path=":id" element={<NewComment />} />
         </Route>
 

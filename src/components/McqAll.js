@@ -5,8 +5,8 @@ import '../App.css';
 import { Helmet } from 'react-helmet';
 import { useOutletContext } from 'react-router-dom';
 
-export default function McqAll(props) {
-    const { data } = useOutletContext()
+export default function McqAll() {
+    const { data, descrip } = useOutletContext()
 
     const mcqElements = data.map((mcq) => {
 
@@ -25,8 +25,8 @@ export default function McqAll(props) {
     return (
         <div className="App">
             <Helmet>
-                <title>{props.description}</title>
-                <meta name="description" content={"Practise civil engineering " + props.description + " multiple choice questions (mcq) loksewa, NEC license preparation"} />
+                <title>{descrip}</title>
+                <meta name="description" content={"Practise civil engineering " + descrip + " multiple choice questions (mcq) loksewa, NEC license preparation"} />
             </Helmet>
             <div >
                 {mcqElements}

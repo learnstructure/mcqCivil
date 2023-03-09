@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet';
 import './css/discussion.css'
-import { Link, useLocation, useNavigate, useOutletContext, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useOutletContext, useParams } from 'react-router-dom'
 import { db } from './firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 import McqOne from './McqOne'
@@ -16,6 +16,7 @@ function NewComment(props) {
     if (location.state) {
         var { id, path, ques, quesno, ansA, ansB, ansC, ansD, correct } = location.state
         var pathname = path.slice(1)
+        //console.log(id);
     } else {
         var onemcq = data.find(mcq => mcq.id === qid.id)
         pathname = qid.subject
@@ -23,6 +24,8 @@ function NewComment(props) {
         quesno = onemcq.serialno; ansA = onemcq.optionA; ansB = onemcq.optionB;
         ansC = onemcq.optionC; ansD = onemcq.optionD; correct = onemcq.correct
     }
+    id = id.slice(0, 30)
+    //console.log(id)
 
     const [newComment, setNewComment] = useState({ name: "", comment: "" })
     function handleChange(e) {
@@ -80,9 +83,7 @@ function NewComment(props) {
             <Helmet>
                 <meta name="description" content={ques} />
             </Helmet>
-            <div style={{ marginBottom: '0.7rem' }}>
-                <Link to='..' relative='path' className="showDiscussion" >👈Go back</Link>
-            </div>
+            <button onClick={() => navigate(-1)} className="showDiscussion" style={{ marginBottom: "0.3rem", }}>👈 Go back</button>
             <McqOne ques={ques} quesno={quesno} ansA={ansA} ansB={ansB} ansC={ansC} ansD={ansD} correct={correct} />
             <div className='oldCommentSection'>
                 <p className='comment-heading'>Discussion forum</p>
