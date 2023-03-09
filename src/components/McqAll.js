@@ -3,14 +3,17 @@ import Mcq from './Mcq';
 import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs'
 import '../App.css';
 import { Helmet } from 'react-helmet';
+import { useOutletContext } from 'react-router-dom';
 
 export default function McqAll(props) {
-    const mcqElements = props.data.map((mcq, index) => {
-        const id = (index + mcq.question.substring(1, 20) + mcq.optionA.substring(1, 10) + mcq.question.slice(-20) + mcq.optionB.substring(1, 10)).replaceAll(/[./?:%,*+'";-]/g, "").replaceAll(' ', '').replaceAll('  ', '')
+    const { data } = useOutletContext()
+
+    const mcqElements = data.map((mcq) => {
+
         return (<Mcq
-            key={id}
-            id={id}
-            serialno={index + 1}
+            key={mcq.id}
+            id={mcq.id}
+            serialno={mcq.serialno}
             question={mcq.question}
             optionA={mcq.optionA}
             optionB={mcq.optionB}

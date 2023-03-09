@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet';
 import './css/discussion.css'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useOutletContext, useParams } from 'react-router-dom'
 import { db } from './firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 import McqOne from './McqOne'
 
 function NewComment(props) {
+
     const randomNumber = Math.floor(Math.random() * Date.now()).toString();
     const location = useLocation()
+    const { data } = useOutletContext()
+    const qid = useParams()
 
-    const { id, path, ques, quesno, ansA, ansB, ansC, ansD, correct } = location.state
-
-
-    const pathname = path.slice(1)
+    if (location.state) {
+        var { id, path, ques, quesno, ansA, ansB, ansC, ansD, correct } = location.state
+        var pathname = path.slice(1)
+    } else {
+        var onemcq = data.find(mcq => mcq.id === qid.id)
+        pathname = qid.subject
+        id = onemcq.id; ques = onemcq.question;
+        quesno = onemcq.serialno; ansA = onemcq.optionA; ansB = onemcq.optionB;
+        ansC = onemcq.optionC; ansD = onemcq.optionD; correct = onemcq.correct
+    }
 
     const [newComment, setNewComment] = useState({ name: "", comment: "" })
     function handleChange(e) {
@@ -71,8 +80,9 @@ function NewComment(props) {
             <Helmet>
                 <meta name="description" content={ques} />
             </Helmet>
-            <button onClick={() => navigate(-1)} className="showDiscussion" style={{ marginBottom: "0.3rem", }}>👈 Go back</button>
-
+            <div style={{ marginBottom: '0.7rem' }}>
+                <Link to='..' relative='path' className="showDiscussion" >👈Go back</Link>
+            </div>
             <McqOne ques={ques} quesno={quesno} ansA={ansA} ansB={ansB} ansC={ansC} ansD={ansD} correct={correct} />
             <div className='oldCommentSection'>
                 <p className='comment-heading'>Discussion forum</p>

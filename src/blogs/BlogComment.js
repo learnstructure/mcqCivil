@@ -60,10 +60,8 @@ function BlogComment({ id }) {
 
     return (
         <div>
-            <div className='new-comment-btn-container'>
-
-                <Link to=".." relative='path' className="new-comment-btn">👈 Go back</Link>   {/*  relative="path" takes up one level */}
-
+            <div style={{ marginBottom: '0.7rem' }}>
+                <Link to=".." relative='path' className="new-comment-btn">👈 Go back</Link>
             </div>
             <div className='oldCommentSection'>
                 <p className='comment-heading'>Feedback</p>

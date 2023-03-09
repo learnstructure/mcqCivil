@@ -439,6 +439,326 @@ const dataGk = [
         optionD: "Dasgaja",
         correct: "d"
     },
+    {
+        question: "Which is the nearest port from Nepal?",
+        optionA: "Bay of Bangal",
+        optionB: "Kolkatta",
+        optionC: "Patna",
+        optionD: "West Bengal",
+        correct: "b"
+    },
+    {
+        question: "Which district is known as the district of lakes?",
+        optionA: "Kaski",
+        optionB: "Chitwan",
+        optionC: "Rasuwa",
+        optionD: "Kathmandu",
+        correct: "a"
+    },
+    {
+        question: "How many districts are there in Mountainous region?",
+        optionA: "20",
+        optionB: "21",
+        optionC: "22",
+        optionD: "23",
+        correct: "b"
+    },
+    {
+        question: "Which of the following district does not lie in inner Terai?",
+        optionA: "Dang",
+        optionB: "Nawalpur West",
+        optionC: "Surkhet",
+        optionD: "Nawalpur East",
+        correct: "b"
+    },
+    {
+        question: "What is the area occupied by Inner Terai?",
+        optionA: "8.5%",
+        optionB: "9.5%",
+        optionC: "10.5%",
+        optionD: "11.5%",
+        correct: "a"
+    },
+    {
+        question: "Which of the following district is not included in Upper Sagarmatha?",
+        optionA: "Solukhumbhu",
+        optionB: "Okhaldhunga",
+        optionC: "Khotang",
+        optionD: "Sankhuwasabha",
+        correct: "d"
+    },
+    {
+        question: "Which is the airport at the highest altitude?",
+        optionA: "Phaplu",
+        optionB: "Kangel Danda",
+        optionC: "Lukla",
+        optionD: "Syanboche",
+        correct: "d"
+    },
+    {
+        question: "Which district has the similar map structure to Nepal?",
+        optionA: "Ramechhap",
+        optionB: "Dolakha",
+        optionC: "Myagdi",
+        optionD: "Baglung",
+        correct: "d"
+    },
+    {
+        question: "Which is the pass at the highest altitude?",
+        optionA: "Changla pass",
+        optionB: "Larkhe pass",
+        optionC: "Thorang pass",
+        optionD: "Olangchungola",
+        correct: "c"
+    },
+    {
+        question: "Which place of Nepal is called 'The Cherapunji?",
+        optionA: "Godavari",
+        optionB: "Kimathanka",
+        optionC: "Lumle",
+        optionD: "Lomanthang",
+        correct: "c"
+    },
+    {
+        question: "Which district of Nepal is famous for salt?",
+        optionA: "Manang",
+        optionB: "Mustang",
+        optionC: "Dang",
+        optionD: "Arghakhanchi",
+        correct: "b"
+    },
+    {
+        question: "Which place is called 'Sri Lanka of Nepal'?",
+        optionA: "Chandani and Dodhara",
+        optionB: "Koshi Tappu",
+        optionC: "Marchawar",
+        optionD: "Jagadispur lake",
+        correct: "b"
+    },
+    {
+        question: "Which region is called the 'Outer Himalaya'?",
+        optionA: "Chure",
+        optionB: "Mahabharat",
+        optionC: "Inner Terrain",
+        optionD: "Midland",
+        correct: "a"
+    },
+    {
+        question: "Which region is called the 'Lesser Himalaya'?",
+        optionA: "Chure",
+        optionB: "Mahabharat",
+        optionC: "Inner Terrain",
+        optionD: "Midland",
+        correct: "b"
+    },
+    {
+        question: "What is the highest point of Mahabharata range?",
+        optionA: "Garva",
+        optionB: "Lalikharka Hill",
+        optionC: "Churia",
+        optionD: "Shailung Hill",
+        correct: "d"
+    },
+    {
+        question: "What is the highest point of Chure range?",
+        optionA: "Garva",
+        optionB: "Lalikharka Hill",
+        optionC: "Churia",
+        optionD: "Shailung Hill",
+        correct: "a"
+    },
+    {
+        question: "How many mountain ranges are there in Nepal?",
+        optionA: "25",
+        optionB: "26",
+        optionC: "27",
+        optionD: "28",
+        correct: "d"
+    },
+    {
+        question: "Which is the longest mountain range of Nepal?",
+        optionA: "Kanchenjunga",
+        optionB: "Rolwaling",
+        optionC: "Mahalangur",
+        optionD: "Khumdu",
+        correct: "c"
+    },
+    {
+        question: "How many mountain peaks are there in Nepal above 8000 meters?",
+        optionA: "5",
+        optionB: "6",
+        optionC: "7",
+        optionD: "8",
+        correct: "d"
+    },
+    {
+        question: "How many mountain peaks are there in Nepal above 8500 meters?",
+        optionA: "3",
+        optionB: "4",
+        optionC: "5",
+        optionD: "6",
+        correct: "a"
+    },
+    {
+        question: "How many peaks above 8000m are there in province number 1?",
+        optionA: "4",
+        optionB: "5",
+        optionC: "6",
+        optionD: "7",
+        correct: "b"
+    },
+    {
+        question: "Which of the following province is named first?",
+        optionA: "Karnali",
+        optionB: "Gandaki",
+        optionC: "Sudur Paschim",
+        optionD: "Bagmati",
+        correct: "a"
+    },
+    {
+        question: "The number of provinces named after the name of river are _",
+        optionA: "3",
+        optionB: "4",
+        optionC: "5",
+        optionD: "6",
+        correct: "a"
+    },
+    {
+        question: "Which province has recently decided to change its capital?",
+        optionA: "Lumbini",
+        optionB: "Gandaki",
+        optionC: "Janaki",
+        optionD: "Koshi",
+        correct: "a"
+    },
+    {
+        question: "Which of the following province is linked to India only?",
+        optionA: "Province number 1",
+        optionB: "Bagmati province",
+        optionC: "Gandaki province",
+        optionD: "Lumbini province",
+        correct: "d"
+    },
+    {
+        question: "How many districts are there in Bagmati Province",
+        optionA: "10",
+        optionB: "11",
+        optionC: "12",
+        optionD: "13",
+        correct: "d"
+    },
+    {
+        question: "Which is the province with least number of districts?",
+        optionA: "Province number 1",
+        optionB: "Madhesh Province",
+        optionC: "Bagmati province",
+        optionD: "Gandaki Province",
+        correct: "b"
+    },
+    {
+        question: "Which is the largest province in terms of Area?",
+        optionA: "Gandaki",
+        optionB: "Lumbini",
+        optionC: "Karnali",
+        optionD: "Sudur-Paschim",
+        correct: "c"
+    },
+    {
+        question: "Who is the person to ascend Mount Everest for most number of times (26 times)?",
+        optionA: "Aang Rita Sherpa",
+        optionB: "Kamirita Sherpa",
+        optionC: "Mingma Dorchi Sherpa",
+        optionD: "Nirmal Purja Magar",
+        correct: "b"
+    },
+    {
+        question: "Who is the first Chief Minister of Nepal?",
+        optionA: "Sher Dhan Rai",
+        optionB: "Lal Babu Raut",
+        optionC: "Dormani Poudyal ",
+        optionD: "Trilochan Bhatta",
+        correct: "c"
+    },
+    {
+        question: "Who is the first governor/Chief of province of Nepal?",
+        optionA: "Anuradha Koirala",
+        optionB: "Dharmanath Yadav",
+        optionC: "Amik Serachan",
+        optionD: "Bidhya Devi Bhandari",
+        correct: "a"
+    },
+    {
+        question: "Who is the first female chief minister of Nepal?",
+        optionA: "Komal Oli",
+        optionB: "Padma Aryal",
+        optionC: "Binda Pandey",
+        optionD: "Astha Laxmi Shakya",
+        correct: "d"
+    },
+    {
+        question: "How many local levels are there?",
+        optionA: "753",
+        optionB: "754",
+        optionC: "755",
+        optionD: "756",
+        correct: "a"
+    },
+    {
+        question: "Which of the following districts does not have any rural municipalities?",
+        optionA: "Kathmandu and Lalitpur",
+        optionB: "Kathmandu and Bhaktapur",
+        optionC: "Kathmandu and Dhading",
+        optionD: "Kathmandu and Chitwan",
+        correct: "b"
+    },
+    {
+        question: "How many districts of Nepal do not have any municipalities?",
+        optionA: "3",
+        optionB: "4",
+        optionC: "5",
+        optionD: "6",
+        correct: "c"
+    },
+    {
+        question: "Which of the following districts does not have any municipalities?",
+        optionA: "Dolpa",
+        optionB: "Rolpa",
+        optionC: "Mugu",
+        optionD: "Rasuwa",
+        correct: "d"
+    },
+    {
+        question: "Which is the largest sub-metropolitan city of Nepal based on area?",
+        optionA: "Itarari",
+        optionB: "Dhangadhi",
+        optionC: "Hetauda",
+        optionD: "Kalaiya",
+        correct: "b"
+    },
+    {
+        question: "Which is the last metropolitan city of Nepal?",
+        optionA: "Kathmandu",
+        optionB: "Biratnagar",
+        optionC: "Pokhara",
+        optionD: "Ghorahi",
+        correct: "b"
+    },
+    {
+        question: "Which is the smallest metropolitan city?",
+        optionA: "Lalitpur",
+        optionB: "Birgunj",
+        optionC: "Bharatpur",
+        optionD: "Kathmandu",
+        correct: "a"
+    },
+    {
+        question: "What percent of the total area of Nepal is covered by hilly region?",
+        optionA: "15%",
+        optionB: "17%",
+        optionC: "68%",
+        optionD: "8.5%",
+        correct: "c"
+    },
 
     /* {
         question: "",
