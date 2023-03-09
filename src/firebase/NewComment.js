@@ -6,26 +6,25 @@ import { db } from './firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 import McqOne from './McqOne'
 
-function NewComment(props) {
+function NewComment() {
 
     const randomNumber = Math.floor(Math.random() * Date.now()).toString();
     const location = useLocation()
     const { data } = useOutletContext()
-    const qid = useParams()
+    const params = useParams()
 
     if (location.state) {
         var { id, path, ques, quesno, ansA, ansB, ansC, ansD, correct } = location.state
         var pathname = path.slice(1)
-        //console.log(id);
+
     } else {
-        var onemcq = data.find(mcq => mcq.id === qid.id)
-        pathname = qid.subject
+        var onemcq = data.find(mcq => mcq.id === params.id)
+        pathname = params.subject
         id = onemcq.id; ques = onemcq.question;
         quesno = onemcq.serialno; ansA = onemcq.optionA; ansB = onemcq.optionB;
         ansC = onemcq.optionC; ansD = onemcq.optionD; correct = onemcq.correct
     }
     id = id.slice(0, 30)
-    //console.log(id)
 
     const [newComment, setNewComment] = useState({ name: "", comment: "" })
     function handleChange(e) {
@@ -37,7 +36,7 @@ function NewComment(props) {
         const addData = async () => {
             try {
 
-                const subCollectionRef = collection(db, pathname, id, "comments")       //id is unique for each question
+                const subCollectionRef = collection(db, pathname, id, "comments")
                 await addDoc(subCollectionRef, {
                     name: newComment.name,
                     comment: newComment.comment

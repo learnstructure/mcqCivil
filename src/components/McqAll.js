@@ -1,25 +1,19 @@
-
 import Mcq from './Mcq';
 import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs'
 import '../App.css';
 import { Helmet } from 'react-helmet';
 import { useOutletContext } from 'react-router-dom';
-
+import { createContext } from 'react';
+export const McqContext = createContext()
 export default function McqAll() {
     const { data, descrip } = useOutletContext()
 
     const mcqElements = data.map((mcq) => {
 
-        return (<Mcq
-            key={mcq.id}
-            id={mcq.id}
-            serialno={mcq.serialno}
-            question={mcq.question}
-            optionA={mcq.optionA}
-            optionB={mcq.optionB}
-            optionC={mcq.optionC}
-            optionD={mcq.optionD}
-            correct={mcq.correct} />)
+        return (
+            <McqContext.Provider value={{ mcq }} key={mcq.id}>
+                <Mcq />
+            </McqContext.Provider>)
     })
 
     return (

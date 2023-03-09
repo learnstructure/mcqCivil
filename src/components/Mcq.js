@@ -1,24 +1,25 @@
 import '../css/mcq.css';
 import { useState } from 'react';
 import Discussion from '../firebase/Discussion';
-import { createContext } from 'react';
-export const McqContext = createContext();
-export default function Mcq(props) {
+import { useContext } from 'react';
+import { McqContext } from './McqAll';
+export default function Mcq() {
+    const { mcq } = useContext(McqContext)
+
     const audio = new Audio();
     audio.src = "./correctOption.wav";
     const [optClassA, setOptClassA] = useState(null)
 
     function handleClickA() {
-        if (props.correct === "a") {
+        if (mcq.correct === "a") {
             audio.play();
             setOptClassA("correctAnswer")
-
         }
         else { setOptClassA("wrongAnswer") }
     }
     const [optClassB, setOptClassB] = useState(null)
     function handleClickB() {
-        if (props.correct === "b") {
+        if (mcq.correct === "b") {
             audio.play();
             setOptClassB("correctAnswer");
         }
@@ -26,7 +27,7 @@ export default function Mcq(props) {
     }
     const [optClassC, setOptClassC] = useState(null)
     function handleClickC() {
-        if (props.correct === "c") {
+        if (mcq.correct === "c") {
             audio.play();
             setOptClassC("correctAnswer");
         }
@@ -34,7 +35,7 @@ export default function Mcq(props) {
     }
     const [optClassD, setOptClassD] = useState(null)
     function handleClickD() {
-        if (props.correct === "d") {
+        if (mcq.correct === "d") {
             audio.play();
             setOptClassD("correctAnswer");
         }
@@ -44,35 +45,32 @@ export default function Mcq(props) {
     return (
         <div className="mcq">
 
-            <div>{props.serialno}. {props.question}</div>
+            <div>{mcq.serialno}. {mcq.question}</div>
             <div className="option">
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionA`} value="a" style={{ display: 'none' }} />
-                    <label htmlFor={`${props.serialno}optionA`}
-                        onClick={handleClickA} id={optClassA}>a) {props.optionA}</label>
+                    <input type="radio" name={`${mcq.serialno}options`} id={`${mcq.serialno}optionA`} value="a" style={{ display: 'none' }} />
+                    <label htmlFor={`${mcq.serialno}optionA`}
+                        onClick={handleClickA} id={optClassA}>a) {mcq.optionA}</label>
                 </p>
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionB`} value="b" style={{ display: 'none' }} />
-                    <label htmlFor={`${props.serialno}optionB`}
-                        onClick={handleClickB} id={optClassB}>b) {props.optionB}</label>
+                    <input type="radio" name={`${mcq.serialno}options`} id={`${mcq.serialno}optionB`} value="b" style={{ display: 'none' }} />
+                    <label htmlFor={`${mcq.serialno}optionB`}
+                        onClick={handleClickB} id={optClassB}>b) {mcq.optionB}</label>
                 </p>
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionC`} value="c" style={{ display: 'none' }} />
-                    <label htmlFor={`${props.serialno}optionC`}
-                        onClick={handleClickC} id={optClassC}>c) {props.optionC}</label>
+                    <input type="radio" name={`${mcq.serialno}options`} id={`${mcq.serialno}optionC`} value="c" style={{ display: 'none' }} />
+                    <label htmlFor={`${mcq.serialno}optionC`}
+                        onClick={handleClickC} id={optClassC}>c) {mcq.optionC}</label>
                 </p>
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionD`} value="d" style={{ display: 'none' }} />
-                    <label htmlFor={`${props.serialno}optionD`}
-                        onClick={handleClickD} id={optClassD}>d) {props.optionD}</label>
+                    <input type="radio" name={`${mcq.serialno}options`} id={`${mcq.serialno}optionD`} value="d" style={{ display: 'none' }} />
+                    <label htmlFor={`${mcq.serialno}optionD`}
+                        onClick={handleClickD} id={optClassD}>d) {mcq.optionD}</label>
                 </p>
 
             </div>
 
-            <McqContext.Provider value={{ id: props.id, ques: props.question, quesno: props.serialno, ansA: props.optionA, ansB: props.optionB, ansC: props.optionC, ansD: props.optionD, correct: props.correct }}>
-                <Discussion />
-            </McqContext.Provider>
-
+            <Discussion />
         </div>
     )
 }
