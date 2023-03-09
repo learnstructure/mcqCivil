@@ -5,8 +5,8 @@ function Blog2() {
     return (
         <main className='blog-container'>
             <Helmet>
-                <title>Response spectrum</title>
-                <meta name="description" content={"Response Spectrum Analysis (RSA) in ETABS SAP2000 Scale factor"} />
+                <title>Diaphragms in ETABS</title>
+                <meta name="description" content="Differences between various types of diaphragms in ETABS" />
             </Helmet>
             <h1>What are actually rigid, semi-rigid and no diaphragm in ETABS? And which one to assign?</h1>
 

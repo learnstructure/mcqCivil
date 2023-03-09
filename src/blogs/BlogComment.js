@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './css/blog.css'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { db } from '../firebase/firebaseConfig'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 
@@ -56,13 +56,13 @@ function BlogComment({ id }) {
         }
         fetchData();
     }, [id])
-    const navigate = useNavigate()
+
 
     return (
         <div>
             <div className='new-comment-btn-container'>
 
-                <button onClick={() => navigate(-1)} className="new-comment-btn" >👈 Go back</button>
+                <Link to=".." relative='path' className="new-comment-btn">👈 Go back</Link>   {/*  relative="path" takes up one level */}
 
             </div>
             <div className='oldCommentSection'>

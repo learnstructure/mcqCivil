@@ -1,7 +1,9 @@
 import React from 'react'
 import '../css/mcq.css'
+//import { useParams } from 'react-router-dom'
 function McqOne({ ques, quesno, ansA, ansB, ansC, ansD, correct }) {
-
+    /* const params = useParams()
+    console.log(params) */
     return (
         <div >
             <div>{quesno}. {ques}</div>
