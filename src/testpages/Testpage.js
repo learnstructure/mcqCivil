@@ -10,8 +10,8 @@ function Testpage() {
                 <title>Online Test</title>
                 <meta name="description" content="civil engineering loksewa NEC license MCQ test" />
             </Helmet>
-            <h3>Quick test</h3>
-            <p>For this test, there will be 10 minutes for 15 questions.</p>
+            <h3>Quick tests</h3>
+            <p>For this test, there will be <strong>10 minutes for 15 questions</strong>.</p>
             <p>Get ready and click on any of the following subjects.</p>
             <div className='link-container'>
                 <Link to="som">SOM</Link>
@@ -28,13 +28,13 @@ function Testpage() {
 
             </div>
             <hr />
-            <p>Try GK test. This is based on Loksewa Nepal.</p>
+            <p>Try GK test. This is based on <strong>Loksewa Nepal</strong>.</p>
             <div className='link-container'>
                 <Link to='gk' >General Knowledge test</Link>
             </div>
             <hr />
             <h3>Long test</h3>
-            <p>For this test, there will be 45 minutes for 50 questions.</p>
+            <p>For this test, there will be <strong> 45 minutes for 50 questions</strong>.</p>
             <p>Get ready and click below.</p>
             <div className='link-container'>
                 <Link to="civil">Overall test</Link>

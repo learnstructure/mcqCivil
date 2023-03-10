@@ -16,8 +16,8 @@ import Test from './Test'
 import Timer from './Timer'
 import { dataProfessional } from '../data/dataProfessional'
 import { dataGk } from '../data/dataGk'
-
-
+import { createContext } from 'react'
+export const TestContext = createContext()
 function Testsub() {
 
     const { subject } = useParams();
@@ -67,7 +67,7 @@ function Testsub() {
 
     const randomQuestions = testData.map((mcq, index) => {
         return (<Test
-            key={index}
+            key={index + 1}
             serialno={index + 1}
             question={mcq.question}
             optionA={mcq.optionA}
@@ -76,22 +76,21 @@ function Testsub() {
             optionD={mcq.optionD}
             correct={mcq.correct}
             submitClicked={submitClicked}
-
-            setRightAns={setRightAns}
         />)
     })
 
     return (
-        <div>
-            {randomQuestions}
-            <Timer
-                setSubmitClicked={setSubmitClicked}
-                submitClicked={submitClicked}
-                rightAns={rightAns}
-                totalQuestions={testData.length}
-                time={time} />
-
-        </div>
+        <TestContext.Provider value={{ rightAns, setRightAns }}>
+            <div>
+                {randomQuestions}
+                <Timer
+                    setSubmitClicked={setSubmitClicked}
+                    submitClicked={submitClicked}
+                    rightAns={rightAns}
+                    totalQuestions={testData.length}
+                    time={time} />
+            </div>
+        </TestContext.Provider>
     )
 }
 

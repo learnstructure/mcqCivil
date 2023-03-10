@@ -1,20 +1,28 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import './css/testpage.css'
+import { useContext } from 'react';
+import { TestContext } from './Testsub';
 
 let count;
 function Test(props) {
     useMemo(() => {
         count = 0;
     }, [])
+    const { setRightAns } = useContext(TestContext)
 
     const [answer, setAnswer] = useState()
 
     useMemo(() => {
+
         if (props.submitClicked && answer === props.correct) {
             count = count + 1
-            props.setRightAns(count)
         }
+
     }, [props.submitClicked])
+
+    useEffect(() => {
+        setRightAns(count)
+    }, [count]);
 
     return (
         <div className="mcq" >
