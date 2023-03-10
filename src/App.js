@@ -6,7 +6,7 @@ import Title from './components/Title'
 import Home from './components/Home';
 
 import McqAll from './components/McqAll';
-import Testpage from './components/Testpage'
+import Testpage from './testpages/Testpage'
 import Contact from './components/Contact';
 
 import Thanks from './components/Thanks';
@@ -16,6 +16,8 @@ import ScrollToTop from './components/ScrollToTop';
 import BlogOne from './blogs/BlogOne';
 
 import SharedLayout from './sharedLayouts/SharedLayout';
+import Testsub from './testpages/Testsub';
+
 
 function App() {
 
@@ -33,7 +35,10 @@ function App() {
 
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/blog/:id' element={<BlogOne />}></Route>
+
         <Route path='/test' element={<Testpage />}></Route>
+        <Route path='/test/:subject' element={<Testsub />}></Route>
+
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/thanks' element={<Thanks />}></Route>
       </Routes>

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import '../css/timer.css'
+import './css/timer.css'
 
-function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQuestions }) {
-    const [minute, setMinute] = useState(0)
+function Timer({ setSubmitClicked, submitClicked, rightAns, totalQuestions, time }) {
+    const [minute, setMinute] = useState(time)
     const [second, setSecond] = useState(0)
 
     useEffect(() => {
         var timer = setInterval(() => {
 
-            setSecond(second + 1)
-            if (second === 59) {
-                setMinute(minute + 1);
-                setSecond(0);
+            setSecond(second - 1)
+            if (second === 0) {
+                setMinute(minute - 1);
+                setSecond(59);
             }
-            if (minute === 45) {    //time duration of test
+            if (minute === 0 && second === 0) {    //time duration of test
                 setSubmitClicked(true)
             }
 
@@ -23,8 +23,8 @@ function Timer({ testClicked, setSubmitClicked, submitClicked, rightAns, totalQu
     return (
         <>
             <div className='container' style={{ display: submitClicked ? "none" : "null" }}>
-                {testClicked && !submitClicked && <button className='btn1 btn-test' onClick={() => { setSubmitClicked(true); }}>Submit</button>}
-                {!submitClicked && <span className='marginRight'>Time elapsed = {minute < 10 ? "0" + minute : minute} : {second < 10 ? "0" + second : second}</span>}
+                {!submitClicked && <button className='btn1 btn-test' onClick={() => { setSubmitClicked(true); }}>Submit</button>}
+                {!submitClicked && <span className='marginRight'>Time remaining = {minute < 10 ? "0" + minute : minute} : {second < 10 ? "0" + second : second}</span>}
 
             </div>
             {submitClicked &&

@@ -495,19 +495,6 @@ const dataSurveying = [
 
 
 ]
-const Random = (data) => {
-    const num = 5;
-    const res = [];
-    for (let i = 0; i < num;) {
-        const random = Math.floor(Math.random() * data.length);
-        if (res.indexOf(data[random]) !== -1) {
-            continue;
-        };
-        res.push(data[random]);
-        i++;
-    };
-    return res;
-};
-const surveyingRandom = Random(dataSurveying)
 
-export { dataSurveying, surveyingRandom }
+
+export { dataSurveying }

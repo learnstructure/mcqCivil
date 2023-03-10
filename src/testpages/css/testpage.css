@@ -1,3 +1,29 @@
+.test-container {
+    width: 70%;
+    margin: auto;
+}
+
+.link-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    column-count: 3;
+}
+
+.link-container a {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border-radius: 0.2rem;
+    text-decoration: none;
+    border: none;
+}
+
+.link-container a:hover {
+    background-color: #45a049;
+}
+
 .unticked {
     color: black;
 }
@@ -43,13 +69,10 @@ input[type="radio"]:checked+label {
     padding: 0.5rem;
 }
 
-.submitLower {
-    display: block;
-    margin: auto;
-}
 
-.testInfo {
-    text-align: center;
-    margin-top: 1rem;
-    line-height: 2rem;
+
+@media screen and (max-width: 768px) {
+    .test-container {
+        width: 97%;
+    }
 }

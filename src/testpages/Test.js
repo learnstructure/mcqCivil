@@ -1,13 +1,11 @@
 import React, { useState, useMemo } from 'react'
-import '../css/testpage.css'
-import { Helmet } from 'react-helmet';
+import './css/testpage.css'
+
 let count;
 function Test(props) {
     useMemo(() => {
-        if (props.testClicked) {
-            count = 0;
-        }
-    }, [props.testClicked])
+        count = 0;
+    }, [])
 
     const [answer, setAnswer] = useState()
 
@@ -20,10 +18,7 @@ function Test(props) {
 
     return (
         <div className="mcq" >
-            <Helmet>
-                <title>Online Test</title>
-                <meta name="description" content="civil engineering loksewa NEC license MCQ test" />
-            </Helmet>
+
             <div>{props.serialno}. {props.question}</div>
             <div className="option" >
 
@@ -49,12 +44,7 @@ function Test(props) {
                     <label htmlFor={`${props.serialno}optionD`} className={props.submitClicked && props.correct === "d" ? "correctAnswer" : null}>d) {props.optionD}</label>
                 </p>
             </div>
-            {/* {props.submitClicked && <p>Selected option is {answer}</p>} */}
-            {/* {props.submitClicked &&
-                <div className='result'>
-                    <p>Number of correct answers = {count}</p>
-                    Total questions = {props.serialno}
-                </div>} */}
+
         </div>
     )
 }
