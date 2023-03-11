@@ -13,7 +13,7 @@
 
 .blog-container h1 {
     font-size: 1.5rem;
-    color: royalblue;
+    color: rgb(23, 155, 169);
     line-height: 1;
 }
 
@@ -30,6 +30,18 @@
 .blog-container li {
     line-height: 1.8;
 }
+
+.blog-container p {
+    line-height: 1.7;
+}
+
+.img-flex {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+}
+
+
 
 .new-comment-btn {
     background-color: inherit;
@@ -51,6 +63,12 @@
     display: flex;
 }
 
+.highlight {
+    background-color: bisque;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
 @media screen and (max-width: 768px) {
     .blog-container {
         width: 97%;
@@ -58,6 +76,14 @@
 
     .blog-summary-container {
         flex-direction: column;
+    }
+
+    .img-flex {
+        flex-direction: column;
+    }
+
+    .img-flex img {
+        max-width: 90%;
     }
 
 }
