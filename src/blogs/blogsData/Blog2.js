@@ -41,6 +41,7 @@ function Blog2() {
                 <li>Choose rigid or semi rigid as rigidity.</li>
                 <li>Now to apply the above defined diaphragm, select slabs in a story.</li>
                 <li>Go to Assign &gt; Shells &gt; Diaphragms and after selecting a diaphragm click apply.</li>
+                <li>One thing to note is that there are two ways to define diaphragm in ETABS, via joints and via shell. It is recommended to define via shell because if you do so, internal joints in the shell will also be constrained to diaphragm.</li>
             </ul>
             <h4>Let's see what are the differences between rigid and semi-rigid in ETABS</h4>
             <img src='/images/diaphragm.JPG' alt="rigid vs semi rigid" style={{ maxWidth: '100%' }} />
@@ -60,7 +61,7 @@ function Blog2() {
                 <li>In case of rigid diaphragm EQ loads are applied at CM of diaphragm whereas in no diaphragm and semi-rigid diaphragm, EQ loads are applied at each internally and externally meshed joint.</li>
                 <li>Difference between no diaphragm and semi-rigid diaphragm is that in case of semi-rigid diaphragm, eccentricity can be applied that produces moment at each joints whereas eccentricity can not be applied in case of no diaphragm</li>
                 <li><span style={{ color: 'royalBlue' }}>Very important: </span> In case of semi-rigid and no diaphragm, in-plane shear forces in slab are calculated which is transferred to surrounding elements but this feature is not available in rigid diaphragm. As a result, axial forces are zero in beams connected to slab in case of rigid diaphragm.</li>
-                <li>So to conclude, I would suggest to always always assign <strong>semi-rigid diaphragm </strong> unless you are sure that floor has very high in-plane stiffness and so rigid diaphragm can be also be assigned.</li>
+                <li>So to conclude, I would suggest to always always assign <strong>semi-rigid diaphragm </strong> unless you are sure that floor has very high in-plane stiffness and so rigid diaphragm can also be assigned which reduces analysis time.</li>
             </ul>
 
             <hr />

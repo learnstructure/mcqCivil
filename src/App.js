@@ -33,8 +33,8 @@ function App() {
           <Route path=":id" element={<NewComment />} />
         </Route>
 
-        <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/blog/:id' element={<BlogOne />}></Route>
+        <Route path='/structural-engineering' element={<Blog />}></Route>
+        <Route path='/structural-engineering/:id' element={<BlogOne />}></Route>
 
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/test/:subject' element={<Testsub />}></Route>

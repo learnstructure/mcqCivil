@@ -47,7 +47,7 @@ function NewComment() {
             }
         }
         addData();
-        setDiscussion((prev) => [...prev, <div key={randomNumber}><hr></hr><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> </div>])
+        setDiscussion((prev) => [...prev, <div key={randomNumber}><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div><hr></hr> </div>])
 
         setNewComment({ name: "", comment: "" })
     }
@@ -67,7 +67,7 @@ function NewComment() {
                     })
                 }
                 else {
-                    setDiscussion("No previous comments. Feel free to reply.")
+                    setDiscussion([<div key='1'>No previous comments. Feel free to reply.</div>, <hr key='2'></hr>])
                 }
 
             } catch (e) {

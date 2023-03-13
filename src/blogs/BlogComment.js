@@ -28,7 +28,7 @@ function BlogComment({ id }) {
             }
         }
         addData();
-        setDiscussion((prev) => [...prev, <div key={randomNumber}><hr></hr><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div> </div>])
+        setDiscussion((prev) => [...prev, <div key={randomNumber}><span className='userName'>{newComment.name}</span> <br /> <div className='userComment'> {newComment.comment}</div><hr /> </div>])
 
         setNewComment({ name: "", comment: "" })
     }
@@ -47,7 +47,7 @@ function BlogComment({ id }) {
                     })
                 }
                 else {
-                    setDiscussion("No previous comments. Feel free to reply.")
+                    setDiscussion([<div key='1'>No previous comments. Feel free to reply.</div>, <hr key='2'></hr>])
                 }
 
             } catch (e) {
@@ -61,12 +61,13 @@ function BlogComment({ id }) {
     return (
         <div>
             <div style={{ marginBottom: '0.7rem' }}>
-                <Link to=".." relative='path' className="new-comment-btn">👈 Go back</Link>
+                Please give your feedback..<Link to=".." relative='path' className="new-comment-btn">👈Go to menu</Link>
             </div>
             <div className='oldCommentSection'>
                 <p className='comment-heading'>Feedback</p>
 
                 {discussion}
+
             </div>
 
             <form onSubmit={handleSubmit} className='commentSection' >

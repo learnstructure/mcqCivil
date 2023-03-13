@@ -9,7 +9,7 @@ function Home() {
         <div className='homepage'>
             <Helmet>
                 <title>Civil Engineering MCQ</title>
-                <meta name="description" content={"Practise civil engineering multiple choice questions (mcq) loksewa, NEC license preparation"} />
+                <meta name="description" content={"Practise civil engineering multiple choice questions as well as the general knowledge questions based on PSC Loksewa Nepal at one place for free. You can ask any confusions to the experts in discussion."} />
             </Helmet>
             <section className='home-body'>
                 <div >
