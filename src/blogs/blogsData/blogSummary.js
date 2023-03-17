@@ -2,16 +2,16 @@ import Blog1 from './Blog1'
 import Blog2 from './Blog2'
 import Blog3 from './Blog3'
 import Blog4 from './Blog4'
-import Blog5 from './Blog5'
+//import Blog5 from './Blog5'
 const blog = [
-    {
+    /* {
 
         title: "What is displacement based design approach?",
         preview: "This is part 1 of displacement based design approach. In displacement based design philosophy, the process is opposite to what we saw in force based design. Here the displacement demands are calculated using non-linear analysis and displacement capacities are ensured to allow those deformation demands. Displacement capacities are calculated using methods like capacity spectrum method, displacement coefficient method, etc.",
         image: '/images/nonlinear/acceptance.PNG',
         imageAlt: 'acceptance criteria',
         content: <Blog5 />
-    },
+    }, */
     {
 
         title: "What is pushover analysis and how to perform it in ETABS?",

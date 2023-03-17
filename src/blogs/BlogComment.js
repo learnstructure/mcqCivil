@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './css/blog.css'
 import { Link } from 'react-router-dom'
 import { db } from '../firebase/firebaseConfig'
-import { addDoc, collection, getDocs } from 'firebase/firestore'
+import { addDoc, collection, getDocs, serverTimestamp/* , Timestamp, query, where, orderBy  */ } from 'firebase/firestore'
+
 
 function BlogComment({ id }) {
     const randomNumber = Math.floor(Math.random() * Date.now()).toString();
@@ -20,7 +21,8 @@ function BlogComment({ id }) {
                 const subCollectionRef = collection(db, "blog", id, "comments")
                 await addDoc(subCollectionRef, {
                     name: newComment.name,
-                    comment: newComment.comment
+                    comment: newComment.comment,
+                    timestamp: serverTimestamp()
                 });
 
             } catch (e) {
@@ -38,12 +40,22 @@ function BlogComment({ id }) {
         const fetchData = async () => {
             try {
                 const querySnapshot = await getDocs(collection(db, "blog", id, "comments"));
+                /* const commentsRef = collection(db, "blog", id, "comments");
+                const q = query(commentsRef, orderBy("timestamp", "asc"));
+                const querySnapshot = await getDocs(q); */
 
                 if (!querySnapshot.empty) {
                     querySnapshot.forEach(doc => {
                         var userName = doc.data().name;
                         var UserName = userName.charAt(0).toUpperCase() + userName.slice(1)
-                        setDiscussion((prev) => [...prev, <div key={doc.id}><span className='userName'>{UserName}</span> <br /> <div className='userComment'> {doc.data().comment}</div> <hr></hr></div>])
+                        var timestamp = doc.data().timestamp ? doc.data().timestamp.toDate().toLocaleString() : ''
+                        setDiscussion((prev) => [...prev, <div key={doc.id}>
+                            <div >
+                                <span className='userName'>{UserName}</span>
+                                {timestamp && <span className='timestamp'>[{timestamp}]</span>}
+                            </div>
+                            <div className='userComment'> {doc.data().comment}</div> <hr></hr>
+                        </div>])
                     })
                 }
                 else {
