@@ -9,6 +9,10 @@ function Blog3() {
                 <meta name="description" content="What actually are axial force, shear force and bending moment?" />
             </Helmet>
             <h1>What actually are axial force, shear force and bending moment ? 🤔</h1>
+            <div className='author'>
+                <div>Author: Abinash Mandal</div>
+                <div>Date: March, 2023</div>
+            </div>
 
             <h2>Introduction</h2>
             <p>When external load (force or moment) is applied on a deformable body, internal force develops within the body. This internal force acting on unit area is known as stress. There are basically two types of stress: normal stress (tensile stress and compressive stress) and shear stress.

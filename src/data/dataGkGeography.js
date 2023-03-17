@@ -1,4 +1,4 @@
-const dataGk = [
+const dataGkGeography = [
     {
         question: "Nepal is geographically situated at _____ zone of the world map.",
         optionA: "north south",
@@ -774,4 +774,4 @@ const dataGk = [
 ]
 
 
-export { dataGk }
+export { dataGkGeography }

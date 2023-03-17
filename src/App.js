@@ -17,6 +17,7 @@ import BlogOne from './blogs/BlogOne';
 
 import SharedLayout from './sharedLayouts/SharedLayout';
 import Testsub from './testpages/Testsub';
+import SharedBlog from './sharedLayouts/SharedBlog';
 
 
 function App() {
@@ -32,9 +33,10 @@ function App() {
           <Route index element={<McqAll />} />
           <Route path=":id" element={<NewComment />} />
         </Route>
-
-        <Route path='/structural-engineering' element={<Blog />}></Route>
-        <Route path='/structural-engineering/:id' element={<BlogOne />}></Route>
+        <Route path="structural-engineering" element={<SharedBlog />}>
+          <Route index element={<Blog />} />
+          <Route path=":id" element={<BlogOne />} />
+        </Route>
 
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/test/:subject' element={<Testsub />}></Route>

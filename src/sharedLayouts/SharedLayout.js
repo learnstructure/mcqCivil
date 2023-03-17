@@ -11,7 +11,8 @@ import { dataGeotechnical } from '../data/dataGeotechnical'
 import { dataDrawing } from '../data/dataDrawing'
 import { dataEconomics } from '../data/dataEconomics'
 import { dataProfessional } from '../data/dataProfessional';
-import { dataGk } from '../data/dataGk';
+import { dataGkGeography } from '../data/dataGkGeography';
+import { dataGkOrganization } from '../data/dataGkOrganization';
 
 function SharedLayout() {
     const { subject } = useParams()
@@ -62,10 +63,13 @@ function SharedLayout() {
             data = [...dataProfessional]
             descrip = "Professional practice"
             break;
-
+        case "gk-geography":
+            data = [...dataGkGeography]
+            descrip = "General knowledge Geography"
+            break;
         default:
-            data = [...dataGk]
-            descrip = "General knowledge"
+            data = [...dataGkOrganization]
+            descrip = "General knowledge UN, SAARC & BIMSTEC"
             break;
     }
 

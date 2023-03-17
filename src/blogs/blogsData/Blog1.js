@@ -9,7 +9,10 @@ function Blog1() {
                 <meta name="description" content={"Response Spectrum Analysis (RSA) in ETABS SAP2000 Scale factor"} />
             </Helmet>
             <h1>Response Spectrum Analysis (RSA) in ETABS</h1>
-
+            <div className='author'>
+                <div>Author: Abinash Mandal</div>
+                <div>Date: March, 2023</div>
+            </div>
             <h2>Principles</h2>
             <p>Structural analysis can be of linear and non-linear type. We will not talk about non-linear analysis here.
                 Basically linear analysis means the method of analysis in which there is linear (direct) relationship between force and deformation. Linear analysis can further be of static and dynamic (time history) nature.

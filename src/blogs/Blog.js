@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import blogSummary from './blogsData/blogSummary'
+
+import { useOutletContext } from 'react-router-dom';
 import { Helmet } from 'react-helmet'
 import './css/blog.css'
-function Blog() {
 
+function Blog() {
+    const { blog } = useOutletContext()
     return (
         <div className='blog-container'>
             <Helmet>
@@ -12,7 +14,7 @@ function Blog() {
                 <meta name="description" content={"Structure analysis and design articles, blogs etabs sap2000 staad pro midas civil"} />
             </Helmet>
 
-            {blogSummary.map(blog => {
+            {blog.map(blog => {
                 /* const urlId = (blog.title).replaceAll(/[./?°:%,*_+'";]/g, "").replace(/[¹²³⁴ᵗʰʳᵈˢᵗ]/g, "").replaceAll(' ', '-').replaceAll('  ', '-'); */
                 return (<div key={blog.id} className="blog-container-one" >
                     <h1>{blog.title}</h1>

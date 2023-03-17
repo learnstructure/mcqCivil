@@ -45,7 +45,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-
+    z-index: 2000;
     background-color: #f9f9f9;
     min-width: 10rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -128,7 +128,7 @@
 
     .topNav.responsive .dropdown-content a {
         display: flex;
-        text-align: left;
+        justify-content: right;
     }
 
     .topNav.responsive .drop-icon {
@@ -137,7 +137,7 @@
 
     .topNav.responsive .link-copy {
         display: flex;
-        transform: translateX(0.5rem);
+        justify-content: right;
     }
 
     .topNav.responsive .logo {

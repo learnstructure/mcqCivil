@@ -33,11 +33,12 @@ function Home() {
                 </div>
                 <p>Practise general knowledge questions here.</p>
                 <div className='home-link'>
-                    <NavLink to='/gk' >General knowledge</NavLink>
+                    <NavLink to='/gk-geography' >Geography</NavLink>
+                    <NavLink to='/gk-organization' >UN, SAARC & BIMSTEC</NavLink>
                 </div>
                 <p>See our blogs here.</p>
                 <div className='home-link'>
-                    <NavLink to='/blog' >Structure blogs</NavLink>
+                    <NavLink to='/structural-engineering' >Structure blogs</NavLink>
                 </div>
                 <p>Give us feedback or <NavLink to='/contact' >contact us.</NavLink></p>
 

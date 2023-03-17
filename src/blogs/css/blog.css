@@ -39,6 +39,7 @@
     display: flex;
     max-width: 100%;
     align-items: center;
+
 }
 
 
@@ -67,6 +68,13 @@
     background-color: bisque;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(240, 240, 240);
+    padding: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {

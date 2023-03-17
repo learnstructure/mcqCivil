@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/blog.css'
 import { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom'
 function Blog4() {
     return (
         <main className='blog-container'>
@@ -9,7 +10,11 @@ function Blog4() {
                 <meta name="description" content="What is pushover analysis and how to perform it in ETABS?" />
             </Helmet>
             <h1>What is pushover analysis and how to perform it in ETABS?</h1>
-
+            <div className='author'>
+                <div>Author: Abinash Mandal</div>
+                <div>Date: March, 2023</div>
+            </div>
+            <p>This is second part of the series on introduction to displacement based design approach. Pushover analysis is a method of displacement based design approach. <Link to='/structural-engineering/What-is-displacement-based-design-approach' >The first part</Link> contains theory part and this part contains implementation of pushover analysis on ETABS. </p>
             <h2>Introduction</h2>
             <p>Pushover analysis is the <em>non-linear static </em>analysis. Non-linear means if we draw graph between load and displacement, the curve won't be straight line passing through the origin unlike in linear analysis. And by static means load doesn't change with time </p>
             <p>Basically non-linearity can be of two types. They are material non-linearity and geometric non-linearity. Material non-linearity means the fundamental stress-strain diagram of the material is non-linear and so this non-linearity is on <strong>material</strong> level. One example of such non-linearity (which we all are familiar with since taking fundamental course on theory of structures in college) is formation of plastic hinge.</p>
@@ -21,15 +26,14 @@ function Blog4() {
             <p>To understand pushover analysis, understanding plastic hinges is very important. So let's review (what we already learnt in college) how plastic hinges form for elasto-plastic curve and homogeneous material.
                 The elasto-plastic stress strain curve is simplified form of complex curve and this looks like as shown in figure below.
             </p>
-
+            <p>Let us suppose a simply supported beam of length L is subjected to uniformly distributed load (udl) of w as shown in figure aside. The figure also shows the bending stress distribution with maximum at outer fibers and zero at neutral axis. Bending stress is σ=(M/I) y</p>
             <div className='img-flex'>
-
-                <p>Let us suppose a simply supported beam of length L is subjected to uniformly distributed load (udl) of w as shown in figure aside. The figure also shows the bending stress distribution with maximum at outer fibers and zero at neutral axis. Bending stress is σ=(M/I) y</p>
                 <div><img src='/images/nonlinear/stress-strain.PNG' alt="stress strain curve" /></div>
                 <div><img src='/images/nonlinear/bending-stress.PNG' alt="beam and bending stress" /></div>
             </div>
+            <p> Let’s assume the load was initially small so that stress at outermost fiber σ&lt;σᵧ where σᵧ is the yield stress. This is represented in fig a. Now as the load increases stress at outermost fiber reaches σᵧ as shown in fig b. Now on increasing load further, outermost stress remains constant at σ=σᵧ (this is because of our assumed stress strain diagram) and stress at inner fibers increase to σᵧ. This is shown in fig c. If the load is further increased stress at all fibers becomes σᵧ as shown in fig d. This fig d is in plastic condition meaning whole section has reached plastic state σ=σᵧ   throughout the cross section. The moment at section where plastic condition has reached is called plastic moment (Mₚ) and the section is called plastic hinge section (in other words, plastic hinge has formed at that section). On any further increase on load, moment at the section remains constant at Mₚ and now behaves similar to normal internal hinge.</p>
             <div className='img-flex'>
-                <p> Let’s assume the load was initially small so that stress at outermost fiber σ&lt;σᵧ where σᵧ is the yield stress. This is represented in fig a. Now as the load increases stress at outermost fiber reaches σᵧ as shown in fig b. Now on increasing load further, outermost stress remains constant at σ=σᵧ (this is because of our assumed stress strain diagram) and stress at inner fibers increase to σᵧ. This is shown in fig c. If the load is further increased stress at all fibers becomes σᵧ as shown in fig d. This fig d is in plastic condition meaning whole section has reached plastic state σ=σᵧ   throughout the cross section. The moment at section where plastic condition has reached is called plastic moment (Mₚ) and the section is called plastic hinge section (in other words, plastic hinge has formed at that section). On any further increase on load, moment at the section remains constant at Mₚ and now behaves similar to normal internal hinge.</p>
+
                 <div><img src='/images/nonlinear/plastic-stress.PNG' alt="formation of plastic hinge" /></div>
             </div>
             <p>Now we can easily calculate plastic moment using simple statics. But we won't do it right now because ETABS will automatically do that for us. If you want in depth explanation about <em>plastic analysis</em> , please let me know in the comment section below. If we are doing it in ETABS or any analysis software, we only have to input the stress strain diagram (or load deflection curve), like the elasto-plastic curve shown in first figure above. In ETABS there are options to generate auto hinge property based on ASCE 41-17 which will automatically create load deflection curve and so simplify the task.</p>
@@ -113,14 +117,14 @@ function Blog4() {
                 <li>If you see the curve carefully, you will see the curve is first straight line (linear part), then at step 1, the slope of curve reduces (meaning stiffness decreases) and on going further, slope reduces further. </li>
                 <li>We can also see the hinge results for each hinge assignment. This shows how far in the backbone curve, moment has reached for the respective hinge, and so gives the idea about the level of damage in the particular hinge location.</li>
             </ul>
-
-            <h3>5. Conclusion</h3>
+            <h3>5. Obtain the performance point</h3>
+            <h2>Conclusion</h2>
             <ul>
                 <li>First I want to congratulate you if you followed the steps or got everything explained here.</li>
                 <li>The pushover curve that we obtained is the capacity curve, not the demand curve. Note that we never applied the specific seismic load. </li>
                 <li>If we integrate the demand curve (i.e. response spectrum function) with capacity curve, the point of intersection of these two curves is known as performance point which is the estimated maximum displacement of the structure for given response spectrum.</li>
-                <li>One method of achieving this is capacity spectrum method. We will see this in detail next time. Lastly I would like to emphasize that learning non-linear analysis would take some time and effort from you.</li>
-                <li>This article is meant to be the foundation for further studies and I will be continuing this next time.</li>
+
+                <li>This article is meant to be the foundation for further studies on performance based design which is still a evolving field.</li>
             </ul>
 
             <hr />

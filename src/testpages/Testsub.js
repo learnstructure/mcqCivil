@@ -15,7 +15,8 @@ import { dataDrawing } from '../data/dataDrawing'
 import Test from './Test'
 import Timer from './Timer'
 import { dataProfessional } from '../data/dataProfessional'
-import { dataGk } from '../data/dataGk'
+import { dataGkGeography } from '../data/dataGkGeography'
+import { dataGkOrganization } from '../data/dataGkOrganization'
 import { createContext } from 'react'
 export const TestContext = createContext()
 function Testsub() {
@@ -53,7 +54,7 @@ function Testsub() {
             case "professional":
                 return generateRandom(dataProfessional, 15)
             case "gk":
-                return generateRandom(dataGk, 15)
+                return [...generateRandom(dataGkGeography, 10), ...generateRandom(dataGkOrganization, 5)]
             default:
                 return [...generateRandom(dataSOM, 4), ...generateRandom(dataStructure, 4), ...generateRandom(dataRCC, 5), ...generateRandom(dataGeotechnical, 5), ...generateRandom(dataSurveying, 5),
                 ...generateRandom(dataBuildingMat, 5), ...generateRandom(dataEstimating, 4), ...generateRandom(dataConstructionManagement, 5), ...generateRandom(dataEconomics, 5), ...generateRandom(dataDrawing, 5), ...generateRandom(dataProfessional, 3)]

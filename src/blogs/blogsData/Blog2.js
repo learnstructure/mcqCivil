@@ -9,7 +9,10 @@ function Blog2() {
                 <meta name="description" content="Differences between various types of diaphragms in ETABS" />
             </Helmet>
             <h1>What are actually rigid, semi-rigid and no diaphragm in ETABS? And which one to assign?</h1>
-
+            <div className='author'>
+                <div>Author: Abinash Mandal</div>
+                <div>Date: March, 2023</div>
+            </div>
             <h2>Rigid diaphragm</h2>
             <p>Well diaphragms are constraints applied in a floor system which are implemented in almost every analysis software like ETABS, SAP2000, STAAD Pro, MIDAS and so on.
             </p>
