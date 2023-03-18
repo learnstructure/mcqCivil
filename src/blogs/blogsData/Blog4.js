@@ -14,29 +14,7 @@ function Blog4() {
                 <div>Author: Abinash Mandal</div>
                 <div>Date: March, 2023</div>
             </div>
-            <p>This is second part of the series on introduction to displacement based design approach. Pushover analysis is a method of displacement based design approach. <Link to='/structural-engineering/What-is-displacement-based-design-approach' >The first part</Link> contains theory part and this part contains implementation of pushover analysis on ETABS. </p>
-            <h2>Introduction</h2>
-            <p>Pushover analysis is the <em>non-linear static </em>analysis. Non-linear means if we draw graph between load and displacement, the curve won't be straight line passing through the origin unlike in linear analysis. And by static means load doesn't change with time </p>
-            <p>Basically non-linearity can be of two types. They are material non-linearity and geometric non-linearity. Material non-linearity means the fundamental stress-strain diagram of the material is non-linear and so this non-linearity is on <strong>material</strong> level. One example of such non-linearity (which we all are familiar with since taking fundamental course on theory of structures in college) is formation of plastic hinge.</p>
-            <p>The second type, i.e. geometric non-linearity is on the <strong>member</strong> level. One example of such (which we all are familiar with) is P-Δ effect. </p>
-            <p>In this article we will focus on <em>material non-linearity </em> and we will discuss geometric non-linearity some other time.</p>
-            <p>Now back to the topic, <strong>pushover analysis means application of loads in steps</strong>. Loads are applied in steps because the stiffness of the member usually reduces at each step due to formation of cracks or plastic hinges. If the stiffness would not change along the way, this would be same as linear analysis.
-                Pushover analysis helps to see the behavior of structure during earthquake, i.e. how the plasticity develops in it. It is one of the method of performance based design approach.</p>
-            <h2> Plastic hinges</h2>
-            <p>To understand pushover analysis, understanding plastic hinges is very important. So let's review (what we already learnt in college) how plastic hinges form for elasto-plastic curve and homogeneous material.
-                The elasto-plastic stress strain curve is simplified form of complex curve and this looks like as shown in figure below.
-            </p>
-            <p>Let us suppose a simply supported beam of length L is subjected to uniformly distributed load (udl) of w as shown in figure aside. The figure also shows the bending stress distribution with maximum at outer fibers and zero at neutral axis. Bending stress is σ=(M/I) y</p>
-            <div className='img-flex'>
-                <div><img src='/images/nonlinear/stress-strain.PNG' alt="stress strain curve" /></div>
-                <div><img src='/images/nonlinear/bending-stress.PNG' alt="beam and bending stress" /></div>
-            </div>
-            <p> Let’s assume the load was initially small so that stress at outermost fiber σ&lt;σᵧ where σᵧ is the yield stress. This is represented in fig a. Now as the load increases stress at outermost fiber reaches σᵧ as shown in fig b. Now on increasing load further, outermost stress remains constant at σ=σᵧ (this is because of our assumed stress strain diagram) and stress at inner fibers increase to σᵧ. This is shown in fig c. If the load is further increased stress at all fibers becomes σᵧ as shown in fig d. This fig d is in plastic condition meaning whole section has reached plastic state σ=σᵧ   throughout the cross section. The moment at section where plastic condition has reached is called plastic moment (Mₚ) and the section is called plastic hinge section (in other words, plastic hinge has formed at that section). On any further increase on load, moment at the section remains constant at Mₚ and now behaves similar to normal internal hinge.</p>
-            <div className='img-flex'>
-
-                <div><img src='/images/nonlinear/plastic-stress.PNG' alt="formation of plastic hinge" /></div>
-            </div>
-            <p>Now we can easily calculate plastic moment using simple statics. But we won't do it right now because ETABS will automatically do that for us. If you want in depth explanation about <em>plastic analysis</em> , please let me know in the comment section below. If we are doing it in ETABS or any analysis software, we only have to input the stress strain diagram (or load deflection curve), like the elasto-plastic curve shown in first figure above. In ETABS there are options to generate auto hinge property based on ASCE 41-17 which will automatically create load deflection curve and so simplify the task.</p>
+            <p>This is second part of the series on introduction to displacement based design approach. Pushover analysis is a method of displacement based design approach. The <Link to='/structural-engineering/What-is-displacement-based-design-approach' >first part</Link> contains theory part and this part contains implementation of pushover analysis on ETABS. </p>
 
             <h2>Implementation in ETABS</h2>
             <h3>1. Modelling and initial design</h3>
@@ -112,19 +90,36 @@ function Blog4() {
             </ul>
             <img src='/images/nonlinear/pushover.PNG' alt="push over curve" style={{ maxWidth: "100%" }} />
             <ul>
-                <li>As we go through the steps, we will see some colored dots at location of hinges defined in step 2 denoting acceptance criteria. Acceptance criteria was automatically defined by ETABS when defining hinges. This represents level of damage we could allow in the structures. There are generally three acceptance criteria, namely immediate occupancy, life safety and collapse prevention. If you are not familiar with these terms, please wait for part 2 of this article.</li>
-                <li>Let's check the base shear. Go to display &gt; static base shear. This displays base shear curve as shown in figure above.</li>
+                <li>As we go through the steps, we will see some colored dots at location of hinges defined in step 2 denoting acceptance criteria. Acceptance criteria was automatically defined by ETABS when defining hinges. This represents level of damage we could allow in the structures. There are generally three acceptance criteria, namely immediate occupancy, life safety and collapse prevention. These are explained in more detail in part 1.</li>
+                <li>Let's check the base shear. Go to display &gt; static pushover curve. This displays base shear curve as shown in figure above.</li>
                 <li>If you see the curve carefully, you will see the curve is first straight line (linear part), then at step 1, the slope of curve reduces (meaning stiffness decreases) and on going further, slope reduces further. </li>
                 <li>We can also see the hinge results for each hinge assignment. This shows how far in the backbone curve, moment has reached for the respective hinge, and so gives the idea about the level of damage in the particular hinge location.</li>
             </ul>
             <h3>5. Obtain the performance point</h3>
-            <h2>Conclusion</h2>
+            <ul>
+                <li>Again, go to display &gt; static pushover curve</li>
+                <li>Change plot type as FEMA 440 EL. Set load case as non linear case that you defined. In my case its NL-x (non linear load case in x direction).</li>
+                <li>Spectrum source is important. By default its set to ASCE 7-10 General. Change this to response spectrum function as per your requirement. Here I have set it to be IS-2016 (IS 1893 2016) as shown in figure below. You can define this by going to Define &gt; Functions &gt; Response Spectrum</li>
+            </ul>
+            <img src='/images/nonlinear/target.PNG' alt="push over curve" style={{ maxWidth: "100%" }} />
+            <ul>
+                <li>Spectrum source is due to the earthquake that is likely to occur in your location. This plots demand spectrum in the plot (red line as shown in figure).</li>
+                <li>I have set SF (scale factor) as 9810 because response spectrum function given in IS code is relative to g.</li>
+                <li>ETABS now shows performance point (in my case 60.6 mm). This is the peak value of displacement that is likely to occur during <strong>this earthquake</strong>. </li>
+                <li>If the magnitude of earthquake is increased, then this peak displacement increases (which is obvious). This can be quickly seen by increasing the scale factor and refreshing the window. </li>
+                <li>From the diagram we show that performance point for this earthquake is at 4th step. That means  four stages of plastic deformation will be seen for this earthquake. To see the locations, go to deformed shape and switch to 4th step. This will show the location of plastic deformations graphically.</li>
+                <li>In the same deformed shape, ETABS shows color coding for the extent of inelastic deformation at 4th step (which is corresponding to earthquake I have defined). In my case color shown is green dot. This means beyond immediate occupancy but within the life safety level.</li>
+                <li>You can also see the hinge result in more detail by going to Display &gt; hinge results and selecting the appropriate hinge. If you increase the step, a blue dot will move down the backbone curve showing the extent of deformation.</li>
+            </ul>
+            <h3>6. Conclusion</h3>
             <ul>
                 <li>First I want to congratulate you if you followed the steps or got everything explained here.</li>
-                <li>The pushover curve that we obtained is the capacity curve, not the demand curve. Note that we never applied the specific seismic load. </li>
+                <li>The pushover curve that we obtained is the capacity curve, not the demand curve. </li>
                 <li>If we integrate the demand curve (i.e. response spectrum function) with capacity curve, the point of intersection of these two curves is known as performance point which is the estimated maximum displacement of the structure for given response spectrum.</li>
-
-                <li>This article is meant to be the foundation for further studies on performance based design which is still a evolving field.</li>
+                <li>We can see the extent of inelastic deformation, the structure is likely to undergo for the selected earthquake. And in this way, we can check for the acceptance criteria. </li>
+                <li>Finally we can design the structure for the demand forces and displacements corresponding to the performance point or target displacement. But this is beyond the scope of this study.</li>
+                <li>One important thing to realize is that using pushover analysis really gave us a power to see how the structure behaves during a earthquake (i.e. to see the location and extent of inelastic deformation and to check the acceptance criteria) which was not possible in traditional code based method (which is essentially a force based method).</li>
+                <li>This article is meant to be the foundation for further studies on performance based design which is a very rapidly evolving field.</li>
             </ul>
 
             <hr />

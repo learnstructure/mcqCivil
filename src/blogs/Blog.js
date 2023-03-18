@@ -15,7 +15,7 @@ function Blog() {
             </Helmet>
 
             {blog.map(blog => {
-                /* const urlId = (blog.title).replaceAll(/[./?°:%,*_+'";]/g, "").replace(/[¹²³⁴ᵗʰʳᵈˢᵗ]/g, "").replaceAll(' ', '-').replaceAll('  ', '-'); */
+
                 return (<div key={blog.id} className="blog-container-one" >
                     <h1>{blog.title}</h1>
                     <div className='img-flex'>

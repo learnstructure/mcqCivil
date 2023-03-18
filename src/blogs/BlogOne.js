@@ -8,13 +8,14 @@ function BlogOne() {
     const params = useParams().id
 
     const myBlog = blog.find(obj => obj.id === params)
+    //console.log(myBlog)
     return (
         <>
             {myBlog.content}
             <div className='blog-container'>
                 <p>Hope this was helpful. Thanks for reading. ❤️</p>
 
-                <BlogComment id={params} />
+                <BlogComment id={myBlog.id} />
             </div>
         </>
     )

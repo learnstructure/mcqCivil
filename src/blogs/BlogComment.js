@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './css/blog.css'
 import { Link } from 'react-router-dom'
 import { db } from '../firebase/firebaseConfig'
-import { addDoc, collection, getDocs, serverTimestamp/* , Timestamp, query, where, orderBy  */ } from 'firebase/firestore'
+import { addDoc, collection, getDocs, serverTimestamp, query, orderBy } from 'firebase/firestore'
 
 
 function BlogComment({ id }) {
@@ -39,11 +39,11 @@ function BlogComment({ id }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const querySnapshot = await getDocs(collection(db, "blog", id, "comments"));
-                /* const commentsRef = collection(db, "blog", id, "comments");
+                //const querySnapshot = await getDocs(collection(db, "blog", id, "comments"));
+                const commentsRef = collection(db, "blog", id, "comments");
                 const q = query(commentsRef, orderBy("timestamp", "asc"));
-                const querySnapshot = await getDocs(q); */
-
+                const querySnapshot = await getDocs(q);
+                setDiscussion([])
                 if (!querySnapshot.empty) {
                     querySnapshot.forEach(doc => {
                         var userName = doc.data().name;
