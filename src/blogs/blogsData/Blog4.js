@@ -67,7 +67,7 @@ function Blog4() {
             <ul>
                 <li>The screenshot of nonlinear load case definition is shown above. Choose load case type as <strong>nonlinear</strong>  static</li>
                 <li>For the sake of simplicity, choose initial conditions as zero initial conditions. In actual project, there will be dead and live load already which you can choose if you want. But you have to create a new nonlinear load case with dead and specified live load and only then you can select that here.</li>
-                <li>Inside loads applied, choose acceleration as load type. If you want to perform non-linear analysis for known value of loads, you can choose load pattern as load type and select the required loads with suitable scale factors</li>
+                <li>Inside loads applied, choose acceleration as load type. If you want to perform non-linear analysis for known value of loads, you can choose load pattern as load type and select the required loads with suitable scale factors. Or you may want to apply load pattern according to mode shape. For low rise building where first mode is most dominant, you may choose 1st mode only. But for medium to high rise building where contribution from higher modes are significant, you may have to perform multi-mode pushover analysis.</li>
                 <li>Scale factor is given -1 value, so the base shear curve will be shown on positive quadrant.</li>
                 <li>Click on modify/show which is on right of load application.</li>
 
