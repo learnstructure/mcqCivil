@@ -14,6 +14,10 @@ function BlogOne() {
             {myBlog.content}
             <div className='blog-container'>
                 <p>Hope this was helpful. Thanks for reading. ❤️</p>
+                <p>
+                    Join our <a href='https://t.me/mcq_civilengineering' target="_blank" className='ext-link'>Telegram</a> channel to get updates and to make request about the contents.
+
+                </p>
 
                 <BlogComment id={myBlog.id} />
             </div>

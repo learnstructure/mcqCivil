@@ -840,6 +840,447 @@ const dataGkOrganization = [
         optionD: "7",
         correct: "c"
     },
+    {
+        question: "How many organs are there in UNO?",
+        optionA: "4",
+        optionB: "5",
+        optionC: "6",
+        optionD: "7",
+        correct: "c"
+    },
+
+    {
+        question: "Which is the principle or chief organ of UNO?",
+        optionA: "Secretariat",
+        optionB: "Security Council",
+        optionC: "General Assembly",
+        optionD: "Economic and Social",
+        correct: "c"
+    },
+    {
+        question: "Which coordinates the different activities of specialized agencies of UNO?",
+        optionA: "Secretariat",
+        optionB: "Security Council",
+        optionC: "General Assembly",
+        optionD: "Economic and Social Council",
+        correct: "d"
+    },
+    {
+        question: "Which is the inactive organ of UNO?",
+        optionA: "Secretariat",
+        optionB: "Security Council",
+        optionC: "General Assembly",
+        optionD: "Trusteeship Council",
+        correct: "d"
+    },
+    {
+        question: "The first meeting of UN General Assembly was held in",
+        optionA: "1945 October 24",
+        optionB: "1946 January 10",
+        optionC: "1947 October 20",
+        optionD: "1958 March 04",
+        correct: "b"
+    },
+    {
+        question: "When is the General Assembly of United nations held?",
+        optionA: "Third Tuesday of August, every year",
+        optionB: "Third Tuesday of September, every year",
+        optionC: "Third Tuesday of May, every year",
+        optionD: "Third Tuesday of June, every year",
+        correct: "b",
+    },
+    {
+        question: "Who was the president of 76th General Assembly of UNO?",
+        optionA: "Abdulla Sahid",
+        optionB: "Aayatolla Khameni",
+        optionC: "Christain Tenek",
+        optionD: "Maria Espinosa",
+        correct: "a"
+    },
+    {
+        question: "Who is the first Nepalese to participate in UN General  Assembly?",
+        optionA: "Tanka Prasad Acharya",
+        optionB: "Madhuraman Acharya",
+        optionC: "Chuda Prasad Sharma",
+        optionD: "Bhagirath Ingnam",
+        correct: "c"
+    },
+    {
+        question: "How many members are there in Security Council?",
+        optionA: "10",
+        optionB: "15",
+        optionC: "20",
+        optionD: "25",
+        correct: "b"
+    },
+    {
+        question: "Which of the following country is not a member of Permanent Security Council?",
+        optionA: "France",
+        optionB: "Russia",
+        optionC: "China",
+        optionD: "Japan",
+        correct: "d"
+    },
+    {
+        question: "Which country is the first veto power user in the world?",
+        optionA: "USA",
+        optionB: "UK",
+        optionC: "Russia",
+        optionD: "China",
+        correct: "b"
+    },
+    {
+        question: "Nepal has been the member of UN Temporary Security Council for ... times",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "4",
+        correct: "b"
+    },
+    {
+        question: "How many countries represent in UN Temporary Security Council from Africa and Asia continent (Afro-Asia)?",
+        optionA: "5",
+        optionB: "6",
+        optionC: "4",
+        optionD: "3",
+        correct: "a"
+    },
+    {
+        question: "How many judges are there in International Court of justice (ICJ)?",
+        optionA: "5",
+        optionB: "10",
+        optionC: "15",
+        optionD: "20",
+        correct: "c"
+    },
+    {
+        question: "Who appoints the judges of International Court of Justice?",
+        optionA: "General Assembly",
+        optionB: "Security Council",
+        optionC: "Secretariat",
+        optionD: "none",
+        correct: "a"
+    },
+    {
+        question: "What is the term of office of judges of International court of justice?",
+        optionA: "3 year",
+        optionB: "6 year",
+        optionC: "9 year",
+        optionD: "10 year",
+        correct: "c"
+    },
+    {
+        question: "Where is the International court of justice?",
+        optionA: "Tokyo (Japan)",
+        optionB: "Amsterderm (Netherlands)",
+        optionC: "Hague (Netherlands)",
+        optionD: "London (UK)",
+        correct: "c"
+    },
+    {
+        question: "How many members are there in Economic and Social Council(ECOSOC)?",
+        optionA: "54",
+        optionB: "55",
+        optionC: "56",
+        optionD: "59",
+        correct: "a"
+    },
+    {
+        question: "Who is the first Deputy Secretary General of UN?",
+        optionA: "Trygve Lee",
+        optionB: "Ban Ki Moon",
+        optionC: "Antonio Gutteres",
+        optionD: "Louis Freshet",
+        correct: "d"
+    },
+    {
+        question: "Which of the following statement is false?",
+        optionA: "The term of the office of secretary general of UNO is 5 years.",
+        optionB: "The secretary general of UNO cannot participate in ICJ activities.",
+        optionC: "The first Secretary General of UNO is Trygve Lee.",
+        optionD: "UN University lies in USA",
+        correct: "d"
+    },
+    {
+        question: "Dagg Hammarskjold library lies in",
+        optionA: "USA",
+        optionB: "Japan",
+        optionC: "UK",
+        optionD: "Russia",
+        correct: "a"
+    },
+    {
+        question: "Which of the following secretary general have received Nobel Peace Prize?",
+        optionA: "Dagg Hammarskjold",
+        optionB: "Uthan T",
+        optionC: "Kofi Annan",
+        optionD: "Both a and c",
+        correct: "d"
+    },
+    {
+        question: "Secretary who presented a report called Quiet revolution to strengthen the security system of UNO is",
+        optionA: "Kofi Annan",
+        optionB: "Dagg Hammarskjold",
+        optionC: "Antonio Guterres",
+        optionD: "Uthan T",
+        correct: "a"
+    },
+    {
+        question: "Which agency of UNO has received Nobel Peace Prize for two times?",
+        optionA: "UNHCR",
+        optionB: "UNICEF",
+        optionC: "ILO",
+        optionD: "WFP",
+        correct: "a"
+    },
+    {
+        question: "Who is the first secretary general of UNO to visit NEpal?",
+        optionA: "Uthan T",
+        optionB: "Xavier perez",
+        optionC: "Ban-ki-moon",
+        optionD: "Kofi Annan",
+        correct: "a"
+    },
+    {
+        question: "First secretary general from African Continent is",
+        optionA: "Kofi Annan",
+        optionB: "Boutros Boutros Ghali",
+        optionC: "Javier perez",
+        optionD: "Kurt Waldheim",
+        correct: "b"
+    },
+    {
+        question: "First Specialized agency of UNO is",
+        optionA: "FAO",
+        optionB: "ILO",
+        optionC: "UPU",
+        optionD: "ITU",
+        correct: "b"
+    },
+    {
+        question: "Which of the following organization is not the specialized agency of UNO?",
+        optionA: "International Monetary Fund",
+        optionB: "World Bank",
+        optionC: "World Trade organization",
+        optionD: "World Tourism Organization",
+        correct: "c"
+    },
+    {
+        question: "Where is the headquarter of International Labor Organization (ILO)?",
+        optionA: "Geneva",
+        optionB: "Rome",
+        optionC: "Paris",
+        optionD: "Washington DC",
+        correct: "a"
+    },
+    {
+        question: "Where is the headquarter of UNICEF?",
+        optionA: "Geneva",
+        optionB: "Roma",
+        optionC: "New York",
+        optionD: "Washington DC",
+        correct: "c"
+    },
+    {
+        question: "UN Armies are known as",
+        optionA: "Blue Helmets",
+        optionB: "Red Helmets",
+        optionC: "White Helmets",
+        optionD: "Green Helmets",
+        correct: "a"
+    },
+    {
+        question: "When did UNO officially create the Department of Peacekeeping Operations (DPKO)?",
+        optionA: "1990",
+        optionB: "1991",
+        optionC: "1992",
+        optionD: "1993",
+        correct: "c"
+    },
+    {
+        question: "Bretton Woods Agreement is related to",
+        optionA: "ADB",
+        optionB: "WTO",
+        optionC: "World Bank",
+        optionD: "IDA",
+        correct: "c"
+    },
+    {
+        question: "Which specialized agency of UN has conducted Structural Adjustment Program (SAP)?",
+        optionA: "IMF",
+        optionB: "World Bank",
+        optionC: "FAO",
+        optionD: "Both a and b",
+        correct: "d"
+    },
+    {
+        question: "When did Nepal become member of World Trade Organization (WTO)?",
+        optionA: "2004 April 23",
+        optionB: "2005 April 23",
+        optionC: "2006 April 23",
+        optionD: "2007 April 23",
+        correct: "a"
+    },
+    {
+        question: "Which organ of UNO ratifies the budget of UNO for 2 years?",
+        optionA: "General Assembly",
+        optionB: "Security Council",
+        optionC: "Economic and Social Council",
+        optionD: "Secretariat",
+        correct: "a"
+    },
+    {
+        question: "The Marrakesh Agreement is related to",
+        optionA: "ADB",
+        optionB: "WTO",
+        optionC: "World Bank",
+        optionD: "None of the above",
+        correct: "b"
+    },
+    {
+        question: "Which agency of UNO has contributed the most in the conservation and protection of arts, culture and heritages of Nepal?",
+        optionA: "UNICEF",
+        optionB: "WIPO",
+        optionC: "IAEA",
+        optionD: "UNESCO",
+        correct: "d"
+    },
+    {
+        question: "Special Drawing Rights (SDR) issued by International Monetary Fund is called",
+        optionA: "Paper currency",
+        optionB: "Paper Gold",
+        optionC: "Paper Money",
+        optionD: "Paper dollar",
+        correct: "b"
+    },
+    {
+        question: "Which of the following agency of UN has not received Nobel Peace Prize?",
+        optionA: "UNHCR",
+        optionB: "UNICEF",
+        optionC: "ILO",
+        optionD: "WHO",
+        correct: "d"
+    },
+    {
+        question: "Where is the headquarter of IMF?",
+        optionA: "Manila",
+        optionB: "Rome",
+        optionC: "New York",
+        optionD: "Washington DC",
+        correct: "d"
+    },
+    {
+        question: "Who is the Secretary General of UN to die in air plane crash?",
+        optionA: "Tryug Vee Lee",
+        optionB: "Ban Ki Moon",
+        optionC: "Antonio Guttress",
+        optionD: "Dagg Hammarskjold",
+        correct: "d"
+    },
+    {
+        question: "How many official languages are spoken in UNO?",
+        optionA: "3",
+        optionB: "4",
+        optionC: "5",
+        optionD: "6",
+        correct: "d"
+    },
+    {
+        question: "Which is the only country of SAARC that has not been the member of World Trade Organization?",
+        optionA: "Bhutan",
+        optionB: "Bangladesh",
+        optionC: "Nepal",
+        optionD: "Afghanistan",
+        correct: "a"
+    },
+    {
+        question: "Which of the following is not the component of World Bank?",
+        optionA: "IBRD",
+        optionB: "IDA",
+        optionC: "IFC",
+        optionD: "AIIB",
+        correct: "d"
+    },
+    {
+        question: "What is the term of the president of the UN General Assembly?",
+        optionA: "1 year",
+        optionB: "2 year",
+        optionC: "3 year",
+        optionD: "4 year",
+        correct: "a"
+    },
+    {
+        question: "What is the term of a non-permanent member of the Security Council?",
+        optionA: "1 year",
+        optionB: "2 year",
+        optionC: "3 year",
+        optionD: "4 year",
+        correct: "b"
+    },
+    {
+        question: "The agency of UNO concerned with the improvement of standards of education and strengthening international co-operation in this field is",
+        optionA: "UNEP",
+        optionB: "UNESCO",
+        optionC: "UNICEF",
+        optionD: "UNIDO",
+        correct: "b"
+    },
+    {
+        question: "Which specialized agency of UNO lists world heritage sites?",
+        optionA: "UNICEF",
+        optionB: "UNESCO",
+        optionC: "ICAO",
+        optionD: "IAEA",
+        correct: "b"
+    },
+    {
+        question: "On which date did the UN adopt the Universal Declaration of Human rights?",
+        optionA: "1948 January 10",
+        optionB: "1948 September 10",
+        optionC: "1948 May 10",
+        optionD: "1948 December 10",
+        correct: "d"
+    },
+    {
+        question: "General Assembly of the UNO meets in a regular session of",
+        optionA: "once a year",
+        optionB: "Twice a year",
+        optionC: "Once a 2 year",
+        optionD: "when required",
+        correct: "a"
+    },
+    {
+        question: "The non-permanent members of the Security Council are elected for a period of",
+        optionA: "Two years",
+        optionB: "one year",
+        optionC: "Three years",
+        optionD: "four year",
+        correct: "a"
+    },
+    {
+        question: "When was Nepal elected as the Vice President by the UN General Assembly?",
+        optionA: "2022 June 5",
+        optionB: "2022 June 6",
+        optionC: "2022 June 7",
+        optionD: "2022 June 8",
+        correct: "d"
+    },
+    {
+        question: "Who has been elected the new president for 77th UN General Assembly?",
+        optionA: "Shimer Homer",
+        optionB: "Csaba Corosi",
+        optionC: "Swenstiger James",
+        optionD: "Al Hamid Huma Khuresi",
+        correct: "b"
+    },
+    {
+        question: "Which agency of UNO has contributed the most in the conservation and preservation of cultural heritage of the world?",
+        optionA: "UNICEF",
+        optionB: "UNESCO",
+        optionC: "UNIDOF",
+        optionD: "UNDP",
+        correct: "b"
+    },
 
     /* {
         question: "",

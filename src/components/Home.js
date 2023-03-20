@@ -12,6 +12,10 @@ function Home() {
                 <meta name="description" content={"Practise civil engineering multiple choice questions as well as the general knowledge questions based on PSC Loksewa Nepal at one place for free. You can ask any confusions to the experts in discussion."} />
             </Helmet>
             <section className='home-body'>
+                <div>
+                    Join our <a href='https://t.me/mcq_civilengineering' target="_blank" className='ext-link'>Telegram</a> channel to get updates and to make request about the contents.
+
+                </div>
                 <div >
                     <h2 className='focusText'>Let's <span style={{ color: "green" }}>Crack</span> Civil Engineering Competitive <span style={{ color: "green" }}>Exams</span></h2>
                     <p>Prepare for your civil engineering exams with our collection of multiple choice questions.</p>

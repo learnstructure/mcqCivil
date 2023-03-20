@@ -31,3 +31,16 @@
     text-shadow: 1px 1px 2px #999;
     line-height: 1.2;
 }
+
+.ext-link {
+    padding: 0.3rem 0.5rem;
+    background-color: rgb(47, 141, 130);
+    color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    text-decoration: none;
+    border-radius: 0.2rem;
+}
+
+.ext-link:hover {
+    background-color: rgb(34, 100, 92);
+}
