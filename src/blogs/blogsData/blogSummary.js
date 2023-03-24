@@ -3,7 +3,16 @@ import Blog2 from './Blog2'
 import Blog3 from './Blog3'
 import Blog4 from './Blog4'
 import Blog5 from './Blog5'
+import Blog6 from './Blog6'
 const blog = [
+    {
+
+        title: "What is membrane and shell in ETABS and which one to assign?",
+        preview: "This is part 1 of displacement based design approach. In displacement based design philosophy, the process is opposite to what we saw in force based design. Here the displacement demands are calculated using non-linear analysis and displacement capacities are ensured to allow those deformation demands. Displacement capacities are calculated using methods like capacity spectrum method, displacement coefficient method, etc.",
+        image: '/images/nonlinear/acceptance.PNG',
+        imageAlt: 'acceptance criteria',
+        content: <Blog6 />
+    },
     {
 
         title: "What is displacement based design approach?",
@@ -44,14 +53,6 @@ const blog = [
         imageAlt: 'shear force and stress',
         content: <Blog3 />
     },
-
-    /*
-   {
-       id: 3,
-       title: "new blog 3",
-       preview: "this is my third blog",
-       content: <Blog1 />
-   }, */
 
 ]
 export default blog
