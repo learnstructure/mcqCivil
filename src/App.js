@@ -19,6 +19,9 @@ import SharedLayout from './sharedLayouts/SharedLayout';
 import Testsub from './testpages/Testsub';
 import SharedBlog from './sharedLayouts/SharedBlog';
 
+import Calculator from './structure-tools/Calculator';
+import CalculatorNav from './structure-tools/CalculatorNav';
+
 
 function App() {
 
@@ -37,6 +40,9 @@ function App() {
           <Route index element={<Blog />} />
           <Route path=":id" element={<BlogOne />} />
         </Route>
+
+        <Route path='/structure-calculator' element={<Calculator />}></Route>
+        <Route path='/structure-calculator/:module' element={<CalculatorNav />}></Route>
 
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/test/:subject' element={<Testsub />}></Route>

@@ -1,0 +1,41 @@
+.calc-container {
+    /* border: 1px solid rgb(127, 124, 130); */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 1rem;
+    display: flex;
+    padding-right: auto;
+}
+
+.params {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    row-gap: 0.3rem;
+}
+
+.param-label {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.params input {
+    text-align: center;
+}
+
+
+.input-number {
+    width: 4rem;
+    height: 1.5rem;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .calc-container {
+        flex-direction: column;
+    }
+
+    .params {
+        margin-right: auto;
+    }
+}
