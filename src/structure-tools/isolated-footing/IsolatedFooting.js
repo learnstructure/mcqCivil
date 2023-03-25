@@ -5,7 +5,7 @@ export const FootingParams = createContext()
 
 function IsolatedFooting() {
     const [result, setResult] = useState(null)
-    const [params, setParams] = useState({ a: 0.3, b: 0.1, l: 1.5, h1: 0.45, h2: 0.15, abc: 100, p: 50, mx: 10, my: 10, fy: 500, fck: 20 });
+    const [params, setParams] = useState({ a: 0.3, b: 0.1, l: 1.8, h1: 0.4, h2: 0.15, abc: 100, p: 200, mx: 10, my: 10, fy: 500, fck: 20 });
     const handleChange = (event) => {
         const { name, value } = event.target;
         setParams({ ...params, [name]: value });
@@ -27,7 +27,7 @@ function IsolatedFooting() {
                 </div>
 
                 <form onSubmit={handleSubmit} className='params'>
-                    <label className='param-label'>Loadings</label>
+                    <label className='param-label'>Loadings (unfactored)</label>
 
                     <label>
                         P :
@@ -80,13 +80,13 @@ function IsolatedFooting() {
                     <label className='param-label'>Design Parameters</label>
                     <label>
                         fᵧ :
-                        <input type="number" name="fy" value={params.fy} onChange={handleChange} min="0.05"
-                            step="0.05" className='input-number' /> N/mm²
+                        <input type="number" name="fy" value={params.fy} onChange={handleChange} min="250"
+                            step="10" className='input-number' /> N/mm²
                     </label>
                     <label>
                         f꜀ₖ :
-                        <input type="number" name="fck" value={params.fck} onChange={handleChange} min="0.05"
-                            step="0.05" className='input-number' /> N/mm²
+                        <input type="number" name="fck" value={params.fck} onChange={handleChange} min="5"
+                            step="5" className='input-number' /> N/mm²
                     </label>
                     <button type="submit">Calculate</button>
                 </form>
