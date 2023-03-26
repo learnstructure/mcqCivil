@@ -5,8 +5,8 @@ function Blog3() {
     return (
         <main className='blog-container'>
             <Helmet>
-                <title>Types of forces in structural analysis</title>
-                <meta name="description" content="What actually are axial force, shear force and bending moment?" />
+                <title>What actually are axial force, shear force and bending moment?</title>
+                <meta name="description" content="The distribution of normal and or shear stresses in a specific manner gives rise to specific type of forces, like axial force (tension and compression), shear force, bending moment and torsion." />
             </Helmet>
             <h1>What actually are axial force, shear force and bending moment ? 🤔</h1>
             <div className='author'>

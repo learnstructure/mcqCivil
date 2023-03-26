@@ -1,16 +1,24 @@
 .calc-container {
-    /* border: 1px solid rgb(127, 124, 130); */
+
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 1rem;
     display: flex;
-    padding-right: auto;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+
+.result-container {
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 1rem;
+
 }
 
 .params {
     display: flex;
     flex-direction: column;
     text-align: right;
-    row-gap: 0.3rem;
+    row-gap: 0.5rem;
 }
 
 .param-label {
@@ -28,6 +36,13 @@
     height: 1.5rem;
     font-size: 0.9rem;
     margin-left: 0.5rem;
+    text-align: center;
+}
+
+.dropdown-input {
+    width: auto;
+    padding: 0.1rem;
+    margin: 0 0.3rem;
 }
 
 @media screen and (max-width: 768px) {

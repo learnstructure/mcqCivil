@@ -7,10 +7,10 @@ import Blog6 from './Blog6'
 const blog = [
     {
 
-        title: "What is membrane and shell in ETABS and which one to assign?",
-        preview: "This is part 1 of displacement based design approach. In displacement based design philosophy, the process is opposite to what we saw in force based design. Here the displacement demands are calculated using non-linear analysis and displacement capacities are ensured to allow those deformation demands. Displacement capacities are calculated using methods like capacity spectrum method, displacement coefficient method, etc.",
-        image: '/images/nonlinear/acceptance.PNG',
-        imageAlt: 'acceptance criteria',
+        title: "What is membrane and thin shell in ETABS and which one to assign?",
+        preview: "If you assign membrane shell in ETABS, transverse loads applied on the shell will be transferred to the supporting member using tributary area method. This is in contrast to shell thin where load is transferred by finite element analysis, i.e. by meshing of shells.",
+        image: '/images/shell/moment.PNG',
+        imageAlt: 'moments in shell and membrane',
         content: <Blog6 />
     },
     {

@@ -6,8 +6,8 @@ function Blog5() {
     return (
         <main className='blog-container'>
             <Helmet>
-                <title>Displacement based design</title>
-                <meta name="description" content="What is displacement based design approach?" />
+                <title>What is displacement based design approach?</title>
+                <meta name="description" content="In displacement based design philosophy, the process is opposite to what we saw in force based design. Here the displacement demands are calculated using non-linear analysis and displacement capacities are ensured to allow those deformation demands." />
             </Helmet>
             <h1>What is displacement based design approach?</h1>
             <div className='author'>

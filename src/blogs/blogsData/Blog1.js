@@ -5,8 +5,8 @@ function Blog1() {
     return (
         <main className='blog-container'>
             <Helmet>
-                <title>Response spectrum</title>
-                <meta name="description" content={"Response Spectrum Analysis (RSA) in ETABS SAP2000 Scale factor"} />
+                <title>Response spectrum Analysis in ETABS</title>
+                <meta name="description" content="Response Spectrum Analysis (RSA) in ETABS SAP2000 Scale factor" />
             </Helmet>
             <h1>Response Spectrum Analysis (RSA) in ETABS</h1>
             <div className='author'>
@@ -30,13 +30,7 @@ function Blog1() {
 
             <h2>Implementation in ETABS</h2>
             <p>Response spectrum analysis in ETABS involves the following steps:</p>
-            {/* <ol>
-                <li>Define the design seismic input</li>
-                <li>Define the structural model</li>
-                <li>Define the analysis settings</li>
-                <li>Run the analysis</li>
-                <li>Interpret the results</li>
-            </ol> */}
+
             <h3>1. Model the structure correctly</h3>
             <img src='/images/modelrsa.JPG' alt="3D model of structure" style={{ maxWidth: '100%' }} />
             <p>Making the model is easy. If you are new to ETABS, follow some beginner's videos on youtube</p>

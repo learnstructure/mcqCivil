@@ -5,8 +5,8 @@ function Blog2() {
     return (
         <main className='blog-container'>
             <Helmet>
-                <title>Diaphragms in ETABS</title>
-                <meta name="description" content="Differences between various types of diaphragms in ETABS" />
+                <title>What are actually rigid, semi-rigid and no diaphragm in ETABS? And which one to assign</title>
+                <meta name="description" content="Diaphragms are constraints applied in a floor system which are implemented in almost every analysis software like ETABS, SAP2000, STAAD Pro, MIDAS and so on" />
             </Helmet>
             <h1>What are actually rigid, semi-rigid and no diaphragm in ETABS? And which one to assign?</h1>
             <div className='author'>

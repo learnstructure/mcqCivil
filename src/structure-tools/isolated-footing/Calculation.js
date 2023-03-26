@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import { FootingParams } from './IsolatedFooting'
 
 function Calculation() {
     //bearing check
     const cover = 0.05
-    const dia = 12
+    const [dia, setDia] = useState(12)
+
     const { a, b, h1, h2, l, abc, p, mx, my, fy, fck } = useContext(FootingParams).params
     const sigma_max = (p / Math.pow(l, 2)) * (1.1 + 6 * mx / (p * l) + 6 * my / (p * l))
     const sigma_min = (p / Math.pow(l, 2)) * (1.1 - 6 * mx / (p * l) - 6 * my / (p * l))
@@ -17,8 +18,8 @@ function Calculation() {
     const Astbd_formula = fck * (1 - Math.pow(1 - 4.598 * Mubd / (fck * 1000), 0.5)) / (2 * fy)
     const Astbd_min = 0.0015
     const Astbd = (Astbd_formula < Astbd_min) ? Astbd_min : Astbd_formula
-    const Ast = Astbd * (a + 2 * b) * d * Math.pow(10, 6)
 
+    const Ast = Astbd * (a + 2 * b) * d * Math.pow(10, 6)
     const nbars = 4 * Ast / (Math.PI * dia * dia)
     var spacing = (l * 1000 - 2 * cover) / nbars
     spacing = Math.floor(spacing / 10) * 10
@@ -35,7 +36,15 @@ function Calculation() {
     }
     const v1 = q * x1 * 0.5 * (w1 + l)
     const t1 = v1 / (w1 * d1) / 1000
-    var betta = 0.8 * fck / (6.89 * Astbd * 100)
+    const [spacingProv, setSpacingProv] = useState(300);
+    const [Ast1, setAst1] = useState(3.14 * dia * dia * 0.25 * (1000 / spacingProv + 1) / (d1 * 1000000))
+    const handleSpacingChange = (event) => {
+        setSpacingProv(event.target.value);
+    };
+    useMemo(() => {
+        setAst1(3.14 * dia * dia * 0.25 * (1000 / spacingProv + 1) / (d1 * 1000000))
+    }, [spacingProv, d1, dia])
+    var betta = 0.8 * fck / (6.89 * Ast1 * 100)
     betta = betta < 1 ? 1 : betta
     const tc1 = 0.85 * Math.sqrt(0.8 * fck) * (Math.sqrt(1 + 5 * betta) - 1) / (6 * betta)
 
@@ -61,8 +70,14 @@ function Calculation() {
     const a_ratio = l / a < 2 ? l / a : 2
     const fperm_foot = 0.45 * fck * a_ratio
     const fperm = fperm_col > fperm_foot ? fperm_foot : fperm_col
+
+    const handleDiaChange = (event) => {
+        setDia(event.target.value);
+    };
+
     return (
         <>
+
             <h3>Bearing pressure check</h3>
             <p>Maximum soil pressure = {sigma_max.toFixed(2)} kN/m²
                 {check(sigma_max < abc)}</p>
@@ -78,7 +93,15 @@ function Calculation() {
             <p>Minimum Aₛₜ/bd = {Astbd_min.toFixed(5)}</p>
             <p>Aₛₜ/bd taken = {Astbd.toFixed(5)}</p>
             <p>Aₛₜ = {Ast.toFixed(1)} mm²</p>
-            <p>Spacing required for {dia} mm dia bar = {spacing} mm</p>
+            <p>Spacing required for
+                <select value={dia} onChange={handleDiaChange} className="dropdown-input">
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="16">16</option>
+                    <option value="20">20</option>
+                </select>
+                mm dia bar = {spacing} mm</p>
+            <p>Spacing provided =  <input type="number" value={spacingProv} onChange={handleSpacingChange} min="100" step="5" className='input-number' /> mm <br /><span style={{ color: 'red' }}>{!check(tc1 > t1) ? "Try reducing spacing for passing 1 way shear" : ""}</span></p>
 
             <h3>One way shear check</h3>
             <p>Dist. of critical section from edge of footing = {x1.toFixed(3)} m</p>

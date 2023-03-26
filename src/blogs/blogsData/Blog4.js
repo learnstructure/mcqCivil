@@ -6,8 +6,8 @@ function Blog4() {
     return (
         <main className='blog-container'>
             <Helmet>
-                <title>Pushover analysis in ETABS</title>
-                <meta name="description" content="What is pushover analysis and how to perform it in ETABS?" />
+                <title>What is pushover analysis and how to perform it in ETABS?</title>
+                <meta name="description" content="Loads are applied in steps because the stiffness of the member usually reduces at each step due to formation of cracks or plastic hinges. If the stiffness would not change along the way, this would be same as linear analysis." />
             </Helmet>
             <h1>What is pushover analysis and how to perform it in ETABS?</h1>
             <div className='author'>
