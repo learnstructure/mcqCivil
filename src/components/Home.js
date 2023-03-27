@@ -13,7 +13,7 @@ function Home() {
             </Helmet>
             <section className='home-body'>
                 <p style={{ lineHeight: '1.6' }}>
-                    Join our <a href='https://t.me/mcq_civilengineering' target="_blank" className='ext-link'>Telegram</a> channel to get updates and to make request about the contents.
+                    Join our <a href='https://t.me/civilengineering_structure' target="_blank" className='ext-link' rel="noreferrer">Telegram</a> channel to get updates and to make request about the contents.
                 </p>
                 <div >
                     <h2 className='focusText'>Let's <span style={{ color: "green" }}>Crack</span> Civil Engineering Competitive <span style={{ color: "green" }}>Exams</span></h2>

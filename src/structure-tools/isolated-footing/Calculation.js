@@ -101,7 +101,9 @@ function Calculation() {
                     <option value="20">20</option>
                 </select>
                 mm dia bar = {spacing} mm</p>
-            <p>Spacing provided =  <input type="number" value={spacingProv} onChange={handleSpacingChange} min="100" step="5" className='input-number' /> mm <br /><span style={{ color: 'red' }}>{!check(tc1 > t1) ? "Try reducing spacing for passing 1 way shear" : ""}</span></p>
+            <p>Spacing provided =  <input type="number" value={spacingProv} onChange={handleSpacingChange} min="100" step="5" className='input-number' /> mm <br />
+                {tc1 < t1 && <span style={{ color: 'red' }}>Try reducing spacing for passing 1 way shear</span>}
+            </p>
 
             <h3>One way shear check</h3>
             <p>Dist. of critical section from edge of footing = {x1.toFixed(3)} m</p>
