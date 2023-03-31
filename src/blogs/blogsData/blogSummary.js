@@ -4,7 +4,16 @@ import Blog3 from './Blog3'
 import Blog4 from './Blog4'
 import Blog5 from './Blog5'
 import Blog6 from './Blog6'
+import Blog7 from './Blog7'
 const blog = [
+    {
+
+        title: "What is P-delta analysis and how to perform it?",
+        preview: "We still say this elastic because material has not necessarily reached the plastic range. We call this second order because we are considering the deformed shape while writing the equilibrium equation and so we are actually considering the geometric non-linearity.",
+        image: '/images/pdelta/bmd.PNG',
+        imageAlt: 'p-delta effect',
+        content: <Blog7 />
+    },
     {
 
         title: "What is membrane and thin shell in ETABS and which one to assign?",
