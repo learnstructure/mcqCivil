@@ -8,7 +8,7 @@ function Blog7() {
         <main className='blog-container'>
             <Helmet>
                 <title>What is P-delta analysis and how to perform it?</title>
-                <meta name="description" content="What is P-delta analysis and how to perform it?" />
+                <meta name="description" content="What is P-delta analysis and how to perform it? small and large delta effect" />
             </Helmet>
             <h1>What is P-delta analysis and how to perform it?</h1>
             <div className='author'>
@@ -68,13 +68,21 @@ function Blog7() {
             <p> Again go to Display &gt; Force diagrams &gt; frame forces. Select load case eq-x and component as Moment 3-3. This will show bending moment diagram. Below is the BM at base for p-delta and no p-delta option in my model</p>
             <img src='/images/pdelta/bmcompare.PNG' alt="p delta effect" style={{ maxWidth: '100%' }} />
             <p>Again we can see that bending moment has increased from 103.6 kNm to 112.5 kNm.</p>
+            <h2>P-Δ (large delta) and P-𝛅 (small delta)</h2>
+            <p>Up until this point we only talked about P-Δ where Δ is the lateral deflection at top of column relative to its bottom. So this is also known as global or large delta.</p>
+            <p>In addition to Δ, there is also 𝛅 which is deflection of column locally with respect to reference line connecting end points of column as shown in figure below. </p>
+            <img src='/images/pdelta/local.PNG' alt="small and large p-delta" style={{ maxWidth: '100%' }} />
+            <p>This 𝛅 also causes secondary moments and forces in the frames (in a similar way we saw for Δ) and this is often known as P-𝛅 (small delta) effect. </p>
+            <p>For design of frame structures, we have to consider both P-Δ and P-𝛅 effect. We already included P-Δ effect during analysis in our model as shown in previous heading. Now to capture P-𝛅 effect, we could break the columns at intermediate points but this is not necessary. It is recommended in the manual to capture P-𝛅 (small delta) effect during actual column design by the use of amplification factors as given in code. For example, IS 456 in Cl. 39.7.1 gives the formula to calculate additional moment. This process of including additional moment (P-𝛅 effect) happens automatically in ETABS during the design of columns.</p>
+
             <h2>Conclusion</h2>
             <ul>
-                <li>To summarize, P-Δ effect occurs due to the axial force P in a member which produces secondary moment and other secondary responses in the member which has gone through Δ lateral displacement. </li>
+                <li>P-Δ effect occurs due to the axial force P in a member which produces secondary moment and other secondary responses in the member which has gone through Δ lateral displacement. </li>
                 <li>If the axial force P is compression, it has softening effect, meaning increased moments and displacements. This is common in building structures.</li>
                 <li>If the axial force P is tension, it has stiffening effect, meaning reduced moments and displacements. This occurs in cable structures.</li>
-                <li>One more point I would like to mention is the fact that my model was only 5 story building but the moment seems to have increased by about 8.5% which is high for typical 5 story buildings. Well this happens if the weight of structure (which causes axial load in columns) is high in proportion to the lateral stiffness of the structure. I had intentionally made it so so that we could see some difference. But this shouldn't happen in real projects.</li>
-                <li>To conclude this I would say, it's not necessary to include P-Δ for most common buildings which are upto 3 to 7 story buildings. But if your building is slender like my model and you are not sure, you can always include P-Δ and see the difference. And most importantly your building code says specifically when you have to consider P-Δ effect. </li>
+                <li>I would like to emphasize the fact that my model was only 5 story building but the moment seems to have increased by about 8.5% which is high for typical 5 story buildings. Well this happens if the weight of structure (which causes axial load in columns) is high in proportion to the lateral stiffness of the structure. I had intentionally made it so so that we could see some difference. But this shouldn't happen in real projects.</li>
+                <li>To conclude this I would say, it's not necessary to include P-Δ for most common buildings which are upto 3 to 7 story buildings. But if your building is slender like my model and you are not sure, you can always include P-Δ and see the difference. And most importantly your building code says specifically when and how to consider P-Δ effect. </li>
+                <li>If you have not included P-Δ in your analysis, its important to set <em>Consider P-delta done?</em> to <em>No</em>. You can set this in frame design preference. This way ETABS will try to approximately capture second order effects as given in code.</li>
             </ul>
 
             <hr />
