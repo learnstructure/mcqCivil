@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import blog from '../blogs/blogsData/blogSummary'
+import blog from '../src/blogs/blogsData/blogSummary'
 
 function SharedTool() {
 

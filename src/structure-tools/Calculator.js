@@ -11,6 +11,8 @@ function Calculator() {
             <h2>Welcome to Structure Calculator</h2>
             <p>Design a <Link to="footing">Sloped isolated footing</Link>
             </p>
+            <p>Design a <Link to="rcc-column">RCC Column</Link>
+            </p>
         </main>
     )
 }
