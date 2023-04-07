@@ -1,19 +1,21 @@
 import React, { useState, createContext } from 'react'
 import { Helmet } from 'react-helmet'
 import Calculation from './Calculation';
+import GetInteraction from './GetInteraction';
 export const RccColumnParams = createContext()
 function RccColumn() {
     const [result, setResult] = useState(null)
     const [params, setParams] = useState({ D: 500, B: 300, l: 1.8, pu: 200, mux: 100, muy: 0, fy: 415, fck: 25, nb: 2, nd: 3, dia_b: 25, dia_d: 25, cover: 60.5 });
     const handleChange = (event) => {
-        const { name, value } = event.target;
+        const value = parseFloat(event.target.value)
+        const { name } = event.target;
         setParams({ ...params, [name]: value });
     };
     const handleSubmit = (event) => {
         event.preventDefault();
         //console.log("Form values:", params);
         setResult(<RccColumnParams.Provider value={{ params }} >
-            <Calculation />
+            <GetInteraction />
         </RccColumnParams.Provider>)
 
     };
@@ -68,8 +70,8 @@ function RccColumn() {
                     <label className='param-label'>Rebar Parameters</label>
                     <label>
                         Effective Cover :
-                        <input type="number" name="cover" value={params.cover} onChange={handleChange} min="1"
-                            step="0.1" className='input-number' /> mm
+                        <input type="number" name="cover" value={params.cover} onChange={handleChange} min="10"
+                            step="0.5" className='input-number' /> mm
                     </label>
                     <label>
                         Bars along bending - No:

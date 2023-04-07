@@ -18,7 +18,9 @@ export default function Calculation() {
         } else {
             Asi = calc_area(2, dia_d)
         }
-        const yi = -0.5 * D + (i - 1) * layer_dist + cover
+        var yi = -0.5 * D + (i - 1) * layer_dist + cover
+
+
         var esi = get_strain(xu, D, yi)
 
         var fsi = get_fs(fy, esi)
@@ -42,15 +44,17 @@ export default function Calculation() {
 
     const P_ur = Cs + Cc
     const M_ur = Mc + Ms
-    return (
-        <>
-            <h4>{P_ur / 1000}</h4>
-
-            <h4>{M_ur / 1000000}</h4>
-            {/*  <div>{steelLayer.map(layer => <p key={layer.id}>{layer.fci}</p>)}</div> */}
-
-        </>
-    )
+    return [P_ur, M_ur]
+    /*  return (
+         <>
+            
+             <h4>{P_ur / 1000}</h4>
+ 
+             <h4>{M_ur / 1000000}</h4>
+              <div>{steelLayer.map(layer => <p key={layer.id}>{layer.fci}</p>)}</div> 
+ 
+         </>
+     ) */
 }
 
 function calc_area(no, dia) {
