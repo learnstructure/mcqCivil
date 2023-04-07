@@ -13,9 +13,9 @@ export function get_fs(fy, strain) {
         case 250:
             return strain < 0.87 * fy / Es ? Es * strain : 0.87 * fy
         case 415:
-            return (strain >= 0.87 * fy / Es + 0.002) ? 0.87 * fy : multiInterpolate(strain, strain415, stress415)
+            return (strain > 0.0038) ? 0.87 * fy : multiInterpolate(strain, strain415, stress415)
         default:
-            return (strain >= 0.87 * fy / Es + 0.002) ? 0.87 * fy : multiInterpolate(strain, strain500, stress500)
+            return (strain >= 0.00417) ? 0.87 * fy : multiInterpolate(strain, strain500, stress500)
     }
 }
 
