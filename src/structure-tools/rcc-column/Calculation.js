@@ -3,12 +3,12 @@ import { RccColumnParams } from './RccColumn'
 
 import { get_strain, get_fc, get_fs, get_a_xbar } from './myModules'
 
-export default function Calculation() {
+export default function Calculation(ku) {
 
     const { D, B, pu, mux, muy, fy, fck, nb, nd, dia_d, dia_b, cover } = useContext(RccColumnParams).params
     const layer_dist = (D - 2 * cover) / (nd - 1)
 
-    const xu = 1.2 * D
+    const xu = ku * D
     var steelLayer = []
     var Cs = 0, Ms = 0
     for (let i = 1; i <= nd; i++) {
@@ -57,7 +57,7 @@ export default function Calculation() {
      ) */
 }
 
-function calc_area(no, dia) {
+export function calc_area(no, dia) {
     return no * Math.PI * dia * dia / 4
 }
 
