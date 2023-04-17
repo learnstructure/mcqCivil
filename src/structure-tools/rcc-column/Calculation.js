@@ -1,11 +1,11 @@
-import React, { useContext, useMemo, useState } from 'react'
+import { useContext } from 'react'
 import { RccColumnParams } from './RccColumn'
 
 import { get_strain, get_fc, get_fs, get_a_xbar } from './myModules'
 
 export default function Calculation(ku) {
 
-    const { D, B, pu, mux, muy, fy, fck, nb, nd, dia_d, dia_b, cover } = useContext(RccColumnParams).params
+    const { D, B, fy, fck, nb, nd, dia_d, dia_b, cover } = useContext(RccColumnParams).params
     const layer_dist = (D - 2 * cover) / (nd - 1)
 
     const xu = ku * D
@@ -45,16 +45,7 @@ export default function Calculation(ku) {
     const P_ur = Cs + Cc
     const M_ur = Mc + Ms
     return [P_ur, M_ur]
-    /*  return (
-         <>
-            
-             <h4>{P_ur / 1000}</h4>
- 
-             <h4>{M_ur / 1000000}</h4>
-              <div>{steelLayer.map(layer => <p key={layer.id}>{layer.fci}</p>)}</div> 
- 
-         </>
-     ) */
+
 }
 
 export function calc_area(no, dia) {

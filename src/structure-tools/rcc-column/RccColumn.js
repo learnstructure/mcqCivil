@@ -1,6 +1,5 @@
 import React, { useState, createContext } from 'react'
 import { Helmet } from 'react-helmet'
-import Calculation from './Calculation';
 import GetInteraction from './GetInteraction';
 export const RccColumnParams = createContext()
 function RccColumn() {
@@ -13,7 +12,7 @@ function RccColumn() {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        //console.log("Form values:", params);
+
         setResult(<RccColumnParams.Provider value={{ params }} >
             <GetInteraction />
         </RccColumnParams.Provider>)
@@ -22,13 +21,13 @@ function RccColumn() {
     return (
         <main className='page-container'>
             <Helmet>
-                <title>RCC Column design</title>
+                <title>RCC Column design </title>
                 <meta name="description" content="Design RCC Column based on IS 456: 2007 for free" />
             </Helmet>
-            <h2>RCC Column Design</h2>
+            <h2>RCC Column Design <span style={{ color: 'blueviolet' }}>(Betta)</span></h2>
             <div className='calc-container'>
                 <form onSubmit={handleSubmit} className='params'>
-                    <label className='param-label'>Loadings (factored)</label>
+                    {/* <label className='param-label'>Loadings (factored)</label>
                     <label>
                         Pᵤ :
                         <input type="number" name="pu" value={params.pu} onChange={handleChange} min="0"
@@ -43,7 +42,7 @@ function RccColumn() {
                         Mᵤᵧ :
                         <input type="number" name="muy" value={params.muy} onChange={handleChange} min="0"
                             step="0.05" className='input-number' /> kNm
-                    </label>
+                    </label> */}
                     <label className='param-label'>Column Parameters</label>
                     <label>
                         D :
@@ -89,13 +88,14 @@ function RccColumn() {
                         <input type="number" name="dia_b" value={params.dia_b} onChange={handleChange} min="2"
                             step="1" className='input-number' /> mm
                     </label>
-                    <button type="submit">Calculate</button>
+                    <button type="submit">Generate Interaction diagram</button>
                 </form>
-            </div>
-            <h3>Results</h3>
-            <div className='result-container'>
                 {result}
             </div>
+            {/* <h3>Results</h3>
+            <div className='result-container'>
+
+            </div> */}
         </main>
     )
 }
