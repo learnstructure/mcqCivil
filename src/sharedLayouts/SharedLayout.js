@@ -13,6 +13,9 @@ import { dataEconomics } from '../data/dataEconomics'
 import { dataProfessional } from '../data/dataProfessional';
 import { dataGkGeography } from '../data/dataGkGeography';
 import { dataGkOrganization } from '../data/dataGkOrganization';
+import { dataGkNatResources } from '../data/dataGkNatResources';
+import { dataGkClimate } from '../data/gk/dataGkClimate';
+import { dataGkPlans } from '../data/gk/dataGkPlans';
 
 function SharedLayout() {
     const { subject } = useParams()
@@ -66,6 +69,18 @@ function SharedLayout() {
         case "gk-geography":
             data = [...dataGkGeography]
             descrip = "General knowledge Geography"
+            break;
+        case "gk-natural-resources":
+            data = [...dataGkNatResources]
+            descrip = "General knowledge Natural Resources"
+            break;
+        case "gk-climate-nepal":
+            data = [...dataGkClimate]
+            descrip = "General knowledge Climate of Nepal Biodiversity"
+            break;
+        case "gk-periodic-plans":
+            data = [...dataGkPlans]
+            descrip = "General knowledge Periodic plans of Nepal"
             break;
         default:
             data = [...dataGkOrganization]

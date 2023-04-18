@@ -50,6 +50,9 @@ export default function Title() {
                         <div className="dropdown-content"  >
                             <NavLink to='/gk-geography' onClick={handleClick} >Geography</NavLink>
                             <NavLink to='/gk-organization' onClick={handleClick} >UN, SAARC & BIMSTEC</NavLink>
+                            <NavLink to='/gk-natural-resources' onClick={handleClick} >Natural Resources</NavLink>
+                            <NavLink to='/gk-climate-nepal' onClick={handleClick} >Climate of Nepal</NavLink>
+                            <NavLink to='/gk-periodic-plans' onClick={handleClick} >Periodic Plans</NavLink>
                         </div>
                     </div>
 
