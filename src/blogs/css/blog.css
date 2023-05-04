@@ -73,7 +73,8 @@
 .author {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(177, 194, 183, 0.559);
+    background-color: rgba(168, 178, 230, 0.559);
+    color: rgb(55, 82, 78);
     padding: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }

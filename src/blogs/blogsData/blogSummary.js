@@ -5,7 +5,16 @@ import Blog4 from './Blog4'
 import Blog5 from './Blog5'
 import Blog6 from './Blog6'
 import Blog7 from './Blog7'
+import Blog8 from './Blog8'
 const blog = [
+    {
+
+        title: "What is wind load and how to apply it in ETABS?",
+        preview: "Wind load is generally governing lateral load for light building structures because for such structures, wind load demands can be higher than seismic load. Wind load is due to area of the structure. In contrast seismic load is due to weight of the structure.",
+        image: '/images/wind/is875.PNG',
+        imageAlt: 'diaphragm extent for auto wind load',
+        content: <Blog8 />
+    },
     {
 
         title: "What is P-delta analysis and how to perform it?",
