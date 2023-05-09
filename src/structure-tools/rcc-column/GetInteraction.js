@@ -16,7 +16,7 @@ function GetInteraction() {
 
     var data = []
     for (let i = init; i <= 1.6; i = i + 0.04) {
-        var [P_ur, M_ur] = Calculation(i)
+        var [P_ur, M_ur] = Calculation(i, D, B, nd, nb, dia_d, dia_b)
         if (x0 && i === init) {
             P_ur = 0
         }
@@ -26,14 +26,14 @@ function GetInteraction() {
 
     data.reverse();
 
-    const getMurForPur = (pur) => {
+    const getMurForPur = (pur, axis) => {
         let a = 0;
         let b = 1.6;
-        let tol = 0.001;
+        let tol = 0.1;
 
         while (true) {
             let c = (a + b) / 2;
-            const [P_ur, M_ur] = Calculation(c);
+            const [P_ur, M_ur] = axis === "major" ? Calculation(c, D, B, nd, nb, dia_d, dia_b) : Calculation(c, B, D, nb, nd, dia_b, dia_d);
             const diff = P_ur / 1000 - pur;
 
             if (Math.abs(diff) < tol) {
@@ -48,15 +48,42 @@ function GetInteraction() {
         }
     }
 
-    const Mux1 = getMurForPur(pu)
-    const Muy1 = getMurForPur(pu)
+    const Mux1 = getMurForPur(pu, "major")
+    const Muy1 = getMurForPur(pu, "minor")
     const Puz = (0.45 * fck * B * D + 0.75 * fy * Asc) / 1000
     const P_ratio = pu / Puz
     const alpha = P_ratio < 0.2 ? 1 : (P_ratio > 0.8 ? 2 : linearInterpolate(P_ratio, 0.2, 0.8, 1, 2))
     const dc_ratio = Math.pow(mux / Mux1, alpha) + Math.pow(muy / Muy1, alpha)
 
+    // Define the bisection method
+    function bisection(a, b, tol) {
+        //const { D, B, nb, nd, dia_d, dia_b } = useContext(RccColumnParams).params
+        let [P_ur_a] = Calculation(a, D, B, nd, nb, dia_d, dia_b);
+        let fa = P_ur_a;
+
+
+        let c = (a + b) / 2;
+        let [P_ur_c] = Calculation(c, D, B, nd, nb, dia_d, dia_b);
+        let fc = P_ur_c;
+
+        while (Math.abs(fc) > tol) {
+            if (fa * fc < 0) {
+                b = c;
+
+            } else {
+                a = c;
+                fa = fc;
+            }
+            c = (a + b) / 2;
+            [P_ur_c] = Calculation(c, D, B, nd, nb, dia_d, dia_b);
+            fc = P_ur_c;
+        }
+        return c;
+    }
+
     return (
         <div>
+            <h4>Design based on IS 456: 2000</h4>
             <div className='chart'>
                 <ResponsiveContainer width="100%" height="80%">
                     <LineChart data={data} margin={{ bottom: 15, left: 7, top: 40 }}>
@@ -70,12 +97,16 @@ function GetInteraction() {
                         <Line type="monotone" dataKey="p_ur" stroke="#82ca9d" activeDot={{ r: 8 }} />
                     </LineChart>
                 </ResponsiveContainer>
-                <h4>Fig: Interaction Diagram</h4>
+                <h4>Fig: Interaction Diagram (Major)</h4>
 
             </div>
-            <p>Aₛₜ provided = {(Asc * 100 / (B * D)).toFixed(2)} %</p>
-            <p>Mᵤₓ₁ = {Mux1.toFixed(2)} kNm</p>
-            <p>Mᵤᵧ₁ = {Muy1.toFixed(2)} kNm</p>
+
+
+            <p>A<sub>st</sub> provided = {(Asc * 100 / (B * D)).toFixed(2)} %</p>
+            <p>M<sub>ux1</sub> = {Mux1.toFixed(2)} kNm</p>
+            <p>M<sub>uy1</sub> = {Muy1.toFixed(2)} kNm</p>
+            <p>P<sub>uz</sub> = {Puz.toFixed(2)} kN</p>
+            <p>P<sub>u</sub>/P<sub>uz</sub> = {P_ratio.toFixed(3)} kN</p>
             <p>α = {alpha}</p>
             <p style={{ color: 'royalblue', fontWeight: 'bold' }}>Demand-capacity ratio = {dc_ratio.toFixed(3)}</p>
         </div>
@@ -86,30 +117,7 @@ function GetInteraction() {
 export default GetInteraction
 
 
-// Define the bisection method
-function bisection(a, b, tol) {
-    let [P_ur_a] = Calculation(a);
-    let fa = P_ur_a;
 
-
-    let c = (a + b) / 2;
-    let [P_ur_c] = Calculation(c);
-    let fc = P_ur_c;
-
-    while (Math.abs(fc) > tol) {
-        if (fa * fc < 0) {
-            b = c;
-
-        } else {
-            a = c;
-            fa = fc;
-        }
-        c = (a + b) / 2;
-        [P_ur_c] = Calculation(c);
-        fc = P_ur_c;
-    }
-    return c;
-}
 
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {

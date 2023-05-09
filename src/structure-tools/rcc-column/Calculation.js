@@ -3,9 +3,10 @@ import { RccColumnParams } from './RccColumn'
 
 import { get_strain, get_fc, get_fs, get_a_xbar } from './myModules'
 
-export default function Calculation(ku) {
+export default function Calculation(ku, D, B, nd, nb, dia_d, dia_b) {
 
-    const { D, B, fy, fck, nb, nd, dia_d, dia_b, cover } = useContext(RccColumnParams).params
+    //const { D, B, fy, fck, nb, nd, dia_d, dia_b, cover } = useContext(RccColumnParams).params
+    const { fy, fck, cover } = useContext(RccColumnParams).params
     const layer_dist = (D - 2 * cover) / (nd - 1)
 
     const xu = ku * D
