@@ -11,3 +11,13 @@ export function multiInterpolate(x, xValues, yValues) {
     var intercept = y1 - slope * x1;
     return slope * x + intercept;
 }
+export function linearInterpolate(x, x0, x1, y0, y1) {
+    // Calculate the slope of the line
+    const slope = (y1 - y0) / (x1 - x0);
+    // Calculate the y-intercept of the line
+    const yIntercept = y0 - slope * x0;
+    // Calculate the y value at x using the equation of the line
+    const y = slope * x + yIntercept;
+    // Return the interpolated value
+    return y;
+}

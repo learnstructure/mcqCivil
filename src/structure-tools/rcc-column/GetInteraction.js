@@ -3,9 +3,11 @@ import Calculation from './Calculation'
 import { calc_area } from './Calculation';
 import { RccColumnParams } from './RccColumn';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
+import { linearInterpolate } from '../modules/interpolate';
 
 function GetInteraction() {
-    const { D, B, fy, fck, nb, nd, dia_d, dia_b } = useContext(RccColumnParams).params
+    const { D, B, fy, fck, nb, nd, dia_d, dia_b, mux, muy, pu } = useContext(RccColumnParams).params
+
     const Asc = 2 * calc_area(nd, dia_d) + 2 * calc_area(nb - 2, dia_b)
     const P0 = 0.447 * fck * B * D + (0.79 * fy - 0.447 * fck) * Asc
 
@@ -24,22 +26,58 @@ function GetInteraction() {
 
     data.reverse();
 
+    const getMurForPur = (pur) => {
+        let a = 0;
+        let b = 1.6;
+        let tol = 0.001;
+
+        while (true) {
+            let c = (a + b) / 2;
+            const [P_ur, M_ur] = Calculation(c);
+            const diff = P_ur / 1000 - pur;
+
+            if (Math.abs(diff) < tol) {
+                return M_ur / 1000000;
+            }
+
+            if (diff > 0) {
+                b = c;
+            } else {
+                a = c;
+            }
+        }
+    }
+
+    const Mux1 = getMurForPur(pu)
+    const Muy1 = getMurForPur(pu)
+    const Puz = (0.45 * fck * B * D + 0.75 * fy * Asc) / 1000
+    const P_ratio = pu / Puz
+    const alpha = P_ratio < 0.2 ? 1 : (P_ratio > 0.8 ? 2 : linearInterpolate(P_ratio, 0.2, 0.8, 1, 2))
+    const dc_ratio = Math.pow(mux / Mux1, alpha) + Math.pow(muy / Muy1, alpha)
 
     return (
-        <div className='chart'>
-            <ResponsiveContainer width="100%" height="80%">
-                <LineChart data={data} margin={{ bottom: 15, left: 7, top: 40 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="m_ur" type='number' >
-                        <Label value="Mᵤᵣ (in kNm)" offset={0} position="bottom" style={{ fontWeight: 'bold' }} />
-                    </XAxis>
-                    <YAxis label={{ value: 'Pᵤᵣ (in kN)', position: 'top', offset: 20, fontWeight: 'bold' }} />
-                    <Tooltip content={<CustomTooltip />} />
+        <div>
+            <div className='chart'>
+                <ResponsiveContainer width="100%" height="80%">
+                    <LineChart data={data} margin={{ bottom: 15, left: 7, top: 40 }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="m_ur" type='number' >
+                            <Label value="Mᵤᵣ (in kNm)" offset={0} position="bottom" style={{ fontWeight: 'bold' }} />
+                        </XAxis>
+                        <YAxis label={{ value: 'Pᵤᵣ (in kN)', position: 'top', offset: 20, fontWeight: 'bold' }} />
+                        <Tooltip content={<CustomTooltip />} />
 
-                    <Line type="monotone" dataKey="p_ur" stroke="#82ca9d" activeDot={{ r: 8 }} />
-                </LineChart>
-            </ResponsiveContainer>
-            <h4>Fig: Interaction Diagram</h4>
+                        <Line type="monotone" dataKey="p_ur" stroke="#82ca9d" activeDot={{ r: 8 }} />
+                    </LineChart>
+                </ResponsiveContainer>
+                <h4>Fig: Interaction Diagram</h4>
+
+            </div>
+            <p>Aₛₜ provided = {(Asc * 100 / (B * D)).toFixed(2)} %</p>
+            <p>Mᵤₓ₁ = {Mux1.toFixed(2)} kNm</p>
+            <p>Mᵤᵧ₁ = {Muy1.toFixed(2)} kNm</p>
+            <p>α = {alpha}</p>
+            <p style={{ color: 'royalblue', fontWeight: 'bold' }}>Demand-capacity ratio = {dc_ratio.toFixed(3)}</p>
         </div>
     )
 

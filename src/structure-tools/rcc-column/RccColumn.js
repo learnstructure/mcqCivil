@@ -27,7 +27,7 @@ function RccColumn() {
             <h2>RCC Column Design <span style={{ color: 'blueviolet' }}>(Betta)</span></h2>
             <div className='calc-container'>
                 <form onSubmit={handleSubmit} className='params'>
-                    {/* <label className='param-label'>Loadings (factored)</label>
+                    <label className='param-label'>Loadings (factored)</label>
                     <label>
                         Pᵤ :
                         <input type="number" name="pu" value={params.pu} onChange={handleChange} min="0"
@@ -42,7 +42,7 @@ function RccColumn() {
                         Mᵤᵧ :
                         <input type="number" name="muy" value={params.muy} onChange={handleChange} min="0"
                             step="0.05" className='input-number' /> kNm
-                    </label> */}
+                    </label>
                     <label className='param-label'>Column Parameters</label>
                     <label>
                         D :
@@ -88,14 +88,14 @@ function RccColumn() {
                         <input type="number" name="dia_b" value={params.dia_b} onChange={handleChange} min="2"
                             step="1" className='input-number' /> mm
                     </label>
-                    <button type="submit">Generate Interaction diagram</button>
+                    <button type="submit">Design column</button>
                 </form>
+            </div>
+            <h3>Results</h3>
+            <div className='calc-container'>
                 {result}
             </div>
-            {/* <h3>Results</h3>
-            <div className='result-container'>
 
-            </div> */}
         </main>
     )
 }
