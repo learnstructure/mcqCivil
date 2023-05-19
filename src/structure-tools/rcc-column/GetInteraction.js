@@ -48,12 +48,29 @@ function GetInteraction() {
         }
     }
 
-    const Mux1 = getMurForPur(pu, "major")
-    const Muy1 = getMurForPur(pu, "minor")
     const Puz = (0.45 * fck * B * D + 0.75 * fy * Asc) / 1000
     const P_ratio = pu / Puz
-    const alpha = P_ratio < 0.2 ? 1 : (P_ratio > 0.8 ? 2 : linearInterpolate(P_ratio, 0.2, 0.8, 1, 2))
-    const dc_ratio = Math.pow(mux / Mux1, alpha) + Math.pow(muy / Muy1, alpha)
+    let Mux1, Muy1, alpha, dc_ratio
+
+    if (P_ratio >= 1) {
+        Mux1 = "N/A"
+        Muy1 = "N/A"
+        alpha = "N/A"
+        dc_ratio = P_ratio
+    } else {
+        Mux1 = getMurForPur(pu, "major")
+        Muy1 = getMurForPur(pu, "minor")
+
+        //console.log(P_ratio)
+        alpha = P_ratio < 0.2 ? 1 : (P_ratio > 0.8 ? 2 : linearInterpolate(P_ratio, 0.2, 0.8, 1, 2))
+        //console.log(alpha)
+        dc_ratio = Math.pow(mux / Mux1, alpha) + Math.pow(muy / Muy1, alpha)
+        if (dc_ratio < P_ratio) {
+            dc_ratio = P_ratio
+        }
+    }
+
+
 
     // Define the bisection method
     function bisection(a, b, tol) {
@@ -103,11 +120,11 @@ function GetInteraction() {
 
 
             <p>A<sub>st</sub> provided = {(Asc * 100 / (B * D)).toFixed(2)} %</p>
-            <p>M<sub>ux1</sub> = {Mux1.toFixed(2)} kNm</p>
-            <p>M<sub>uy1</sub> = {Muy1.toFixed(2)} kNm</p>
+            <p>M<sub>ux1</sub> = {P_ratio >= 1 ? Mux1 : Mux1.toFixed(2)} {P_ratio < 1 && <span>kNm</span>}</p>
+            <p>M<sub>uy1</sub> = {P_ratio >= 1 ? Muy1 : Muy1.toFixed(2)} {P_ratio < 1 && <span>kNm</span>}</p>
             <p>P<sub>uz</sub> = {Puz.toFixed(2)} kN</p>
-            <p>P<sub>u</sub>/P<sub>uz</sub> = {P_ratio.toFixed(3)} kN</p>
-            <p>α = {alpha}</p>
+            <p>P<sub>u</sub>/P<sub>uz</sub> = {P_ratio.toFixed(3)}</p>
+            <p>α = {P_ratio >= 1 ? alpha : alpha.toFixed(2)}</p>
             <p style={{ color: 'royalblue', fontWeight: 'bold' }}>Demand-capacity ratio = {dc_ratio.toFixed(3)}</p>
         </div>
     )

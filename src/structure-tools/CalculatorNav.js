@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import IsolatedFooting from './isolated-footing/IsolatedFooting';
 import RccColumn from './rcc-column/RccColumn';
+import SteelColumnI from './steel-design/steelColumnI/SteelColumnI';
 function CalculatorNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -11,6 +12,9 @@ function CalculatorNav() {
             break;
         case "rcc-column":
             moduleCalc = <RccColumn />
+            break;
+        case "steel-i-column":
+            moduleCalc = <SteelColumnI />
             break;
         default:
             moduleCalc = <IsolatedFooting />

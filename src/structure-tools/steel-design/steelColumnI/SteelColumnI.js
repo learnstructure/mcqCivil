@@ -1,10 +1,18 @@
 import React, { useState, createContext } from 'react'
 import { Helmet } from 'react-helmet'
-import GetInteraction from './GetInteraction';
+import { get_section_props } from './steelModule'
+
 export const RccColumnParams = createContext()
-function RccColumn() {
+function SteelColumnI() {
     const [result, setResult] = useState(null)
-    const [params, setParams] = useState({ D: 500, B: 300, l: 1.8, pu: 200, mux: 100, muy: 50, fy: 415, fck: 25, nb: 2, nd: 3, dia_b: 25, dia_d: 25, cover: 60.5 });
+    const [params, setParams] = useState({ D: 500, B: 300, l: 1.8, pu: 200, mux: 100, muy: 50, fy: 415, fck: 25, tf: 0, tw: 0 });
+    const [section, setSection] = useState("ISMB100")
+    const handleSectionChange = (event) => {
+        const value = event.target.value
+        setSection(value)
+        const [tf, tw] = get_section_props(value)
+        setParams({ ...params, tf: tf, tw: tw });
+    };
     const handleChange = (event) => {
         const value = parseFloat(event.target.value)
         const { name } = event.target;
@@ -13,18 +21,18 @@ function RccColumn() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        setResult(<RccColumnParams.Provider value={{ params }} >
-            <GetInteraction />
-        </RccColumnParams.Provider>)
+        /*  setResult(<RccColumnParams.Provider value={{ params }} >
+             <GetInteraction />
+         </RccColumnParams.Provider>) */
 
     };
     return (
         <main className='page-container'>
             <Helmet>
-                <title>RCC Column design </title>
-                <meta name="description" content="Design RCC Column based on IS 456: 2007 for free" />
+                <title>Steel Column design </title>
+                <meta name="description" content="Design Steel Column based on IS 456: 2007 for free" />
             </Helmet>
-            <h2>RCC Column Design</h2>
+            <h2>Steel Column Design (I-Section)</h2>
             <div className='calc-container'>
                 <form onSubmit={handleSubmit} className='params'>
                     <label className='param-label'>Loadings (factored)</label>
@@ -44,6 +52,19 @@ function RccColumn() {
                             step="0.05" className='input-number' /> kNm
                     </label>
                     <label className='param-label'>Column Parameters</label>
+                    <label >Choose a section:
+                        <select name="section" id="section" onChange={handleSectionChange}>
+                            <option value="ISMB100">ISMB100</option>
+                            <option value="ISMB150">ISMB150</option>
+                            <option value="ISMB200">ISMB200</option>
+                            <option value="ISMB250">ISMB250</option>
+                            <option value="ISMB300">ISMB300</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <h3>Option selected is {section}</h3>
+                    <h3>tf is {params.tf}</h3>
+                    <h3>tw is {params.tw}</h3>
                     <label>
                         D (Major-x):
                         <input type="number" name="D" value={params.D} onChange={handleChange} min="0.01"
@@ -66,30 +87,9 @@ function RccColumn() {
                         <input type="number" name="fck" value={params.fck} onChange={handleChange} min="1"
                             step="1" className='input-number' /> N/mm²
                     </label>
-                    <label className='param-label'>Rebar Parameters</label>
-                    <label>
-                        Effective Cover :
-                        <input type="number" name="cover" value={params.cover} onChange={handleChange} min="10"
-                            step="0.5" className='input-number' /> mm
-                    </label>
-                    <img src='/images/column.PNG' alt="column design" style={{ maxWidth: '100%' }} />
-                    <label>
-                        Bars along x - No:
-                        <input type="number" name="nd" value={params.nd} onChange={handleChange} min="2"
-                            step="1" className='input-number' /> &
-                        Dia:
-                        <input type="number" name="dia_d" value={params.dia_d} onChange={handleChange} min="2"
-                            step="1" className='input-number' /> mm
-                    </label>
 
-                    <label>
-                        Bars along y - No:
-                        <input type="number" name="nb" value={params.nb} onChange={handleChange} min="2"
-                            step="1" className='input-number' /> &
-                        Dia:
-                        <input type="number" name="dia_b" value={params.dia_b} onChange={handleChange} min="2"
-                            step="1" className='input-number' /> mm
-                    </label>
+                    {/* <img src='/images/column.PNG' alt="column design" style={{ maxWidth: '100%' }} /> */}
+
                     <button type="submit">Design column</button>
                 </form>
             </div>
@@ -102,4 +102,4 @@ function RccColumn() {
     )
 }
 
-export default RccColumn
+export default SteelColumnI
