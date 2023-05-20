@@ -55,6 +55,13 @@
 
 }
 
+.dropdown-select {
+    width: fit-content;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+
 
 @media screen and (max-width: 768px) {
     .calc-container {
