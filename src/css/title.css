@@ -79,12 +79,21 @@
     margin-right: 0.5rem;
 }
 
-.logo span {
-    color: #17a7b7;
+.realm {
+    color: #156132;
+    text-shadow: 0.5px 0.5px 0.5px #05451f;
+}
+
+.main-logo {
+    max-width: 35rem;
 }
 
 
 @media screen and (max-width: 600px) {
+    .main-logo {
+        max-width: 80%;
+    }
+
     .mainNav {
         justify-content: space-between;
     }

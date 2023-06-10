@@ -1,5 +1,5 @@
 import '../css/title.css';
-import logo from './logo.JPG'
+import logo from './newLogo.PNG'
 import Hamburger from 'hamburger-react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -14,7 +14,7 @@ export default function Title() {
             {/* <h1 className="siteInfo">Civil Engineering Mcq</h1> */}
             <div className="siteInfo">
                 <NavLink to='/'>
-                    <img src={logo} alt="Civil Engineering Mcq" style={{ width: '15rem' }}></img>
+                    <img src={logo} alt="Structure realm.com" className='main-logo'></img>
                 </NavLink>
             </div>
             <div className='mainNav'>
@@ -22,7 +22,7 @@ export default function Title() {
                     showMenu ? 'topNav responsive' : 'topNav'
                 }>
                     {/* <img src='/favicon.JPG' alt="website logo" className='logo' /> */}
-                    <div className='logo'>civilengineering-mcq</div>
+                    <div className='logo'><span>structure</span><span className='realm'>realm.com</span></div>
                     <div className='dropdown'>
                         <div className='link-copy'>
                             <div> Technical MCQs <IoIosArrowDropdownCircle className='drop-icon' /></div>

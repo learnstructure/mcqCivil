@@ -12,7 +12,7 @@ function Calculator() {
             <p>Design a <Link to="footing">Sloped isolated footing</Link>
             </p>
             <p>Design a <Link to="rcc-column">RCC Column</Link></p>
-            <p>Design a <Link to="steel-i-column">Steel I Column</Link></p>
+            {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
         </main>
     )
 }

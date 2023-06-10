@@ -8,12 +8,12 @@ function Home() {
     return (
         <div className='homepage'>
             <Helmet>
-                <title>Civil Engineering MCQ</title>
-                <meta name="description" content={"Practise civil engineering multiple choice questions as well as the general knowledge questions based on PSC Loksewa Nepal at one place for free. You can ask any confusions to the experts in discussion."} />
+                <title>Structure Realm</title>
+                <meta name="description" content={"Practise civil engineering multiple choice questions as well as the general knowledge questions based on PSC Loksewa Nepal at one place for free."} />
             </Helmet>
             <section className='home-body'>
                 <p style={{ lineHeight: '1.6' }}>
-                    Join our <a href='https://t.me/civilengineering_structure' target="_blank" className='ext-link' rel="noreferrer">Telegram</a> channel to get updates and to make request about the contents.
+                    Stay connected and get the latest updates by joining our <a href='https://t.me/civilengineering_structure' target="_blank" className='ext-link' rel="noreferrer">Telegram</a> channel!.
                 </p>
                 <div >
                     <h2 className='focusText'>Let's <span style={{ color: "green" }}>Crack</span> Civil Engineering Competitive <span style={{ color: "green" }}>Exams</span></h2>
