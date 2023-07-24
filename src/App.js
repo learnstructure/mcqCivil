@@ -21,6 +21,7 @@ import SharedBlog from './sharedLayouts/SharedBlog';
 
 import Calculator from './structure-tools/Calculator';
 import CalculatorNav from './structure-tools/CalculatorNav';
+import Downloads from './components/Downloads';
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
 
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/test/:subject' element={<Testsub />}></Route>
-
+        <Route path='/downloads' element={<Downloads />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/thanks' element={<Thanks />}></Route>
       </Routes>

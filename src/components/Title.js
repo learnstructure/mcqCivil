@@ -58,6 +58,7 @@ export default function Title() {
 
                     <NavLink to='/structural-engineering' onClick={handleClick}>Structural Engineering</NavLink>
                     <NavLink to='/structure-calculator' onClick={handleClick}>Structure Tools</NavLink>
+                    <NavLink to='/downloads' onClick={handleClick}>Downloads</NavLink>
                     <NavLink to='/test' onClick={handleClick}>Online Test</NavLink>
                     <NavLink to='/contact' onClick={handleClick} className="contact-us">Contact Us</NavLink>
 

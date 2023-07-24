@@ -41,6 +41,12 @@
     border-radius: 0.2rem;
 }
 
+.ext-link2 {
+
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.1rem;
+}
+
 .ext-link:hover {
     background-color: rgb(34, 100, 92);
 }

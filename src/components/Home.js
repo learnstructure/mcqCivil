@@ -43,11 +43,16 @@ function Home() {
                 <div className='home-link'>
                     <NavLink to='/structural-engineering' >Structure blogs</NavLink>
                 </div>
+                <p>See our design tools here.</p>
+                <div className='home-link'>
+                    <NavLink to='/structure-calculator' >Structure Design tools</NavLink>
+                </div>
+
                 <p>Give us feedback or <NavLink to='/contact' >contact us.</NavLink></p>
 
             </section>
             <footer>
-                <p>&copy; 2023 Civil Engineering MCQ. All rights reserved.</p>
+                <p>&copy; 2023 Structure Realm. All rights reserved.</p>
             </footer>
         </div>
     )

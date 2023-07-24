@@ -3,7 +3,7 @@ import '../css/contact.css';
 import { Helmet } from 'react-helmet';
 function Contact() {
     return (
-        <>
+        <div className='page-container'>
             <Helmet>
                 <title>Contact Civil Mcq</title>
                 <meta name="description" content="contact us page" />
@@ -15,8 +15,11 @@ function Contact() {
                 <input type="hidden" name="_captcha" value="false"></input>
                 <input type="hidden" name="_next" value="https://civilengineering-mcq.web.app/thanks"></input>
                 <button type="submit">Send</button>
+
             </form>
-        </>
+            <p>You can also contact us by emailing at <strong><em>structurerealm@gmail.com </em></strong></p>
+
+        </div>
 
     )
 }
