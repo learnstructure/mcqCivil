@@ -19,6 +19,7 @@
     flex-direction: column;
     text-align: right;
     row-gap: 0.5rem;
+
 }
 
 .param-label {
@@ -30,18 +31,32 @@
     text-align: center;
 }
 
+.params2 {
+    margin-top: 0.5rem;
+    display: flex;
+
+    column-gap: 3rem;
+    margin-left: 0.5rem;
+}
 
 .input-number {
     width: 4rem;
-    height: 1.5rem;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 0.9rem;
-    margin-left: 0.5rem;
+    outline: none;
     text-align: center;
+    margin-left: 0.5rem;
+}
+
+.input-number:focus {
+    border-color: #007bff;
 }
 
 .dropdown-input {
     width: auto;
-    padding: 0.1rem;
+    padding: 0.2rem;
     margin: 0 0.3rem;
 }
 
@@ -61,6 +76,15 @@
     margin-left: 0.5rem;
 }
 
+.indent {
+    text-indent: 1rem;
+}
+
+.divs-container {
+    padding-left: 1rem;
+    line-height: 2rem;
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -74,5 +98,9 @@
 
     .chart {
         width: 100%;
+    }
+
+    .params2 {
+        flex-direction: column;
     }
 }

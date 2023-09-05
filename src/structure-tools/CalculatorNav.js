@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import IsolatedFooting from './isolated-footing/IsolatedFooting';
 import RccColumn from './rcc-column/RccColumn';
 import SteelColumnI from './steel-design/steelColumnI/SteelColumnI';
+import ShearWall from './shear-wall/ShearWall';
 function CalculatorNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -12,6 +13,9 @@ function CalculatorNav() {
             break;
         case "rcc-column":
             moduleCalc = <RccColumn />
+            break;
+        case "shear-wall":
+            moduleCalc = <ShearWall />
             break;
         case "steel-i-column":
             moduleCalc = <SteelColumnI />

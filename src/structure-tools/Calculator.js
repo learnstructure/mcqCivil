@@ -12,6 +12,7 @@ function Calculator() {
             <p>Design a <Link to="footing" className='ext-link ext-link2'>Sloped isolated footing</Link>
             </p>
             <p>Design a <Link to="rcc-column" className='ext-link ext-link2'>RCC Column</Link></p>
+            <p>Design a <Link to="shear-wall" className='ext-link ext-link2'>Shear Wall</Link></p>
             {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
 
             <p style={{ lineHeight: '1.6' }}>
