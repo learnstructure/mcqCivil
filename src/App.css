@@ -17,6 +17,39 @@ p {
   margin: auto;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+
+  background-color: black;
+  color: #a9f5f4;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem 1rem;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.share-button {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+
+
+}
+
 @media screen and (max-width: 768px) {
   .page-container {
     width: 97%;

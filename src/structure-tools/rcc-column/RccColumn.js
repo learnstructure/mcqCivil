@@ -1,6 +1,7 @@
 import React, { useState, createContext } from 'react'
 import { Helmet } from 'react-helmet'
 import GetInteraction from './GetInteraction';
+import { calc_area } from './Calculation';
 export const RccColumnParams = createContext()
 function RccColumn() {
     const [result, setResult] = useState(null)
@@ -18,6 +19,7 @@ function RccColumn() {
         </RccColumnParams.Provider>)
 
     };
+    const Ast_percent = 100 * (2 * calc_area(params.nd, params.dia_d) + 2 * calc_area(params.nb - 2, params.dia_b)) / (params.D * params.B)
     return (
         <main className='page-container'>
             <Helmet>
@@ -89,6 +91,9 @@ function RccColumn() {
                         Dia:
                         <input type="number" name="dia_b" value={params.dia_b} onChange={handleChange} min="2"
                             step="1" className='input-number' /> mm
+                    </label>
+                    <label>
+                        A<sub>st</sub>= {Ast_percent.toFixed(2)} %
                     </label>
                     <button type="submit">Design column</button>
                 </form>

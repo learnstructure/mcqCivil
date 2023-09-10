@@ -1,14 +1,16 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import BlogComment from './BlogComment'
-
+import ShareButtons from '../components/ShareButtons';
 import { useOutletContext } from 'react-router-dom';
 function BlogOne() {
     const { blog } = useOutletContext()
     const params = useParams().id
 
     const myBlog = blog.find(obj => obj.id === params)
-    //console.log(myBlog)
+
+    const contentUrl = 'https://structurerealm.com/structural-engineering'
+    const contentTitle = 'Structural Engineering';
     return (
         <>
             {myBlog.content}
@@ -20,6 +22,9 @@ function BlogOne() {
                 </p>
 
                 <BlogComment id={myBlog.id} />
+            </div>
+            <div >
+                <ShareButtons url={contentUrl} title={contentTitle} />
             </div>
         </>
     )
