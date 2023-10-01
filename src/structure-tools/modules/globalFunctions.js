@@ -33,3 +33,6 @@ export function get_tbd(fck) {
 export function get_bar_area(dia) {
     return Math.PI * dia * dia / 4
 }
+export function get_xu_d_lim(fy) {
+    return (0.0035 / (0.0055 + 0.87 * fy / 200000)).toFixed(4)
+}

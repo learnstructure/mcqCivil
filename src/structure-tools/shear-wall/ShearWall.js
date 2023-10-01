@@ -1,8 +1,8 @@
-import React, { useState, createContext } from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { check, get_bar_area, get_tauc, get_tauc_max } from '../modules/globalFunctions'
 import { Link } from 'react-router-dom';
-export const RccColumnParams = createContext()
+
 function ShearWall() {
     var Latex = require('react-latex');
     const [params, setParams] = useState({ l_w: 4, t_w: 0.2, h_w: 31, l_be: 0.450, t_be: 0.450, pu: 3710, mu: 6559, vu: 1234, fy: 415, fck: 25, cover: 40, rho_v: 0.0044, rho_h: 0.0025, ring_dia: 10, main_bar: 12, l_b: 0.45, t_b: 0.45, bar_be: 16, n_be: 10, ring_be: 12 });

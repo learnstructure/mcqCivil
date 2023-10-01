@@ -5,6 +5,7 @@ import RccColumn from './rcc-column/RccColumn';
 import SteelColumnI from './steel-design/steelColumnI/SteelColumnI';
 import ShearWall from './shear-wall/ShearWall';
 import ShareButtons from '../components/ShareButtons';
+import BeamRCC from './beam-rcc/BeamRCC';
 function CalculatorNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -14,6 +15,9 @@ function CalculatorNav() {
             break;
         case "rcc-column":
             moduleCalc = <RccColumn />
+            break;
+        case "rcc-beam":
+            moduleCalc = <BeamRCC />
             break;
         case "shear-wall":
             moduleCalc = <ShearWall />
