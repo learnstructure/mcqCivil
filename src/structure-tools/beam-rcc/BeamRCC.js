@@ -145,7 +145,7 @@ function BeamRCC() {
                 {tau_c > tau_v && <strong>Nominal shear reinforcement required.</strong>}
                 {tau_c < tau_v && <div >Shear to be resisted by stirrups, V<sub>u,s</sub> = {V_us.toFixed(2)} kN </div>}
                 <div>
-                    Horizontal bar dia. =
+                    Stirrups dia. =
                     <select name="ring_dia" value={params.ring_dia} onChange={handleChange} className="dropdown-input">
                         <option value="8">8mm</option>
                         <option value="10">10mm</option>

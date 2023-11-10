@@ -53,6 +53,8 @@ export default function Title() {
                             <NavLink to='/gk-natural-resources' onClick={handleClick} >Natural Resources</NavLink>
                             <NavLink to='/gk-climate-nepal' onClick={handleClick} >Climate of Nepal</NavLink>
                             <NavLink to='/gk-periodic-plans' onClick={handleClick} >Periodic Plans</NavLink>
+                            <NavLink to='/gk-management' onClick={handleClick} >Management</NavLink>
+                            <NavLink to='/gk-government-plans' onClick={handleClick} >Government Plans</NavLink>
                         </div>
                     </div>
 

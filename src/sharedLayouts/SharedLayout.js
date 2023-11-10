@@ -16,6 +16,8 @@ import { dataGkOrganization } from '../data/dataGkOrganization';
 import { dataGkNatResources } from '../data/dataGkNatResources';
 import { dataGkClimate } from '../data/gk/dataGkClimate';
 import { dataGkPlans } from '../data/gk/dataGkPlans';
+import { dataGkGovernmentPlans } from '../data/gk/dataGkGovernmentPlans';
+import { dataGkManagement } from '../data/gk/dataGkManagement';
 
 function SharedLayout() {
     const { subject } = useParams()
@@ -81,6 +83,14 @@ function SharedLayout() {
         case "gk-periodic-plans":
             data = [...dataGkPlans]
             descrip = "General knowledge Periodic plans of Nepal"
+            break;
+        case "gk-government-plans":
+            data = [...dataGkGovernmentPlans]
+            descrip = "General knowledge Government plans and budgeting of Nepal"
+            break;
+        case "gk-management":
+            data = [...dataGkManagement]
+            descrip = "General knowledge Fundamentals of management."
             break;
         default:
             data = [...dataGkOrganization]

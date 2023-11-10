@@ -483,7 +483,965 @@ const dataSurveying = [
         optionD: "All the above",
         correct: "d"
     },
-    /* {
+    {
+        question: "The properties of autogenous curve for automobiles are given by",
+        optionA: "True spiral",
+        optionB: "Cubic parabola",
+        optionC: "Bernoulli's Lemniscate",
+        optionD: "Clothoid spiral",
+        correct: "c"
+    },
+    {
+        question: "In chain surveying field work is limited to",
+        optionA: "Linear measurements only",
+        optionB: "Angular measurements only",
+        optionC: "Both linear and angular measurements",
+        optionD: "All the above",
+        correct: "a"
+    },
+    {
+        question: "The difference of levels between two stations A and B is to be determined. For best results, the instrument station should be",
+        optionA: "Equidistant from A and B",
+        optionB: "Closer to the higher station",
+        optionC: "Closer to the lower station",
+        optionD: "As far as possible from the line AB",
+        correct: "a"
+    },
+    {
+        question: "Select the correct statement",
+        optionA: "Contour interval on any map is kept constant",
+        optionB: "Direct method of contouring is cheaper than indirect method",
+        optionC: "Inter-visibility of points on a contour map cannot be ascertained",
+        optionD: "Slope of a hill cannot be determined with the help of contours",
+        correct: "a"
+    },
+    {
+        question: "In tacheometrical observations, vertical staff holding is generally preferred to normal staffing, due to",
+        optionA: "Ease of reduction of observations",
+        optionB: "Facility of holding",
+        optionC: "Minimum effect of careless holding on the result",
+        optionD: "None of these",
+        correct: "c"
+    },
+    {
+        question: "Whole circle bearing of a line is preferred to a quadrantal bearing merely because",
+        optionA: "Bearing is not completely specified by an angle",
+        optionB: "Bearing is completely specified by an angle",
+        optionC: "Sign of the correction of magnetic declination is different in different quadrants",
+        optionD: "Its Trigonometrical values may be extracted from ordinary tables easily",
+        correct: "b"
+    },
+    {
+        question: "It is more difficult to obtain good results while measuring horizontal distance by stepping",
+        optionA: "Up-hill",
+        optionB: "Down-hill",
+        optionC: "In low undulations",
+        optionD: "In plane areas",
+        correct: "a"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "The apparent error on reversal is twice the actual error",
+        optionB: "The correction may be made equal to half the observed discrepancy",
+        optionC: "The good results may be obtained from a defective instrument by reversing and taking the mean of two erroneous results",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Which of the following methods of plane table surveying is used to locate the position of an inaccessible point?",
+        optionA: "Radiation",
+        optionB: "Intersection",
+        optionC: "Traversing",
+        optionD: "Resection",
+        correct: "b"
+    },
+    {
+        question: "Imaginary line passing through points having equal magnetic declination is termed as",
+        optionA: "Isogonic line",
+        optionB: "Agonic line",
+        optionC: "Isoclinic line",
+        optionD: "None of above",
+        correct: "a"
+    },
+    {
+        question: "Which one of the following statements is correct?",
+        optionA: "When the axes of rotation of the graduated circle and the verniers are not coincident, the instrument possesses eccentricity",
+        optionB: "The mean of the readings of the two verniers gives correct reading free from the eccentricity",
+        optionC: "One Vernier may be used if the readings of two verniers differ by a constant",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "The bearings of the lines AB and BC are 146° 30' and 68° 30'. The included angle ABC is",
+        optionA: "102°",
+        optionB: "78°",
+        optionC: "45°",
+        optionD: "None",
+        correct: "a"
+    },
+    {
+        question: "Transit rule of adjusting the consecutive coordinates of a traverse is used where",
+        optionA: "Linear and angular measurements of the traverse are of equal accuracy",
+        optionB: "Angular measurements are more accurate than linear measurements",
+        optionC: "Linear measurements are more accurate than angular measurements",
+        optionD: "All of the above",
+        correct: "b"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "The lines of sight while observing back sight and fore sight lie in the same horizontal plane",
+        optionB: "The staff readings are measurements made vertically downwards from a horizontal plane",
+        optionC: "The horizontal plane with reference to which staff readings are taken, coincides with the level surface through the telescope axis",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "If the focal length of the object glass is 25 cm and the distance from object glass to the trunnion axis is 15 cm, the additive constant",
+        optionA: "0.1",
+        optionB: "0.4",
+        optionC: "0.6",
+        optionD: "1.33",
+        correct: "b"
+    },
+    {
+        question: "Diurnal variation of magnetic declination is",
+        optionA: "Greater at equator than nearer the poles",
+        optionB: "Less at equator than nearer the poles",
+        optionC: "Less in summer than in winter",
+        optionD: "Same at all latitudes and during different months",
+        correct: "b"
+    },
+    {
+        question: "Rankine's deflection angle in minutes is obtained by multiplying the length of the chord by",
+        optionA: "Degree of the curve",
+        optionB: "Square of the degree of the curve",
+        optionC: "Inverse of the degree of the curve",
+        optionD: "None of these",
+        correct: "a"
+    },
+    {
+        question: "In case of a double line river, contours are",
+        optionA: "Stopped at the banks of the river",
+        optionB: "Stopped at the edge of the river",
+        optionC: "Drawn across the water",
+        optionD: "Drawn by parabolic curves having their vertex at the centre of the water",
+        correct: "b"
+    },
+    {
+        question: "The branch of surveying in which both horizontal and vertical positions of a point, are determined by making instrumental observations is known",
+        optionA: "Tacheometry",
+        optionB: "Tachemetry",
+        optionC: "Telemetry",
+        optionD: "All of above",
+        correct: "d"
+    },
+    {
+        question: "Refraction correction",
+        optionA: "Completely eliminates curvature correction",
+        optionB: "Partially eliminates curvature correction",
+        optionC: "Adds to the curvature correction",
+        optionD: "Has no effect on curvature correction",
+        correct: "b"
+    },
+    {
+        question: "If the plane table is not horizontal in a direction at right angles to the alidade, the line of sight is parallel to the fiducial edge only for",
+        optionA: "Horizontal sights",
+        optionB: "Inclined sights upward",
+        optionC: "Inclined sight downward",
+        optionD: "None of these",
+        correct: "a"
+    },
+    {
+        question: "In optical reading instruments",
+        optionA: "The vertical circle is usually continuous from 0° to 359°",
+        optionB: "The readings increase when the telescope is elevated in the face left position",
+        optionC: "The readings decrease when the telescope is elevated in the face right position",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Select the correct statement.",
+        optionA: "A contour is not necessarily a closed curve",
+        optionB: "A contour represents a ridge line if the concave side of lower value contour lies towards the higher value contour",
+        optionC: "Two contours of different elevations do not cross each other except in case of an overhanging cliff",
+        optionD: "All of the above statements are correct",
+        correct: "d"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "If the slope of the curve of a mass diagram in the direction of increasing abscissa is downward, it indicates an embankment",
+        optionB: "The vertical distance between a maximum ordinate and the next forward maximum ordinate represents the whole volume of the embankment",
+        optionC: "The vertical distance between a minimum ordinate and the next forward maximum ordinate represents the whole volume of a cutting",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Pick up the correct statement from the following",
+        optionA: "The diaphragm is placed between eyepiece and the objective but nearer to the former",
+        optionB: "The diaphragm is placed between the eyepiece and objective but nearer to the later",
+        optionC: "The outer component of the objective is a double-convex lens of crown glass",
+        optionD: "All the above",
+        correct: "a"
+    },
+    {
+        question: "If the whole circle bearing of a line is 270°, its reduced bearing is",
+        optionA: "N 90° W",
+        optionB: "S 90° W",
+        optionC: "W 90°",
+        optionD: "90° W",
+        correct: "c"
+    },
+    {
+        question: "The process of determining the locations of the instrument station by drawing re sectors from the locations of the known stations is",
+        optionA: "Radiation",
+        optionB: "Intersection",
+        optionC: "Resection",
+        optionD: "Traversing",
+        correct: "c"
+    },
+    {
+        question: "The operation of revolving a plane table about its vertical axis so that all lines on the sheet become parallel to corresponding lines on the ground is known",
+        optionA: "Levelling",
+        optionB: "Centering",
+        optionC: "Orientation",
+        optionD: "Setting",
+        correct: "c"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "With both handles in his left hand, the chain man throws out the chain with his right hand and the second chain man assists him to free it from knots",
+        optionB: "The follower of the chaining operation should be more experienced than the leader",
+        optionC: "At the end of the tenth chain length, the two chain men meet and the ten arrows are handed over to the leader",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "The number of horizontal cross wires in a stadia diaphragm is",
+        optionA: "One",
+        optionB: "Two",
+        optionC: "Three",
+        optionD: "Four",
+        correct: "c"
+    },
+    {
+        question: "Total latitude of a point is positive if it lies",
+        optionA: "North of the reference parallel",
+        optionB: "South of the reference parallel",
+        optionC: "East of the reference parallel",
+        optionD: "West of the reference parallel",
+        correct: "a"
+    },
+    {
+        question: "Under ordinary conditions, the precision of a theodolite traverse is affected by",
+        optionA: "Systematic angular errors",
+        optionB: "Accidental linear errors",
+        optionC: "Systematic linear errors",
+        optionD: "Accidental angular errors",
+        correct: "c"
+    },
+    {
+        question: "🚩An angle of deflection right, may be directly obtained by setting the instrument to read",
+        optionA: "Zero on back station",
+        optionB: "180° on back station",
+        optionC: "90°",
+        optionD: "270° on back station",
+        correct: "a"
+    },
+    {
+        question: "Location of contour gradient for a high way is best set out from",
+        optionA: "Ridge down the hill",
+        optionB: "Saddle down the hill",
+        optionC: "Bottom to the ridge",
+        optionD: "Bottom to the saddle",
+        correct: "b"
+    },
+    {
+        question: "Setting out a curve by two theodolite method involves",
+        optionA: "Linear measurements only",
+        optionB: "Angular measurements only",
+        optionC: "Both linear and angular measurements",
+        optionD: "None",
+        correct: "b"
+    },
+    {
+        question: "Direct method of contouring is",
+        optionA: "A quick method",
+        optionB: "Adopted for large surveys only",
+        optionC: "Most accurate method",
+        optionD: "Suitable for hilly terrains",
+        correct: "c"
+    },
+    {
+        question: "A lemniscate curve will not be transitional throughout, if its deflection angle is",
+        optionA: "45°",
+        optionB: "60°",
+        optionC: "90°",
+        optionD: "120°",
+        correct: "a"
+    },
+    {
+        question: "If vertical angles of inclined sights do not exceed 10° and non-verticality of the staff remains within 1°, stadia system of tacheometric observations are made on",
+        optionA: "Staff normal",
+        optionB: "Staff vertical",
+        optionC: "Staff normal as well as vertical",
+        optionD: "None",
+        correct: "a"
+    },
+    {
+        question: "On a diagonal scale, it is possible to read up to",
+        optionA: "One dimension",
+        optionB: "Two dimensions",
+        optionC: "Three dimensions",
+        optionD: "Four dimensions",
+        correct: "c"
+    },
+    {
+        question: "The methods used for locating the plane table stations are",
+        optionA: "Radiation",
+        optionB: "Resection",
+        optionC: "Traversing",
+        optionD: "Both b & c",
+        correct: "d"
+    },
+    {
+        question: "In horizontal angles, the error due to imperfect levelling of the plate bubble is",
+        optionA: "Large when sights are nearly level",
+        optionB: "Large for long sights",
+        optionC: "Less for steeply inclined sights",
+        optionD: "Large for steeply inclined sights",
+        correct: "d"
+    },
+    {
+        question: "If the chain line which runs along N-S direction is horizontal and the ground in E-W direction is sloping",
+        optionA: "It is possible to set offsets correctly on east side",
+        optionB: "It is possible to set offsets correctly on east side",
+        optionC: "It is not possible to set offsets correctly on west side",
+        optionD: "It is possible to set offsets correctly on both sides",
+        correct: "d"
+    },
+    {
+        question: "With the rise of temperature, the sensitivity of a bubble tube",
+        optionA: "Decreases",
+        optionB: "Increases",
+        optionC: "Remains unaffected",
+        optionD: "None of the above",
+        correct: "a"
+    },
+    {
+        question: "The imaginary line passing through the intersection of cross hairs and the optical centre of the objective is known as",
+        optionA: "Line of sight",
+        optionB: "Line of collimation",
+        optionC: "Axis of the telescope",
+        optionD: "None of these",
+        correct: "b"
+    },
+    {
+        question: "The instrument which is used in plane tabling for obtaining horizontal and vertical distances directly without resorting to chaining is known as",
+        optionA: "Plane alidade",
+        optionB: "Telescopic alidade",
+        optionC: "Clinometer",
+        optionD: "Tacheometer",
+        correct: "b"
+    },
+    {
+        question: "Pick up the correct statement from the following",
+        optionA: "The contour lines having the same elevation cannot unite and continue as one line",
+        optionB: "A contour can not end abruptly, but must ultimately close itself not necessarily within the limits of map",
+        optionC: "The direction of steepest slope at a point on a contour is at right angles to the contour",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Two contour lines of same elevation",
+        optionA: "can not unite and continue as one line",
+        optionB: "can not unit but continue as one line",
+        optionC: "can unite but not continue as one line",
+        optionD: "can unite and continue as one line",
+        correct: "a"
+    },
+    {
+        question: "An imaginary line joining the points of equal elevation on the surface of the earth represents",
+        optionA: "Contour surface",
+        optionB: "Contour gradient",
+        optionC: "Contour line",
+        optionD: "Level line",
+        correct: "c"
+    },
+    {
+        question: "The ratio of the angles subtended at the eye, by the virtual image and the object, is known as telescope's",
+        optionA: "resolving power",
+        optionB: "brightness",
+        optionC: "Field of view",
+        optionD: "Magnification",
+        correct: ""
+    },
+    {
+        question: "To orient a plane table at a point with two inaccessible points, the method generally adopted, is",
+        optionA: "Intersection",
+        optionB: "Resection",
+        optionC: "Radiation",
+        optionD: "Two point problem",
+        correct: "d"
+    },
+    {
+        question: "In quadrantal bearing system, back bearing of a line may be obtained from its forward bearing by",
+        optionA: "Adding 180°, if the given bearing is less than 180°",
+        optionB: "Subtracting 180°, if the given bearing, is more than 180°",
+        optionC: "Changing the cardinal points, i.e. substituting N for S and E for W and vice-versa",
+        optionD: "None",
+        correct: "c"
+    },
+    {
+        question: "Back bearing of a line is equal to",
+        optionA: "Fore bearing ± 90°",
+        optionB: "Fore bearing ± 180°",
+        optionC: "Fore bearing ± 360°",
+        optionD: "Fore bearing ± 270°",
+        correct: "b"
+    },
+    {
+        question: "If θ is the slope of the ground and l is the measured distance, the correction is",
+        optionA: "2l sin² θ/2",
+        optionB: "2l cos² θ/2",
+        optionC: "2l tan² θ/2",
+        optionD: "2l cot² θ/2",
+        correct: "a"
+    },
+    {
+        question: "The main plate of a transit is divided into 1080 equal divisions. 60 divisions of the Vernier coincide exactly with 59 divisions of the main plate. The transit can read angles accurate upto",
+        optionA: "5\"",
+        optionB: "10\"",
+        optionC: "15\"",
+        optionD: "20\"",
+        correct: "d"
+    },
+    {
+        question: "The ratio of the length of long chord and the tangent length of a circular curve of radius R deflecting through angle Δ is",
+        optionA: "sin Δ",
+        optionB: "cos Δ",
+        optionC: "2 cos Δ/2",
+        optionD: "2 sin Δ/2",
+        correct: "c"
+    },
+    {
+        question: "The correction to be applied to each 30m chain along θ slope is",
+        optionA: "30 (sec θ - 1)",
+        optionB: "30 (sin θ - 1)",
+        optionC: "30 (cos θ - 1)",
+        optionD: "30 (tan θ - 1)",
+        correct: "a"
+    },
+    {
+        question: "For a closed traverse the omitted measurements may be calculated",
+        optionA: "Length of one side only",
+        optionB: "Length or bearing of adjacent side",
+        optionC: "Both length and bearing of one side",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Horizontal distances obtained by thermometric observations",
+        optionA: "Require slope correction",
+        optionB: "Require tension correction",
+        optionC: "Require slope and tension corrections",
+        optionD: "Do not require slope and tension corrections",
+        correct: "d"
+    },
+    {
+        question: "A clinometer is used for",
+        optionA: "Measuring angle of slope",
+        optionB: "Correcting line of collimation",
+        optionC: "Setting out right angles",
+        optionD: "Defining natural features",
+        correct: "a"
+    },
+    {
+        question: "If L is the specified length of a tape, L₁ its actual length and S the measured distance, then the true distance is given by the formula",
+        optionA: "(L₁/L) × S",
+        optionB: "(L/L₁) × S",
+        optionC: "(L-L₁) × S",
+        optionD: "(L/L₁)² × S",
+        correct: "a"
+    }, {
+        question: "In a perfect prismatic compass",
+        optionA: "Magnetic axis and geometric axis of the needle coincide",
+        optionB: "Ends of the needle and pivot are in same vertical and horizontal planes",
+        optionC: "Pivot is vertically over the centre of the graduated circle",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Pick up the correct statement from the following:",
+        optionA: "Box sextant is used for the measurement of horizontal angles",
+        optionB: "Cross staff is used for setting out right angles",
+        optionC: "Gradiometer is used for setting out any required gradient",
+        optionD: "All the above",
+        correct: "d"
+    },
+    {
+        question: "Sensitiveness of a level tube is designated by",
+        optionA: "Radius of level tube",
+        optionB: "Length of level tube",
+        optionC: "Length of bubble of level tube",
+        optionD: "None of the above",
+        correct: "a"
+    },
+    {
+        question: "Accidental or compensating errors of length are proportional to",
+        optionA: "L",
+        optionB: "√L",
+        optionC: "∛L",
+        optionD: "1/√L",
+        correct: "b"
+    },
+    {
+        question: "The latitude of a traverse leg is obtained by multiplying its length by",
+        optionA: "tangent of its reduced bearing",
+        optionB: "sine of its reduced bearing",
+        optionC: "cosine of its reduced bearing",
+        optionD: "cosecant of its reduced bearing",
+        correct: "c"
+    },
+    {
+        question: "Benchmark is established by",
+        optionA: "Hypsometry",
+        optionB: "Barometric levelling",
+        optionC: "Spirit levelling",
+        optionD: "Trigonometrical levelling",
+        correct: "c"
+    },
+    {
+        question: "If a tacheometer is fitted with an anallatic lens",
+        optionA: "Additive constant is 100, multiplying constant is zero",
+        optionB: "Multiplying constant is 100, additive constant is zero",
+        optionC: "Both multiplying and additive constants are 100",
+        optionD: "Both multiplying and additive constants are 50",
+        correct: "b"
+    },
+    {
+        question: "Short offsets are measured with",
+        optionA: "An ordinary chain",
+        optionB: "An invar tape",
+        optionC: "A metallic tape",
+        optionD: "A steel tape",
+        correct: "a"
+    },
+    {
+        question: "The representation of general topography of a very flat terrain is possible only",
+        optionA: "By drawing contours at large interval",
+        optionB: "By drawing contours at small interval",
+        optionC: "By giving spot levels at large interval",
+        optionD: "By giving spot levels to salient features at close interval",
+        correct: "d"
+    },
+    {
+        question: "True meridian of different places",
+        optionA: "Converge from the South Pole to the North Pole",
+        optionB: "Converge from the North Pole to the South Pole",
+        optionC: "Converge from the equator to the poles",
+        optionD: "Run parallel to each other",
+        correct: "c"
+    },
+    {
+        question: "The angle between the prolongation of the preceding line and the forward line of a traverse is called",
+        optionA: "Deflection angle",
+        optionB: "Included angle",
+        optionC: "Direct angle",
+        optionD: "None of the above",
+        correct: "a"
+    },
+    {
+        question: "In case of a direct vernier scale",
+        optionA: "Graduations increase in opposite direction in which graduations of the main scale increase",
+        optionB: "Smallest division is longer than smallest division of the main scale",
+        optionC: "Graduations increase in the same direction in which graduations of the main scale increase",
+        optionD: "None of these",
+        correct: "c"
+    },
+    {
+        question: "Dumpy level is most suitable when",
+        optionA: "The instrument is to be shifted frequently",
+        optionB: "Fly levelling is being done over long distance",
+        optionC: "Many readings are to be taken from a single setting of the instrument",
+        optionD: "All of the above",
+        correct: "c"
+    },
+    {
+        question: "Magnetic declination at any place",
+        optionA: "Remains constant",
+        optionB: "Does not remain constant",
+        optionC: "Fluctuates",
+        optionD: "Changes abruptly",
+        correct: "b"
+    },
+    {
+        question: "The combined effect of curvature and refraction over a distance L kilometer is",
+        optionA: "67.2 L² mm",
+        optionB: "76.3 L² mm",
+        optionC: "64.5 L² mm",
+        optionD: "None of above",
+        correct: "a"
+    }, {
+        question: "The systematic errors which persist and have regular effects in the performance of a survey operation are due to",
+        optionA: "Carelessness",
+        optionB: "Faulty instrument",
+        optionC: "Inattention",
+        optionD: "None of above",
+        correct: "b"
+    },
+    {
+        question: "Accuracy of elevation of various points obtained from contour map is limited to",
+        optionA: "½ of the contour interval",
+        optionB: "¼ th of the contour interval",
+        optionC: "1/3 th of the contour interval",
+        optionD: "1/5 th of the contour interval",
+        correct: "a"
+    },
+    {
+        question: "The curvature of the earth's surface, is taken into account only if the extent of survey is more than",
+        optionA: "100 sq km",
+        optionB: "160 sq km",
+        optionC: "200 sq km",
+        optionD: "260 sq km",
+        correct: "d"
+    },
+    {
+        question: "The theodolites used for making tacheometric observations by optical wedge system are",
+        optionA: "Provided with stadia hairs in front of eye piece",
+        optionB: "Not provided with stadia hairs at all",
+        optionC: "Fitted with a glass wedge inside the telescope",
+        optionD: "Fitted with a glass wedge in front of telescope",
+        correct: "d"
+    },
+    {
+        question: "When the bubble of the level tube of a level remains central",
+        optionA: "Line of sight is horizontal",
+        optionB: "Axis of the telescope is horizontal",
+        optionC: "Line of collimation is horizontal",
+        optionD: "Geometrical axis of the telescope is horizontal",
+        correct: "a"
+    },
+    {
+        question: "An imaginary line lying throughout the surface of ground and preserving a constant inclination to the horizontal is known as",
+        optionA: "Contour line",
+        optionB: "Horizontal equivalent",
+        optionC: "Contour interval",
+        optionD: "Contour gradient",
+        correct: "d"
+    },
+    {
+        question: "Accurate measurement of deflection angles with a transit not properly adjusted may be made by",
+        optionA: "Setting the Vernier A at zero at back station and then plunging the telescope",
+        optionB: "Setting the Vernier A at zero at back station and turning the instrument to the forward station",
+        optionC: "Taking two back sights one with the telescope normal and the other with telescope inverted",
+        optionD: "None of these",
+        correct: "c"
+    },
+    /* 
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    }, {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    }, {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        optionD: "",
+        correct: ""
+    }
+
+    {
         question: "",
         optionA: "",
         optionB: "",
