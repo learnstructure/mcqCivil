@@ -88,7 +88,7 @@ const dataGkGeography = [
         correct: "a"
     },
     {
-        question: "Nepal occupies ..... percentage of total area of Nepal.",
+        question: "Nepal occupies ..... percentage of total area of world.",
         optionA: "0.03%",
         optionB: "0.3%",
         optionC: "0.1%",
@@ -621,7 +621,7 @@ const dataGkGeography = [
         optionB: "4",
         optionC: "5",
         optionD: "6",
-        correct: "a"
+        correct: "b"
     },
     {
         question: "Which province has recently decided to change its capital?",

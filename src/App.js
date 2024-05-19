@@ -21,6 +21,11 @@ import SharedBlog from './sharedLayouts/SharedBlog';
 
 import Calculator from './structure-tools/Calculator';
 import CalculatorNav from './structure-tools/CalculatorNav';
+
+import Students from './students/Students';
+import StudentsNav from './students/SubjectsNav';
+import AssignmentsNav from './students/AssignmentsNav';
+
 import Downloads from './components/Downloads';
 
 
@@ -44,6 +49,10 @@ function App() {
 
         <Route path='/structure-calculator' element={<Calculator />}></Route>
         <Route path='/structure-calculator/:module' element={<CalculatorNav />}></Route>
+
+        <Route path='/students' element={<Students />}></Route>
+        <Route path='/students/:module' element={<StudentsNav />}></Route>
+        <Route path='/students/:module/:module' element={<AssignmentsNav />}></Route>
 
         <Route path='/test' element={<Testpage />}></Route>
         <Route path='/test/:subject' element={<Testsub />}></Route>
