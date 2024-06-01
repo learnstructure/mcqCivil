@@ -14,6 +14,7 @@ function Calculator() {
             <p>Design a <Link to="rcc-column" className='ext-link ext-link2'>RCC Column</Link></p>
             <p>Design a <Link to="rcc-beam" className='ext-link ext-link2'>RCC Beam</Link></p>
             <p>Design a <Link to="shear-wall" className='ext-link ext-link2'>Shear Wall</Link></p>
+            <p><Link to="weld" className='ext-link ext-link2'>Weld Strength</Link></p>
             {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
 
             <p style={{ lineHeight: '1.6' }}>

@@ -6,6 +6,7 @@ import SteelColumnI from './steel-design/steelColumnI/SteelColumnI';
 import ShearWall from './shear-wall/ShearWall';
 import ShareButtons from '../components/ShareButtons';
 import BeamRCC from './beam-rcc/BeamRCC';
+import Weld from './steel-design/connections/Weld';
 function CalculatorNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -24,6 +25,9 @@ function CalculatorNav() {
             break;
         case "steel-i-column":
             moduleCalc = <SteelColumnI />
+            break;
+        case "weld":
+            moduleCalc = <Weld />
             break;
         default:
             moduleCalc = <IsolatedFooting />

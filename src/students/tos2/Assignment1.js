@@ -19,6 +19,72 @@ const Assignment1 = () => {
                 </div>
 
             </label>
+            <h4>1. Define degree of static and kinematic indeterminacy with suitable expressions. Give examples for each.  </h4>
+
+            <h4 style={{ marginBottom: '5px' }}>2. Define the following terms.</h4>
+            <ul style={{ marginTop: '0px' }}>
+                <li>Primary structure</li>
+                <li>Redundant force</li>
+            </ul>
+            <h4 style={{ marginBottom: '5px' }}>3. State and prove the following.</h4>
+            <ul style={{ marginTop: '0px' }}>
+                <li>Castigliano's second theorem</li>
+                <li>Betti's law</li>
+                <li>Maxwell's law</li>
+            </ul>
+            <h4>4. What is structural idealization? Explain the steps involve during identification and formulation of problems in theory of structures.</h4>
+            <h4>5. Obtain degree of static (external and internal) and kinematic indeterminacy.</h4>
+            <div className='divs-container'>
+                <div >
+                    <img src='/images/tos2/assignment1/5-1.PNG' alt="Frame" style={{ maxWidth: '100%' }} />
+                </div>
+                <h4 className='solution'>
+                    ➤External static indeterminacy =  1 <br />
+                    ➤Internal static indeterminacy =  4    <br />
+                    ➤Kinematic  indeterminacy =  22    <br />
+                    ➤Kinematic  indeterminacy =  13 (Assuming inextensible members)
+                </h4>
+                <hr />
+                <div >
+                    <img src='/images/tos2/assignment1/5-2.PNG' alt="Frame" style={{ maxWidth: '100%' }} />
+                </div>
+                <h4 className='solution'>
+                    ➤External static indeterminacy =  6 <br />
+                    ➤Internal static indeterminacy =  3    <br />
+                    ➤Kinematic  indeterminacy =  27   <br />
+                    ➤Kinematic  indeterminacy =  15 (Assuming inextensible members)
+                </h4>
+                <hr />
+                <div >
+                    <img src='/images/tos2/assignment1/5-3.PNG' alt="Frame" style={{ maxWidth: '100%' }} />
+                </div>
+                <h4 className='solution'>
+                    ➤External static indeterminacy =  3 <br />
+                    ➤Internal static indeterminacy =  5    <br />
+                    ➤Kinematic  indeterminacy =  25    <br />
+                    ➤Kinematic  indeterminacy =  14 (Assuming inextensible members)
+                </h4>
+                <hr />
+                <div >
+                    <img src='/images/tos2/assignment1/5-4.PNG' alt="Frame" style={{ maxWidth: '100%' }} />
+                </div>
+                <h4 className='solution'>
+                    ➤External static indeterminacy =  5 <br />
+                    ➤Internal static indeterminacy =  10    <br />
+                    ➤Kinematic  indeterminacy =  24    <br />
+                    ➤Kinematic  indeterminacy =  11 (Assuming inextensible members)
+                </h4>
+                <hr />
+                <div >
+                    <img src='/images/tos2/assignment1/5-5.PNG' alt="Frame" style={{ maxWidth: '100%' }} />
+                </div>
+                <h4 className='solution'>
+                    ➤External static indeterminacy =  1 <br />
+                    ➤Internal static indeterminacy =  2    <br />
+                    ➤Kinematic  indeterminacy =  16    <br />
+                </h4>
+            </div>
+            <hr />
 
 
             <h4>6. Determine the reactions of the beam shown below by Castigliano’s method</h4>
