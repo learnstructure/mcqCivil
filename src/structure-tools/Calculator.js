@@ -14,9 +14,8 @@ function Calculator() {
             <p>Design a <Link to="rcc-column" className='ext-link ext-link2'>RCC Column</Link></p>
             <p>Design a <Link to="rcc-beam" className='ext-link ext-link2'>RCC Beam</Link></p>
             <p>Design a <Link to="shear-wall" className='ext-link ext-link2'>Shear Wall</Link></p>
-            <p><Link to="weld" className='ext-link ext-link2'>Weld Strength</Link></p>
-            {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
-
+            <p>Calculate <Link to="weld" className='ext-link ext-link2'>Weld Strength</Link></p>
+            <p>Visualize <Link to="mohrs-circle" className='ext-link ext-link2'>Mohr's circle.</Link></p>
             <p style={{ lineHeight: '1.6' }}>
                 <strong>More to come</strong>. Join us on our <a href='https://t.me/civilengineering_structure' target="_blank" className='ext-link' rel="noreferrer">Telegram</a> channel to get notifications.
             </p>

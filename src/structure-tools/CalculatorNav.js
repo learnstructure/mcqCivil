@@ -7,6 +7,7 @@ import ShearWall from './shear-wall/ShearWall';
 import ShareButtons from '../components/ShareButtons';
 import BeamRCC from './beam-rcc/BeamRCC';
 import Weld from './steel-design/connections/Weld';
+import MohrCircle from './mohrs/MohrCircle';
 function CalculatorNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -28,6 +29,9 @@ function CalculatorNav() {
             break;
         case "weld":
             moduleCalc = <Weld />
+            break;
+        case "mohrs-circle":
+            moduleCalc = <MohrCircle />
             break;
         default:
             moduleCalc = <IsolatedFooting />
