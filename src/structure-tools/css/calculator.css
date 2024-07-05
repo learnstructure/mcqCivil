@@ -92,7 +92,27 @@
     row-gap: 1rem;
 }
 
+.switch-container {
+    margin-bottom: 20px;
+}
 
+.switch-container button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+}
+
+.switch-container button.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.toggle-y-axis {
+    margin-bottom: 20px;
+}
 
 @media screen and (max-width: 768px) {
     .calc-container {
@@ -110,4 +130,6 @@
     .params2 {
         flex-direction: column;
     }
+
+
 }
