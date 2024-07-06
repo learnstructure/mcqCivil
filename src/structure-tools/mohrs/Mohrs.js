@@ -11,16 +11,35 @@ const Mohrs = ({ sigma_x, sigma_y, tau_xy, theta_deg, mtype, yaxis }) => {
     const radius = Math.sqrt(Math.pow((sigma_x - sigma_y) / 2, 2) + Math.pow(tau_xy, 2));
     const theta = (theta_deg * Math.PI) / 180;
 
-    var sigma_x_prime, sigma_y_prime, tau_xy_prime
+    var sigma_x_prime, sigma_y_prime, tau_xy_prime, thetaP, thetaP_deg
+
     if (mtype === 'stress') {
         sigma_x_prime = center + (sigma_x - sigma_y) / 2 * Math.cos(2 * theta) + tau_xy * Math.sin(2 * theta);
         sigma_y_prime = center - (sigma_x - sigma_y) / 2 * Math.cos(2 * theta) - tau_xy * Math.sin(2 * theta);
         tau_xy_prime = -(sigma_x - sigma_y) / 2 * Math.sin(2 * theta) + tau_xy * Math.cos(2 * theta);
+
+        thetaP = 0.5 * Math.atan(2 * tau_xy / (sigma_x - sigma_y));
+        thetaP_deg = (thetaP * 180) / Math.PI;
+        if (tau_xy >= 0 && (sigma_x - sigma_y) < 0) {
+            thetaP_deg = (90 + thetaP_deg)
+        } else if (tau_xy <= 0 && (sigma_x - sigma_y) < 0) {
+            thetaP_deg = -(90 - thetaP_deg)
+        }
+
     } else {
         sigma_x_prime = center + (sigma_x - sigma_y) / 2 * Math.cos(2 * theta) - tau_xy * Math.sin(2 * theta);
         sigma_y_prime = center - (sigma_x - sigma_y) / 2 * Math.cos(2 * theta) + tau_xy * Math.sin(2 * theta);
         tau_xy_prime = (sigma_x - sigma_y) / 2 * Math.sin(2 * theta) + tau_xy * Math.cos(2 * theta);
+
+        thetaP = 0.5 * Math.atan(-2 * tau_xy / (sigma_x - sigma_y));
+        thetaP_deg = (thetaP * 180) / Math.PI;
+        if (tau_xy >= 0 && (sigma_x - sigma_y) < 0) {
+            thetaP_deg = -(90 - thetaP_deg)
+        } else if (tau_xy <= 0 && (sigma_x - sigma_y) < 0) {
+            thetaP_deg = 90 + thetaP_deg
+        }
     }
+
 
     const circleData = Array.from({ length: 360 }, (_, i) => {
         const angle = (i * Math.PI) / 180;
@@ -46,9 +65,10 @@ const Mohrs = ({ sigma_x, sigma_y, tau_xy, theta_deg, mtype, yaxis }) => {
     return (
         <>
             <div>
-                <div>   R = {radius.toFixed(2)}  </div>
-                <div>   {mtype === 'stress' ? 'σ' : 'I'}<sub>max</sub> = {sigma_max}  </div>
-                <div>  {mtype === 'stress' ? 'σ' : 'I'}<sub>min</sub> = {sigma_min} </div>
+                <p>   R = {radius.toFixed(2)}  </p>
+                <p>   {mtype === 'stress' ? 'σ' : 'I'}<sub>max</sub> = {sigma_max}  </p>
+                <p title='Negative sign means clockwise rotation'>θ<sub>p,max</sub> = {thetaP_deg.toFixed(2)}°</p>
+                <p>  {mtype === 'stress' ? 'σ' : 'I'}<sub>min</sub> = {sigma_min} </p>
             </div>
             <ScatterChart width={500} height={500} margin={{ bottom: 30, left: 30, top: 30, right: 30 }}>
 
@@ -74,8 +94,8 @@ const Mohrs = ({ sigma_x, sigma_y, tau_xy, theta_deg, mtype, yaxis }) => {
 
                 <Scatter name="Mohr's Circle" data={circleData} fill='#989e49' line />
                 <Scatter name="Stress Points" data={pointsx} fill="red" />
-                {yaxis && <Scatter name="Stress Points" data={pointsy} fill="blue" />}
-                <Scatter name="Max min stress" data={pointmax} fill="green" legendType='star' />
+                {yaxis && <Scatter name="Stress Points" data={pointsy} fill="blueviolet" />}
+                <Scatter name="Max min stress" data={pointmax} fill='blue' shape='triangle' />
                 <Scatter name="Center" data={[{ x: center, y: 0 }]} fill="indigo" />
                 <CartesianGrid />
             </ScatterChart>
