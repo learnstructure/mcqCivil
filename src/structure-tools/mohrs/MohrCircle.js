@@ -26,7 +26,7 @@ const MohrCircle = () => {
             </div>
 
             <p>
-                <label>
+                <label title='To type negative number, first type the number and then add - sign before the number'>
                     {mtype === 'stress' ? 'σ' : 'I'}<sub>x</sub> :
                     <input
                         type="number"
@@ -38,7 +38,7 @@ const MohrCircle = () => {
                 </label>
             </p>
             <p>
-                <label>
+                <label title='To type negative number, first type the number and then add - sign before the number'>
                     {mtype === 'stress' ? 'σ' : 'I'}<sub>y</sub> :
                     <input
                         type="number"
@@ -50,7 +50,7 @@ const MohrCircle = () => {
                 </label>
             </p>
             <p>
-                <label>
+                <label title='To type negative number, first type the number and then add - sign before the number'>
                     {mtype === 'stress' ? '𝜏' : 'I'}<sub>xy</sub> :
                     <input
                         type="number"

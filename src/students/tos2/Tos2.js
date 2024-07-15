@@ -13,6 +13,10 @@ function tos2() {
             </p>
             <p><Link to="2" className='ext-link ext-link2'>Assignment 2</Link>
             </p>
+            <p><Link to="3" className='ext-link ext-link2'>Assignment 3</Link>
+            </p>
+            <p><Link to="4" className='ext-link ext-link2'>Assignment 4</Link>
+            </p>
 
             {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
         </main>

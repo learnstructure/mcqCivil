@@ -75,7 +75,7 @@ const Mohrs = ({ sigma_x, sigma_y, tau_xy, theta_deg, mtype, yaxis }) => {
                 <XAxis
                     type="number"
                     dataKey="x"
-                    domain={[(center - radius - 10), (center + radius + 10)]}
+                    domain={[(center - radius - radius / 2), (center + radius + radius / 2)]}
                     tickFormatter={tick => Math.round(tick)}
                     ticks={[sigma_min, center, sigma_max]}
                     label={{ value: `${mtype === 'stress' ? 'σ' : 'I'}ᵤ`, position: 'bottom', offset: 0, fontWeight: 'bold' }}
@@ -84,7 +84,7 @@ const Mohrs = ({ sigma_x, sigma_y, tau_xy, theta_deg, mtype, yaxis }) => {
                 <YAxis
                     type="number"
                     dataKey="y"
-                    domain={[(-radius - 10), (radius + 10)]}
+                    domain={[(-radius - radius / 1.8), (radius + radius / 1.8)]}
                     tickFormatter={tick => Math.round(tick)}
                     ticks={[-radius, 0, radius]}
                     label={{ value: `${mtype === 'stress' ? '𝜏' : 'I'}ᵤᵥ`, position: 'top', offset: 20, fontWeight: 'bold' }}
