@@ -27,7 +27,7 @@ import StudentsNav from './students/SubjectsNav';
 import AssignmentsNav from './students/AssignmentsNav';
 
 import Downloads from './components/Downloads';
-
+import Concrete from './ai/concrete/Concrete';
 
 function App() {
 
@@ -59,6 +59,7 @@ function App() {
         <Route path='/downloads' element={<Downloads />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/thanks' element={<Thanks />}></Route>
+        <Route path='/concrete' element={<Concrete />}></Route>
       </Routes>
     </>
   );

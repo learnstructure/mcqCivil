@@ -8,6 +8,7 @@ import ShareButtons from '../components/ShareButtons';
 import BeamRCC from './beam-rcc/BeamRCC';
 import Weld from './steel-design/connections/Weld';
 import MohrCircle from './mohrs/MohrCircle';
+
 function CalculatorNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -33,6 +34,9 @@ function CalculatorNav() {
         case "mohrs-circle":
             moduleCalc = <MohrCircle />
             break;
+        /* case "plastic-hinge":
+            moduleCalc = <Plastic />
+            break; */
         default:
             moduleCalc = <IsolatedFooting />
             break;

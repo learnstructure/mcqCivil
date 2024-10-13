@@ -3,26 +3,26 @@ import './css/testpage.css'
 import { useContext } from 'react';
 import { TestContext } from './Testsub';
 
-let count;
+
 function Test(props) {
+    const [count, setCount] = useState(0); // Use state to store the count
+
     useMemo(() => {
-        count = 0;
+        setCount(0); // Initialize the count to 0
     }, [])
     const { setRightAns } = useContext(TestContext)
 
     const [answer, setAnswer] = useState()
 
     useMemo(() => {
-
         if (props.submitClicked && answer === props.correct) {
-            count = count + 1
+            setCount(c => c + 1) // Functional update
         }
-
-    }, [props.submitClicked])
+    }, [props.submitClicked, answer, props.correct]) // No need to include count in the dependency array
 
     useEffect(() => {
-        setRightAns(count)
-    }, [count]);
+        setRightAns(count) // Update the rightAns when the count changes
+    }, [count, setRightAns]) // Include the dependencies
 
     return (
         <div className="mcq" >
