@@ -1,60 +1,90 @@
-import React, { useState, useMemo, useEffect } from 'react'
-import './css/testpage.css'
-import { useContext } from 'react';
-import { TestContext } from './Testsub';
-
+import React, { useState, useEffect } from 'react';
+import './css/testpage.css';
 
 function Test(props) {
-    const [count, setCount] = useState(0); // Use state to store the count
+    const { submitClicked, correct, handleCorrectAnswer, serialno, question, optionA, optionB, optionC, optionD } = props;
+    const [answer, setAnswer] = useState("");
+    const [answered, setAnswered] = useState(false); // Track if the answer has already been checked
 
-    useMemo(() => {
-        setCount(0); // Initialize the count to 0
-    }, [])
-    const { setRightAns } = useContext(TestContext)
-
-    const [answer, setAnswer] = useState()
-
-    useMemo(() => {
-        if (props.submitClicked && answer === props.correct) {
-            setCount(c => c + 1) // Functional update
-        }
-    }, [props.submitClicked, answer, props.correct]) // No need to include count in the dependency array
-
+    // Check if answer is correct when submit is clicked
     useEffect(() => {
-        setRightAns(count) // Update the rightAns when the count changes
-    }, [count, setRightAns]) // Include the dependencies
+        if (submitClicked && !answered && answer === correct) {
+            handleCorrectAnswer();  // Increment correct answer count
+            setAnswered(true);      // Mark as answered to prevent multiple increments
+        }
+    }, [submitClicked, answer, correct, handleCorrectAnswer, answered]); // No longer need to worry about 'props' here
 
     return (
-        <div className="mcq" >
-
-            <div>{props.serialno}. {props.question}</div>
-            <div className="option" >
-
+        <div className="mcq">
+            <div>{serialno}. {question}</div>
+            <div className="option">
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionA`} value="a"
-                        onChange={e => setAnswer(e.target.value)} />
-                    <label htmlFor={`${props.serialno}optionA`}
-                        className={props.submitClicked && props.correct === "a" ? "correctAnswer" : null}>a) {props.optionA}</label>
+                    <input
+                        type="radio"
+                        name={`${serialno}options`}
+                        id={`${serialno}optionA`}
+                        value="a"
+                        onChange={e => setAnswer(e.target.value)}
+                        disabled={submitClicked} // Disable selection after submit
+                    />
+                    <label
+                        htmlFor={`${serialno}optionA`}
+                        className={submitClicked && correct === "a" ? "correctAnswer" : null}
+                    >
+                        a) {optionA}
+                    </label>
                 </p>
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionB`} value="b"
-                        onChange={e => setAnswer(e.target.value)} />
-                    <label htmlFor={`${props.serialno}optionB`} className={props.submitClicked && props.correct === "b" ? "correctAnswer" : null}>b) {props.optionB}</label>
+                    <input
+                        type="radio"
+                        name={`${serialno}options`}
+                        id={`${serialno}optionB`}
+                        value="b"
+                        onChange={e => setAnswer(e.target.value)}
+                        disabled={submitClicked}
+                    />
+                    <label
+                        htmlFor={`${serialno}optionB`}
+                        className={submitClicked && correct === "b" ? "correctAnswer" : null}
+                    >
+                        b) {optionB}
+                    </label>
                 </p>
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionC`} value="c"
-                        onChange={e => setAnswer(e.target.value)} />
-                    <label htmlFor={`${props.serialno}optionC`} className={props.submitClicked && props.correct === "c" ? "correctAnswer" : null}>c) {props.optionC}</label>
+                    <input
+                        type="radio"
+                        name={`${serialno}options`}
+                        id={`${serialno}optionC`}
+                        value="c"
+                        onChange={e => setAnswer(e.target.value)}
+                        disabled={submitClicked}
+                    />
+                    <label
+                        htmlFor={`${serialno}optionC`}
+                        className={submitClicked && correct === "c" ? "correctAnswer" : null}
+                    >
+                        c) {optionC}
+                    </label>
                 </p>
                 <p>
-                    <input type="radio" name={`${props.serialno}options`} id={`${props.serialno}optionD`} value="d"
-                        onChange={e => setAnswer(e.target.value)} />
-                    <label htmlFor={`${props.serialno}optionD`} className={props.submitClicked && props.correct === "d" ? "correctAnswer" : null}>d) {props.optionD}</label>
+                    <input
+                        type="radio"
+                        name={`${serialno}options`}
+                        id={`${serialno}optionD`}
+                        value="d"
+                        onChange={e => setAnswer(e.target.value)}
+                        disabled={submitClicked}
+                    />
+                    <label
+                        htmlFor={`${serialno}optionD`}
+                        className={submitClicked && correct === "d" ? "correctAnswer" : null}
+                    >
+                        d) {optionD}
+                    </label>
                 </p>
             </div>
-
         </div>
-    )
+    );
 }
 
-export default Test
+export default Test;

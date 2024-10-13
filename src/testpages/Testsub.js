@@ -65,7 +65,9 @@ function Testsub() {
 
     const [submitClicked, setSubmitClicked] = useState(false)
     const [rightAns, setRightAns] = useState(0)
-
+    const handleCorrectAnswer = () => {
+        setRightAns(prev => prev + 1);  // Increment based on the previous state
+    };
     const randomQuestions = testData.map((mcq, index) => {
         return (<Test
             key={index + 1}
@@ -77,6 +79,7 @@ function Testsub() {
             optionD={mcq.optionD}
             correct={mcq.correct}
             submitClicked={submitClicked}
+            handleCorrectAnswer={handleCorrectAnswer}
         />)
     })
 
