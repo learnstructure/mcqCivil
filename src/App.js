@@ -28,6 +28,8 @@ import AssignmentsNav from './students/AssignmentsNav';
 
 import Downloads from './components/Downloads';
 import Concrete from './ai/concrete/Concrete';
+import AI from './ai/AI';
+import AiNav from './ai/AiNav';
 
 function App() {
 
@@ -49,6 +51,9 @@ function App() {
 
         <Route path='/structure-calculator' element={<Calculator />}></Route>
         <Route path='/structure-calculator/:module' element={<CalculatorNav />}></Route>
+
+        <Route path='/machine-learning' element={<AI />}></Route>
+        <Route path='/machine-learning/:module' element={<AiNav />}></Route>
 
         <Route path='/students' element={<Students />}></Route>
         <Route path='/students/:module' element={<StudentsNav />}></Route>
