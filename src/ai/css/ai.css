@@ -19,3 +19,44 @@
     /* Darker green */
     transform: scale(1.05);
 }
+
+.prediction-box {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 0.8rem;
+    border: 1px solid #ddd;
+}
+
+.prediction-title {
+    /* text-align: center; */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.prediction-text {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0.4rem 0;
+}
+
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows items to wrap onto the next line */
+    gap: 20px;
+    /* Adds space between items */
+}
+
+.flex-item {
+    flex: 1 1 20%;
+    /* Flex-grow, flex-shrink, and base-width of 45% for 2 items per row */
+}
+
+@media (max-width: 768px) {
+    .flex-item {
+        flex: 1 1 100%;
+        /* For mobile, each item takes full width */
+    }
+}
