@@ -17,6 +17,10 @@ p {
   margin: auto;
 }
 
+.page-new {
+  line-height: 1.6rem;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;

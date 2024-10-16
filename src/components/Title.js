@@ -64,7 +64,7 @@ export default function Title() {
                     <NavLink to='/students' onClick={handleClick}>Students</NavLink>
                     <NavLink to='/downloads' onClick={handleClick}>Downloads</NavLink>
                     <NavLink to='/test' onClick={handleClick}>Online Test</NavLink>
-                    <NavLink to='/contact' onClick={handleClick} className="contact-us">Contact Us</NavLink>
+                    <NavLink to='/contact' onClick={handleClick} className="contact-us">About Me</NavLink>
 
                 </nav>
 
