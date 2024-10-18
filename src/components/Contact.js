@@ -11,10 +11,10 @@ function Contact() {
             </Helmet>
             <h2>About Me</h2>
             <p>
-                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer with a strong focus on innovation in structural design. I leverage <strong>machine learning</strong> and <strong>deep learning</strong> techniques to develop cutting-edge structural systems and materials, optimizing both performance and efficiency.
+                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer with a strong focus on innovation in structural engineering. I leverage <strong>machine learning</strong> and <strong>deep learning</strong> techniques to develop cutting-edge structural materials and systems, optimizing both performance and efficiency.
             </p>
-
-            <h3>Professional Background</h3>
+            <hr />
+            <h3 >Professional Background</h3>
             <ul>
                 <li>
                     <strong>Structural Engineer at Bric Consult Pvt. Ltd., Lalitpur, Nepal</strong> (2019 - Present): Involved in the structural design of buildings and bridges in Nepal, I apply engineering principles to create safe, durable structures that meet industry standards.
@@ -23,7 +23,7 @@ function Contact() {
                     <strong>Assistant Lecturer at Himalaya College of Engineering, Lalitpur, Nepal</strong> (2023 - Present): In academia, I enjoy sharing my expertise in structural engineering, helping to inspire and educate the next generation of engineers.
                 </li>
             </ul>
-
+            <hr />
             <h3>Get in Touch</h3>
             <p>
                 I’m always open to discussing ideas, collaborations, or answering questions. Feel free to contact me through the form below or connect with me on social media:

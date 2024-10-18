@@ -104,6 +104,9 @@ const Concrete = () => {
             </div>
 
             <button onClick={handlePredict} className='button'>Predict</button>
+            {!prediction &&
+                <span style={{ fontStyle: 'italic' }}>The initial prediction may take a moment if the server is not already running.</span>
+            }
             {prediction && (
                 <div className="prediction-box">
                     <p className="prediction-title">Predictions based on various machine learning models</p>
