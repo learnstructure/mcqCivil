@@ -4,6 +4,10 @@ import Assignment1 from './tos2/Assignment1';
 import Assignment2 from './tos2/Assignment2';
 import Assignment3 from './tos2/Assignment3';
 import Assignment4 from './tos2/Assignment4';
+import Ct1 from './ct/Ct1';
+import Ct2 from './ct/Ct2';
+import Ct3 from './ct/Ct3';
+import Ct4 from './ct/Ct4';
 
 function StudentsNav() {
     const { module } = useParams()
@@ -20,6 +24,18 @@ function StudentsNav() {
             break;
         case "4":
             moduleCalc = <Assignment4 />
+            break;
+        case "ct1":
+            moduleCalc = <Ct1 />
+            break;
+        case "ct2":
+            moduleCalc = <Ct2 />
+            break;
+        case "ct3":
+            moduleCalc = <Ct3 />
+            break;
+        case "ct4":
+            moduleCalc = <Ct4 />
             break;
         default:
             moduleCalc = <Assignment1 />

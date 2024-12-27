@@ -11,6 +11,8 @@ function Students() {
             <h2>Check your assignments here.</h2>
             <p><Link to="tos2" className='ext-link ext-link2'>Theory of Structures - II</Link>
             </p>
+            <p><Link to="ct" className='ext-link ext-link2'>Computational Techniques (Structure)</Link>
+            </p>
 
             {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
 
