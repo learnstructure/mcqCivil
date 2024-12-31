@@ -8,6 +8,7 @@ import Ct1 from './ct/Ct1';
 import Ct2 from './ct/Ct2';
 import Ct3 from './ct/Ct3';
 import Ct4 from './ct/Ct4';
+import Ct5 from './ct/Ct5';
 
 function StudentsNav() {
     const { module } = useParams()
@@ -36,6 +37,9 @@ function StudentsNav() {
             break;
         case "ct4":
             moduleCalc = <Ct4 />
+            break;
+        case "ct5":
+            moduleCalc = <Ct5 />
             break;
         default:
             moduleCalc = <Assignment1 />
