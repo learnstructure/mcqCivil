@@ -6,21 +6,32 @@ function Contact() {
     return (
         <div className='page-container page-new'>
             <Helmet>
-                <title>Contact Civil Mcq</title>
-                <meta name="description" content="contact us page" />
+                <title>Contact Structure Realm</title>
+                <meta name="description" content="About Abinash Mandal - Structural Engineer and Lecturer" />
             </Helmet>
             <h2>About Me</h2>
             <p>
-                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer with a strong focus on innovation in structural engineering. I leverage <strong>machine learning</strong> and <strong>deep learning</strong> techniques to develop cutting-edge structural materials and systems, optimizing both performance and efficiency.
+                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer passionate about advancing structural engineering through innovation.
+                I specialize in leveraging <strong>machine learning</strong> and <strong>deep learning</strong> to design efficient and high-performance structural systems.
             </p>
             <hr />
             <h3 >Professional Background</h3>
             <ul>
-                <li>
-                    <strong>Structural Engineer at Bric Consult Pvt. Ltd., Lalitpur, Nepal</strong> (2019 - Present): Involved in the structural design of buildings and bridges in Nepal, I apply engineering principles to create safe, durable structures that meet industry standards.
+                <li style={{ marginBottom: '1rem' }}>
+                    <strong>Structural Engineer at Bric Consult Pvt. Ltd., Lalitpur, Nepal</strong> (2019 - Present): Involved in the structural design of RCC and steel buildings and bridges in Nepal, with a focus on safety, durability, and compliance with industry standards.
                 </li>
-                <li>
-                    <strong>Assistant Lecturer at Himalaya College of Engineering, Lalitpur, Nepal</strong> (2023 - Present): In academia, I enjoy sharing my expertise in structural engineering, helping to inspire and educate the next generation of engineers.
+                <li style={{ marginBottom: '1rem' }}>
+                    <strong>Lecturer at Himalaya College of Engineering, Lalitpur, Nepal</strong> (2023 - Present): Teaching courses such as Engineering Mechanics, Strength of Materials, Theory of Structures I & II, Design of Steel Structures, and Computational Techniques (Finite Element Method). Mentoring students to inspire the next generation of structural engineers.
+                </li>
+            </ul>
+            <hr />
+            <h3 >Research Papers Published</h3>
+            <ul>
+                <li style={{ marginBottom: '1rem' }}>
+                    Mandal, A., & Joshi, H. R. (2020). <i>Effect of change in rise/span ratio on performance of open thin cylindrical shells.</i> Proceedings of the 8th IOE Graduate Conference. <a href='http://conference.ioe.edu.np/ioegc8/papers/ioegc-8-089-80122.pdf' target="_blank" rel="noopener noreferrer">[Paper Link]</a>
+                </li>
+                <li style={{ marginBottom: '1rem' }}>
+                    Abinash Mandal. <i> Predicting Compressive Strength of Concrete Using Advanced Machine Learning Techniques.</i> Accepted for publication in Asian Journal of Civil Engineering (2024). <a href='https://doi.org/10.21203/rs.3.rs-5401974/v1' target="_blank" rel="noopener noreferrer">[Preprint Link]</a>
                 </li>
             </ul>
             <hr />

@@ -53,9 +53,5 @@ export function calc_area(no, dia) {
     return no * Math.PI * dia * dia / 4
 }
 
-function check(arg) {
-    return arg ? " ✅" : " ❌"
-}
-
 
 
