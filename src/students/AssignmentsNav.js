@@ -9,6 +9,7 @@ import Ct2 from './ct/Ct2';
 import Ct3 from './ct/Ct3';
 import Ct4 from './ct/Ct4';
 import Ct5 from './ct/Ct5';
+import St11 from './structure1/St11';
 
 function StudentsNav() {
     const { module } = useParams()
@@ -40,6 +41,9 @@ function StudentsNav() {
             break;
         case "ct5":
             moduleCalc = <Ct5 />
+            break;
+        case "st1-1":
+            moduleCalc = <St11 />
             break;
         default:
             moduleCalc = <Assignment1 />

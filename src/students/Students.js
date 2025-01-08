@@ -13,6 +13,8 @@ function Students() {
             </p>
             <p><Link to="ct" className='ext-link ext-link2'>Computational Techniques (Structure)</Link>
             </p>
+            <p><Link to="st1" className='ext-link ext-link2'>Structure 1 (Architecture)</Link>
+            </p>
 
             {/* <p>Design a <Link to="steel-i-column">Steel I Column</Link></p> */}
 

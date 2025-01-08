@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import Tos2 from './tos2/Tos2';
 import Ct from './ct/Ct';
+import St1 from './structure1/St1';
 function SubjectsNav() {
     const { module } = useParams()
     var moduleCalc;
@@ -12,6 +13,10 @@ function SubjectsNav() {
 
         case "ct":
             moduleCalc = <Ct />
+            break;
+
+        case "st1":
+            moduleCalc = <St1 />
             break;
 
         default:
