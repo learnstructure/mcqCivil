@@ -11,8 +11,8 @@ function Contact() {
             </Helmet>
             <h2>About Me</h2>
             <p>
-                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer passionate about advancing structural engineering through innovation.
-                I specialize in leveraging <strong>machine learning</strong> and <strong>deep learning</strong> to design efficient and high-performance structural systems.
+                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer (M.Sc. in Structural Engineering, Pulchowk Campus, T.U., Nepal) passionate about advancing structural engineering through innovation.
+                I aim to leverage <strong>machine learning</strong> and <strong>deep learning</strong> to design efficient and high-performance structural systems.
             </p>
             <hr />
             <h3 >Professional Background</h3>
@@ -31,7 +31,8 @@ function Contact() {
                     Mandal, A., & Joshi, H. R. (2020). <i>Effect of change in rise/span ratio on performance of open thin cylindrical shells.</i> Proceedings of the 8th IOE Graduate Conference. <a href='http://conference.ioe.edu.np/ioegc8/papers/ioegc-8-089-80122.pdf' target="_blank" rel="noopener noreferrer">[Paper Link]</a>
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                    Abinash Mandal. <i> Predicting Compressive Strength of Concrete Using Advanced Machine Learning Techniques.</i> Accepted for publication in Asian Journal of Civil Engineering (2024). <a href='https://doi.org/10.21203/rs.3.rs-5401974/v1' target="_blank" rel="noopener noreferrer">[Preprint Link]</a>
+                    Mandal, A. (2025). <i> Predicting Compressive Strength of Concrete Using Advanced Machine Learning Techniques: A Combined Dataset Approach.</i> Asian Journal of Civil Engineering. <a href='https://doi.org/10.1007/s42107-024-01247-x' target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s42107-024-01247-x</a>
+                    <br />(For those without subscription, view the full article here. <a href='https://rdcu.be/d5GEn' target="_blank" rel="noopener noreferrer">SharedIt Link</a> )
                 </li>
             </ul>
             <hr />
