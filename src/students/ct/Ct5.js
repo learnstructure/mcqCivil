@@ -62,7 +62,7 @@ const Ct5 = () => {
                 <img src='/images/ct/assignment5/cst3.PNG' alt="Triangular element" style={{ maxWidth: '100%' }} />
             </div>
             <h4 className='solution divs-container'>
-                ➤ u<sub>2</sub> = {(-3.15782 * 10 ** -7 * (10 + roll)).toExponential(3)} m    <span style={{ marginRight: '3em' }}></span>
+                ➤ u<sub>2</sub> = {(-6.93333 * 10 ** -9 * (10 + roll)).toExponential(3)} m    <span style={{ marginRight: '3em' }}></span>
                 ➤ v<sub>2</sub> = 0 <br />
             </h4>
             <hr />
