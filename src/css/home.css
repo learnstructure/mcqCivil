@@ -1,36 +1,49 @@
 .homepage {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem;
-    color: black;
+    font-family: 'Segoe UI', sans-serif;
     background-image: linear-gradient(rgb(255, 255, 255), rgb(220, 226, 225), rgb(244, 244, 244));
-    min-height: 80vh;
+    ;
+    min-height: 100vh;
 }
 
-.home-link {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.8rem;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 1rem;
-    transform: translateX(-40%)
-}
 
-.home-link a {
-    text-decoration: none;
-    transform: translateX(50%);
+.home-body {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+
+    border-radius: 1rem;
+
 }
 
 
 .focusText {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.7rem;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.highlight-purple {
+    color: rgb(5, 143, 223);
     font-weight: bold;
-    text-shadow: 1px 1px 2px #999;
-    line-height: 1.2;
+    text-shadow: 0.5px 0.5px 0.5px #1674df;
+}
+
+.highlight-green {
+
+    color: #156132;
+    text-shadow: 0.5px 0.5px 0.5px #05451f;
+}
+
+.subheading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.telegram-link {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .ext-link {
@@ -40,14 +53,97 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     text-decoration: none;
     border-radius: 0.2rem;
+
 }
 
 .ext-link2 {
-
     padding: 0.4rem 0.8rem;
     border-radius: 0.1rem;
 }
 
 .ext-link:hover {
     background-color: rgb(34, 100, 92);
+}
+
+.home-link {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.home-link a {
+    background-color: rgb(213, 218, 216);
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.home-link a:hover {
+    background-color: #e0f7fa;
+    transform: translateY(-4px);
+}
+
+.cta-link {
+    font-weight: bold;
+    color: darkgreen;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #464545;
+}
+
+.hero-image {
+    display: block;
+    max-width: 95%;
+    margin: 1rem auto;
+    border-radius: 1rem;
+}
+
+.bubble-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(100, 100, 255, 0.15);
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1.2);
+        opacity: 0.3;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero-image {
+
+        max-width: 90%;
+
+    }
 }
