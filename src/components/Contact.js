@@ -11,17 +11,17 @@ function Contact() {
             </Helmet>
             <h2>About Me</h2>
             <p>
-                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer (M.Sc. in Structural Engineering, Pulchowk Campus, T.U., Nepal) passionate about advancing structural engineering through innovation.
+                Hello, I'm <strong>Abinash Mandal</strong>, a structural engineer from <strong>Nepal</strong> passionate about advancing the field through innovation. I am currently pursuing my <strong>PhD in structural engineering </strong> at the University of Nevada, Reno.
                 I aim to leverage <strong>machine learning</strong> and <strong>deep learning</strong> to design efficient and high-performance structural systems.
             </p>
             <hr />
             <h3 >Professional Background</h3>
             <ul>
                 <li style={{ marginBottom: '1rem' }}>
-                    <strong>Structural Engineer at Bric Consult Pvt. Ltd., Lalitpur, Nepal</strong> (2019 - Present): Involved in the structural design of RCC and steel buildings and bridges in Nepal, with a focus on safety, durability, and compliance with industry standards.
+                    <strong>Structural Engineer at Bric Consult Pvt. Ltd., Lalitpur, Nepal</strong> (2019 - 2025): Involved in the structural design of RCC and steel buildings and bridges in Nepal, with a focus on safety, durability, and compliance with industry standards.
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                    <strong>Lecturer at Himalaya College of Engineering, Lalitpur, Nepal</strong> (2023 - Present): Teaching courses such as Engineering Mechanics, Strength of Materials, Theory of Structures I & II, Design of Steel Structures, and Computational Techniques (Finite Element Method). Mentoring students to inspire the next generation of structural engineers.
+                    <strong>Lecturer at Himalaya College of Engineering, Lalitpur, Nepal</strong> (2023 - 2025): Taught courses such as Engineering Mechanics, Strength of Materials, Theory of Structures I & II, Design of Steel Structures, and Computational Techniques (Finite Element Method). Mentoring students to inspire the next generation of structural engineers.
                 </li>
             </ul>
             <hr />

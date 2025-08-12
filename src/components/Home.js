@@ -56,7 +56,7 @@ function Home() {
                     Explore the world of Structural Engineering — Learn, Practice, and Design with our curated resources and tools.
                 </p>
 
-                <img src="/images/home.PNG" alt="Engineer Illustration" className="hero-image" />
+                <img src="/images/home.png" alt="Engineer Illustration" className="hero-image" />
 
 
                 <motion.div className='home-link' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
