@@ -11,6 +11,8 @@ function AI() {
             <h2>Welcome to Machine learning tools</h2>
             <p>Predict <Link to="concrete" className='ext-link ext-link2'>Compressive strength</Link> of Concrete
             </p>
+            <p>Optimize design of <Link to="srrs-beam" className='ext-link ext-link2'>Singly Reinforced RC Beam</Link>
+            </p>
 
             <p style={{ lineHeight: '1.6' }}>
                 <strong>More to come</strong>. Join us on our <a href='https://t.me/civilengineering_structure' target="_blank" className='ext-link' rel="noreferrer">Telegram</a> channel to get notifications.
