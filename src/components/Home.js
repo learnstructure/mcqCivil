@@ -43,9 +43,7 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <p className='telegram-link' style={{ lineHeight: '1.6' }}>
-                    Stay connected and get the latest updates by joining our <a href='https://t.me/civilengineering_structure' target="_blank" className='ext-link' rel="noreferrer">Telegram</a> channel!
-                </p>
+
 
                 {/* <motion.h1 className='focusText' initial={{ scale: 0.9 }} animate={{ scale: 1 }}>
                     Welcome to <span className='highlight-purple'>Structure</span> <span className='highlight-green'>Realm</span>
@@ -56,7 +54,18 @@ function Home() {
                     Explore the world of Structural Engineering — Learn, Practice, and Design with our curated resources and tools.
                 </p>
 
-                <img src="/images/home.png" alt="Engineer Illustration" className="hero-image" />
+                <a
+                    href='https://structure-realm.web.app/'
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Analyze structural frames online" // ✅ Use the standard 'title' attribute here
+                >
+                    <img
+                        src="/images/frame1.PNG"
+                        alt="Frame analysis app"
+                        className="hero-image"
+                    />
+                </a>
 
 
                 <motion.div className='home-link' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>

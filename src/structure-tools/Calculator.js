@@ -9,6 +9,8 @@ function Calculator() {
                 <meta name="description" content="Design your structural components based on IS 456: 2007 for free" />
             </Helmet>
             <h2>Welcome to Structure Calculator</h2>
+            <p>Analyze a <a href='https://structure-realm.web.app/' target="_blank" className='ext-link' rel="noreferrer">Frame</a>
+            </p>
             <p>Design a <Link to="footing" className='ext-link ext-link2'>Sloped isolated footing</Link>
             </p>
             <p>Design a <Link to="rcc-column" className='ext-link ext-link2'>RCC Column</Link></p>
