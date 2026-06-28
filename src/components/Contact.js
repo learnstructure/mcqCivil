@@ -36,6 +36,17 @@ function Contact() {
                 </li>
             </ul>
             <hr />
+            <h3 >Software Releases</h3>
+            <ul>
+                <li style={{ marginBottom: '1rem' }}>
+                    Mandal, A. (2026). FEM2D: An open-source Python library for structural analysis of 2D structures (v0.2.1). Zenodo.  <a href='https://doi.org/10.5281/zenodo.20990850' target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.20990850</a>
+                </li>
+                <li style={{ marginBottom: '1rem' }}>
+                    Mandal, A. (2026). StructDyn: An open-source Python library for structural dynamics analysis (v0.7.4). Zenodo. <a href='https://doi.org/10.5281/zenodo.18676816' target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.18676816</a>
+
+                </li>
+            </ul>
+            <hr />
             <h3>Get in Touch</h3>
             <p>
                 I’m always open to discussing ideas, collaborations, or answering questions. Feel free to contact me through the form below or connect with me on social media:
