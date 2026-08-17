@@ -37,8 +37,84 @@
 
 .subheading {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #444;
+    max-width: 720px;
+    margin: 0.5rem auto 1.5rem auto;
+    line-height: 1.6;
+}
+
+.migration-banner {
+    background: #ffffff;
+    border: 1px solid #d4e3f0;
+    border-left: 4px solid #058fdf;
+    border-radius: 8px;
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.migration-text h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.05rem;
+    color: #1e3a8a;
+}
+
+.migration-text p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+.migration-btn {
+    white-space: nowrap;
+    background-color: #058fdf;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.migration-btn:hover {
+    background-color: #026bb1;
+    transform: translateY(-1px);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin: 2rem 0 0.4rem 0;
+    font-weight: 700;
+}
+
+.section-desc {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .migration-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .migration-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 .telegram-link {

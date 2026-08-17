@@ -4,136 +4,70 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-  <loc>https://structurerealm.com/</loc>
-  <lastmod>2023-06-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/som</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structure</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/rcc</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/geotechnical</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/buildingMaterials</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/constructionManagement</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/economics</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/drawing</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/professional</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-geography</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-organization</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structure-calculator</loc>
-<lastmod>2023-09-10T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structure-calculator/shear-wall</loc>
-<lastmod>2023-09-05T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structure-calculator/footing</loc>
-<lastmod>2023-09-05T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structure-calculator/rcc-column</loc>
-<lastmod>2023-09-05T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-is-wind-load-and-how-to-apply-it-in-ETABS</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-is-P-delta-analysis-and-how-to-perform-it</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-is-membrane-and-thin-shell-in-ETABS-and-which-one-to-assign</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-is-displacement-based-design-approach</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-is-pushover-analysis-and-how-to-perform-it-in-ETABS</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/Response-spectrum-analysis-in-ETABS</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-are-actually-rigid-and-semi-rigid-diaphragm-in-ETABS</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structural-engineering/What-actually-are-axial-force-shear-force-and-bending-moment-%F0%9F%A4%94</loc>
-<lastmod>2023-09-05T11:01:45+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/structure-calculator/rcc-beam</loc>
-<lastmod>2023-10-01T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-periodic-plans</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-natural-resources</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-climate-nepal</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-management</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/gk-government-plans</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/surveying</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
-<url>
-<loc>https://structurerealm.com/estimation</loc>
-<lastmod>2023-10-09T14:27:33+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/som</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/structure</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/rcc</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/geotechnical</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/surveying</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/buildingMaterials</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/estimation</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/constructionManagement</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/economics</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/drawing</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/professional</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-geography</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-organization</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-natural-resources</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-climate-nepal</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-periodic-plans</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-management</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-government-plans</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/test</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/downloads</loc>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/contact</loc>
+  </url>
 </urlset>

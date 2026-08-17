@@ -6,8 +6,8 @@ function Contact() {
     return (
         <div className='page-container page-new'>
             <Helmet>
-                <title>Contact Structure Realm</title>
-                <meta name="description" content="About Abinash Mandal - Structural Engineer and Lecturer" />
+                <title>About Me | Civil Engineering MCQ</title>
+                <meta name="description" content="About Abinash Mandal - Structural & Civil Engineer and Lecturer" />
             </Helmet>
             <h2>About Me</h2>
             <p>

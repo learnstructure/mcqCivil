@@ -1,0 +1,8 @@
+{
+    "name": "MCQ Civil",
+    "description": "Civil engineering MCQ practice and Loksewa Nepal preparation questions with instant feedback and discussion forums.",
+    "requestFramePermissions": [],
+    "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+    ]
+}

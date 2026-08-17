@@ -1,8 +1,13 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 
 function Downloads() {
     return (
         <div className='page-container' style={{ lineHeight: '1.8rem' }}>
+            <Helmet>
+                <title>Downloads | Free Civil Engineering Notes & Numericals</title>
+                <meta name="description" content="Download free civil and structural engineering lecture notes, study slides, and numericals." />
+            </Helmet>
             <p>You can download the <strong>notes and numericals </strong> here for free.</p>
             <p >
                 <a href='https://drive.google.com/file/d/1dt1YMSoPMS0HSOrQFlMuZENr7QBI3r6l/view?usp=drive_link' target="_blank" className='ext-link ext-link2' rel="noreferrer">Engineering Mechanics (Statics)</a>

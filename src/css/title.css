@@ -1,7 +1,3 @@
-.siteInfo {
-    text-align: center;
-}
-
 .mainNav {
     position: -webkit-sticky;
     position: sticky;
@@ -11,7 +7,22 @@
     background-color: #f3f3f3;
     align-items: center;
     justify-content: space-around;
-    padding-right: 1rem;
+    padding: 0.3rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.brand-nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+.nav-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .topNav {
