@@ -50,7 +50,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md transition-colors duration-200">
+    <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-16" ref={dropdownRef}>
 
@@ -67,7 +67,6 @@ export default function Navbar() {
                 <span className="lg:hidden xl:inline">Civil Engineering <span className="text-sky-600 dark:text-sky-400">MCQ</span></span>
                 <span className="hidden lg:inline xl:hidden">Civil Eng. <span className="text-sky-600 dark:text-sky-400">MCQ</span></span>
               </div>
-              {/* Subtitle hidden on lg to save space, shown on mobile & xl+ */}
               <span className="lg:hidden xl:block text-[10px] font-semibold tracking-wider text-slate-500 dark:text-slate-400 whitespace-nowrap">
                 Loksewa, NEC &amp; MSc Entrance Prep
               </span>
@@ -98,23 +97,23 @@ export default function Navbar() {
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 mt-1 w-[480px] p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 grid grid-cols-2 gap-2 animate-fadeIn z-50"
                 >
-                  <div className="col-span-2 pb-2 mb-1 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                      Civil Engineering Subjects ({TECHNICAL_SUBJECTS.length})
-                    </span>
-                    <span className="text-[11px] text-sky-600 dark:text-sky-400 font-medium">Instant answers & discussions</span>
-                  </div>
                   {TECHNICAL_SUBJECTS.map((sub) => (
                     <Link
                       key={sub.slug}
                       to={`/${sub.slug}`}
-                      className="flex flex-col p-2.5 rounded-xl hover:bg-sky-50 dark:hover:bg-slate-800/70 transition group"
+                      onClick={() => setActiveDropdown(null)}
+                      className="p-2.5 rounded-xl hover:bg-sky-50 dark:hover:bg-slate-800/60 transition group flex flex-col"
                     >
-                      <span className="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400">
-                        {sub.title}
-                      </span>
-                      <span className="text-[11px] text-slate-500 dark:text-slate-400">
-                        {sub.rawQuestions.length} Questions
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                          {sub.title}
+                        </span>
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300">
+                          {sub.rawQuestions.length}
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                        {sub.shortTitle} • Loksewa & NEC
                       </span>
                     </Link>
                   ))}
@@ -122,7 +121,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* General Knowledge Dropdown */}
+            {/* Loksewa GK Dropdown */}
             <div className="relative">
               <button
                 type="button"
@@ -143,22 +142,23 @@ export default function Navbar() {
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 mt-1 w-[420px] p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1 animate-fadeIn z-50"
                 >
-                  <div className="pb-2 mb-1 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                      PSC Loksewa Nepal GK ({GK_SUBJECTS.length})
-                    </span>
-                  </div>
                   {GK_SUBJECTS.map((sub) => (
                     <Link
                       key={sub.slug}
                       to={`/${sub.slug}`}
-                      className="flex items-center justify-between p-2 rounded-xl hover:bg-emerald-50 dark:hover:bg-slate-800/70 transition group"
+                      onClick={() => setActiveDropdown(null)}
+                      className="p-2 rounded-xl hover:bg-emerald-50 dark:hover:bg-slate-800/60 transition group flex items-center justify-between"
                     >
-                      <span className="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
-                        {sub.title}
-                      </span>
-                      <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-                        {sub.rawQuestions.length} Qs
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+                          {sub.title}
+                        </span>
+                        <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                          {sub.description}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+                        {sub.rawQuestions.length}
                       </span>
                     </Link>
                   ))}
@@ -166,25 +166,25 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Online Test Link */}
-            <NavLink to="/test" className={navLinkClass}>
-              <Timer className="w-4 h-4 text-amber-500" />
-              <span>Online Test</span>
-            </NavLink>
-
-            {/* Downloads Link */}
-            <NavLink to="/downloads" className={navLinkClass}>
-              <Download className="w-4 h-4 text-purple-500" />
-              <span>Downloads</span>
-            </NavLink>
-
-            {/* Community Link */}
+            {/* Community Tab */}
             <NavLink to="/community" className={navLinkClass}>
               <Users className="w-4 h-4 text-rose-500" />
               <span>Community</span>
             </NavLink>
 
-            {/* Contact & Ecosystem Dropdown */}
+            {/* Online Test */}
+            <NavLink to="/test" className={navLinkClass}>
+              <Timer className="w-4 h-4 text-amber-500" />
+              <span>Online Test</span>
+            </NavLink>
+
+            {/* Free Downloads */}
+            <NavLink to="/downloads" className={navLinkClass}>
+              <Download className="w-4 h-4 text-purple-500" />
+              <span>Downloads</span>
+            </NavLink>
+
+            {/* Unified Contact Dropdown (About Me & Contact + StructureRealm) */}
             <div className="relative">
               <button
                 type="button"
@@ -205,16 +205,17 @@ export default function Navbar() {
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute right-0 mt-1 w-72 p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1.5 animate-fadeIn z-50"
                 >
+                  {/* About Me & Contact option */}
                   <Link
                     to="/contact"
                     onClick={() => setActiveDropdown(null)}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition group"
+                    className="p-2.5 rounded-xl hover:bg-teal-50 dark:hover:bg-slate-800/60 transition group flex items-center gap-3"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-600 dark:text-teal-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                       <User className="w-4 h-4" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400">
+                      <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400">
                         About Me & Contact
                       </span>
                       <span className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
@@ -223,19 +224,22 @@ export default function Navbar() {
                     </div>
                   </Link>
 
+                  <div className="h-px bg-slate-100 dark:bg-slate-800 my-0.5" />
+
+                  {/* StructureRealm external option */}
                   <a
                     href="https://structurerealm.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setActiveDropdown(null)}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-sky-50 dark:hover:bg-slate-800 transition group"
+                    className="p-2.5 rounded-xl hover:bg-sky-50 dark:hover:bg-slate-800/60 transition group flex items-center gap-3"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-sky-100 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                       <Sparkles className="w-4 h-4" />
                     </div>
-                    <div className="flex flex-col">
-                      <div className="flex items-center gap-1">
-                        <span className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                    <div className="flex flex-col flex-1">
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400">
                           StructureRealm.com
                         </span>
                         <ExternalLink className="w-3 h-3 text-slate-400" />
@@ -299,6 +303,7 @@ export default function Navbar() {
               <User className="w-4 h-4 text-teal-500" />
               <span>About Me & Contact</span>
             </NavLink>
+
             <a
               href="https://structurerealm.com"
               target="_blank"

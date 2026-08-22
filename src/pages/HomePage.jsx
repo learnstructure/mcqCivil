@@ -1,13 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  BookOpen, 
-  Globe, 
-  Timer, 
-  Download, 
-  Search, 
-  ArrowRight, 
-  Sparkles, 
+import {
+  BookOpen,
+  Globe,
+  Timer,
+  Download,
+  Search,
+  ArrowRight,
+  Sparkles,
   ExternalLink,
   CheckCircle2,
   CircleHelp,
@@ -30,16 +30,19 @@ import {
   Kanban,
   Landmark,
   X,
-  MessageSquare
+  MessageSquare,
+  Share2
 } from 'lucide-react';
-import { 
-  TECHNICAL_SUBJECTS, 
-  GK_SUBJECTS, 
+import {
+  TECHNICAL_SUBJECTS,
+  GK_SUBJECTS,
   getTotalQuestionsCount,
   searchAllQuestions
 } from '@/data/subjects';
 import logoImg from '@/logo.png';
 import McqCard from '@/components/mcq/McqCard';
+import StudyProgressWidget from '@/components/home/StudyProgressWidget';
+import SiteShareModal from '@/components/ui/SiteShareModal';
 
 // Map icon string names to Lucide icons
 const ICON_MAP = {
@@ -65,6 +68,7 @@ const ICON_MAP = {
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isSiteShareOpen, setIsSiteShareOpen] = useState(false);
   const totalQuestions = getTotalQuestionsCount();
 
   // Search questions across all subjects
@@ -75,10 +79,10 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 animate-fadeIn">
-      
+
       {/* Hero Section */}
       <section className="text-center space-y-6 max-w-4xl mx-auto pt-4">
-        
+
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 dark:bg-sky-950/60 border border-sky-200/80 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold">
           <Sparkles className="w-3.5 h-3.5 text-sky-500" />
           <span>Loksewa, NEC & MSc Entrance Competitive Exam Prep</span>
@@ -104,7 +108,7 @@ export default function HomePage() {
             <Search className="w-5 h-5 text-sky-500 absolute left-4 pointer-events-none" />
             <input
               type="text"
-              placeholder="Search 1,500+ questions (e.g. Poisson's ratio, bending moment, theodolite, cement, IS 456)..."
+              placeholder="Search 1,100+ questions (e.g. Poisson's ratio, bending moment, theodolite, cement, IS 456)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-10 py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm sm:text-base outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
@@ -161,7 +165,7 @@ export default function HomePage() {
                       />
                     </div>
                   ))}
-                  
+
                   <div className="text-center pt-2">
                     <Link
                       to={`/search?q=${encodeURIComponent(searchQuery)}`}
@@ -195,9 +199,19 @@ export default function HomePage() {
             <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
             <strong>100% Free</strong>
           </span>
+          <button
+            onClick={() => setIsSiteShareOpen(true)}
+            className="flex items-center gap-1.5 bg-sky-50 dark:bg-sky-950/60 hover:bg-sky-100 dark:hover:bg-sky-900/60 text-sky-700 dark:text-sky-300 px-3.5 py-1.5 rounded-xl border border-sky-200/80 dark:border-sky-800 font-semibold transition cursor-pointer"
+          >
+            <Share2 className="w-3.5 h-3.5 text-sky-500" />
+            <span>Share Site</span>
+          </button>
         </div>
 
       </section>
+
+      {/* User Study Progress Widget */}
+      <StudyProgressWidget />
 
       {/* Migration Notice to structurerealm.com */}
       <section className="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-sky-200 dark:border-sky-900/60 bg-gradient-to-br from-sky-50/70 via-white to-teal-50/70 dark:from-slate-900 dark:via-slate-900/90 dark:to-sky-950/40">
@@ -338,7 +352,7 @@ export default function HomePage() {
 
       {/* Feature Action Cards Grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-        
+
         {/* Online Test Promo */}
         <div className="glass-card rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-amber-500/10 via-transparent to-transparent border border-amber-200 dark:border-amber-900/60 flex flex-col justify-between space-y-4">
           <div className="space-y-2">
@@ -388,6 +402,12 @@ export default function HomePage() {
         </div>
 
       </section>
+
+      {/* Platform Share Dialog */}
+      <SiteShareModal
+        isOpen={isSiteShareOpen}
+        onClose={() => setIsSiteShareOpen(false)}
+      />
 
     </div>
   );

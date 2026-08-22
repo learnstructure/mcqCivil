@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, ArrowUpRight, ShieldCheck, Mail } from 'lucide-react';
+import { Heart, ArrowUpRight, ShieldCheck, Mail, Share2 } from 'lucide-react';
 import logoImg from '@/logo.png';
+import SiteShareModal from '@/components/ui/SiteShareModal';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isShareOpen, setIsShareOpen] = useState(false);
 
   return (
     <footer className="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/60 backdrop-blur-sm transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          
+
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-2.5">
-              <img 
-                src={logoImg} 
-                alt="Civil Engineering MCQ Logo" 
+              <img
+                src={logoImg}
+                alt="Civil Engineering MCQ Logo"
                 className="w-9 h-9 object-contain rounded-xl shadow-sm"
               />
               <span className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">
@@ -26,6 +28,13 @@ export default function Footer() {
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Comprehensive preparation platform for Nepal Engineering Council (NEC) licensing, PSC Loksewa, and MSc Entrance civil engineering examinations.
             </p>
+            <button
+              onClick={() => setIsShareOpen(true)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold hover:bg-sky-100 dark:hover:bg-sky-900/60 transition cursor-pointer"
+            >
+              <Share2 className="w-3.5 h-3.5" />
+              <span>Share Platform</span>
+            </button>
           </div>
 
           {/* Quick Links */}
@@ -93,6 +102,11 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <SiteShareModal
+        isOpen={isShareOpen}
+        onClose={() => setIsShareOpen(false)}
+      />
     </footer>
   );
 }

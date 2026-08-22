@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
@@ -9,25 +9,52 @@ import {
   Check, 
   GraduationCap, 
   Sparkles, 
-  Info 
+  Info,
+  Bookmark,
+  Star
 } from 'lucide-react';
 import { useSound } from '@/context/SoundContext';
 import ShareModal from '@/components/ui/ShareModal';
+import { recordAnswerAttempt, getQuestionStatus } from '@/services/progress';
+import { isQuestionBookmarked, toggleQuestionBookmark } from '@/services/bookmarks';
 
 export default function McqCard({ mcq, subjectSlug, index }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const [isShareOpen, setIsShareOpen] = useState(false);
   const { playCorrectSound } = useSound();
 
   const correctKey = (mcq.correct || mcq.ans || '').toLowerCase();
   const contributor = mcq.contributor || mcq.contributorName;
 
+  // Restore previous attempt & bookmark status if saved in localStorage
+  useEffect(() => {
+    if (mcq.id) {
+      const prevStatus = getQuestionStatus(mcq.id);
+      if (prevStatus && prevStatus.selectedOption) {
+        setSelectedOption(prevStatus.selectedOption);
+      }
+      setIsBookmarked(isQuestionBookmarked(mcq.id));
+    }
+  }, [mcq.id]);
+
   const handleSelectOption = (optKey) => {
     setSelectedOption(optKey);
-    if (optKey === correctKey) {
+    const isCorrect = optKey === correctKey;
+    if (isCorrect) {
       playCorrectSound();
     }
+    // Record into localStorage progress tracker
+    recordAnswerAttempt(mcq.id, subjectSlug, isCorrect, optKey);
+  };
+
+  const handleToggleBookmark = () => {
+    const newState = toggleQuestionBookmark(mcq.id, {
+      question: mcq.question,
+      subjectSlug: subjectSlug
+    });
+    setIsBookmarked(newState);
   };
 
   const handleCopyQuestion = async () => {
@@ -41,6 +68,8 @@ export default function McqCard({ mcq, subjectSlug, index }) {
     }
   };
 
+  const shareUrl = `${window.location.origin}/${subjectSlug}/${mcq.id}`;
+
   const options = [
     { key: 'a', label: 'A', text: mcq.optionA },
     { key: 'b', label: 'B', text: mcq.optionB },
@@ -48,12 +77,10 @@ export default function McqCard({ mcq, subjectSlug, index }) {
     { key: 'd', label: 'D', text: mcq.optionD },
   ];
 
-  const shareUrl = `${window.location.origin}/${subjectSlug}/${mcq.id}`;
-
   return (
     <article
       id={`q-${mcq.serialno}`}
-      className="glass-card rounded-2xl p-5 sm:p-6 transition-all duration-200 hover:shadow-lg dark:hover:border-slate-700/80 group"
+      className="glass-card rounded-2xl p-5 sm:p-6 transition-all duration-200 hover:shadow-lg dark:hover:border-slate-700/80 group relative"
     >
       {/* Question Header */}
       <div className="flex flex-col gap-2 mb-4">
@@ -69,13 +96,29 @@ export default function McqCard({ mcq, subjectSlug, index }) {
           </div>
         )}
 
-        <div className="flex items-start gap-3">
-          <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-400 font-bold text-sm">
-            {mcq.serialno}
-          </span>
-          <h3 className="text-base sm:text-lg font-medium text-slate-900 dark:text-slate-100 leading-relaxed pt-0.5">
-            {mcq.question}
-          </h3>
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-start gap-3 flex-1">
+            <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-400 font-bold text-sm">
+              {mcq.serialno}
+            </span>
+            <h3 className="text-base sm:text-lg font-medium text-slate-900 dark:text-slate-100 leading-relaxed pt-0.5">
+              {mcq.question}
+            </h3>
+          </div>
+
+          {/* Quick Bookmark Button in Header */}
+          <button
+            type="button"
+            onClick={handleToggleBookmark}
+            title={isBookmarked ? 'Remove from Saved / Starred' : 'Save / Star this question for later'}
+            className={`p-1.5 rounded-xl transition flex-shrink-0 ${
+              isBookmarked
+                ? 'text-amber-500 bg-amber-50 dark:bg-amber-950/50 hover:bg-amber-100'
+                : 'text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-slate-800'
+            }`}
+          >
+            <Star className={`w-4 h-4 ${isBookmarked ? 'fill-amber-400 text-amber-500' : ''}`} />
+          </button>
         </div>
       </div>
 
@@ -186,7 +229,7 @@ export default function McqCard({ mcq, subjectSlug, index }) {
           <button
             type="button"
             onClick={handleCopyQuestion}
-            title="Copy question text"
+            title="Copy question text with options for WhatsApp/Study Groups"
             className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition"
           >
             {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}

@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Check, Copy, Share2 } from 'lucide-react';
 
-export default function ShareModal({ isOpen, onClose, url = window.location.href, title = 'Civil Engineering MCQ' }) {
+export default function SiteShareModal({ isOpen, onClose }) {
   const [copied, setCopied] = useState(false);
 
-  // Lock body scroll when modal is open
+  const siteUrl = window.location.origin;
+  const siteTitle = 'Civil Engineering MCQ | Free Loksewa, NEC & MSc Entrance Prep';
+  const shareText = `Practise 1,100+ Civil Engineering & Loksewa GK MCQs with instant scoring and mock tests:`;
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -25,21 +28,21 @@ export default function ShareModal({ isOpen, onClose, url = window.location.href
 
   if (!isOpen) return null;
 
-  const encodedUrl = encodeURIComponent(url);
-  const encodedTitle = encodeURIComponent(title);
+  const encodedUrl = encodeURIComponent(siteUrl);
+  const encodedText = encodeURIComponent(`${shareText} ${siteUrl}`);
 
   const shareLinks = [
     {
       name: 'WhatsApp',
       icon: '💬',
       bg: 'bg-emerald-500 hover:bg-emerald-600',
-      href: `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`,
+      href: `https://api.whatsapp.com/send?text=${encodedText}`,
     },
     {
       name: 'Telegram',
       icon: '✈️',
       bg: 'bg-sky-500 hover:bg-sky-600',
-      href: `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`,
+      href: `https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(siteTitle)}`,
     },
     {
       name: 'Facebook',
@@ -51,7 +54,7 @@ export default function ShareModal({ isOpen, onClose, url = window.location.href
       name: 'Twitter / X',
       icon: '𝕏',
       bg: 'bg-black hover:bg-neutral-800 text-white font-bold',
-      href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+      href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodeURIComponent(shareText)}`,
     },
     {
       name: 'LinkedIn',
@@ -63,7 +66,7 @@ export default function ShareModal({ isOpen, onClose, url = window.location.href
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(siteUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -80,10 +83,11 @@ export default function ShareModal({ isOpen, onClose, url = window.location.href
         className="relative w-full max-w-md p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-2 font-semibold text-lg">
             <Share2 className="w-5 h-5 text-sky-500" />
-            <span>Share</span>
+            <span>Share Platform</span>
           </div>
           <button
             onClick={onClose}
@@ -93,8 +97,8 @@ export default function ShareModal({ isOpen, onClose, url = window.location.href
           </button>
         </div>
 
-        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
-          {title}
+        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+          {siteTitle}
         </p>
 
         {/* Social Share Grid */}
@@ -120,12 +124,12 @@ export default function ShareModal({ isOpen, onClose, url = window.location.href
           <input
             type="text"
             readOnly
-            value={url}
-            className="flex-1 px-2 text-xs bg-transparent text-slate-700 dark:text-slate-300 outline-none truncate"
+            value={siteUrl}
+            className="flex-1 px-2 text-xs bg-transparent text-slate-700 dark:text-slate-300 outline-none truncate select-all"
           />
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-sky-600 hover:bg-sky-500 rounded-lg transition"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-sky-600 hover:bg-sky-500 rounded-lg transition flex-shrink-0"
           >
             {copied ? (
               <>
