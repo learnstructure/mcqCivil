@@ -1,34 +1,36 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import confetti from 'canvas-confetti';
-import { 
-  ALL_SUBJECTS, 
-  TECHNICAL_SUBJECTS, 
-  GK_SUBJECTS 
+import {
+  ALL_SUBJECTS,
+  TECHNICAL_SUBJECTS,
+  GK_SUBJECTS,
+  UPCOMING_SUBJECTS,
+  ALL_CONTRIBUTION_SUBJECTS
 } from '@/data/subjects';
-import { 
-  submitQuestionContribution, 
-  fetchContributionsWithCache, 
-  computeLeaderboard 
+import {
+  submitQuestionContribution,
+  fetchContributionsWithCache,
+  computeLeaderboard
 } from '@/services/firebase';
-import { 
-  Heart, 
-  Award, 
-  Trophy, 
-  CheckCircle2, 
-  Sparkles, 
-  Send, 
-  BookOpen, 
-  Globe, 
-  HelpCircle, 
-  Eye, 
-  Code2, 
-  Copy, 
-  Check, 
-  RefreshCw, 
-  User, 
-  GraduationCap, 
-  Flame, 
+import {
+  Heart,
+  Award,
+  Trophy,
+  CheckCircle2,
+  Sparkles,
+  Send,
+  BookOpen,
+  Globe,
+  HelpCircle,
+  Eye,
+  Code2,
+  Copy,
+  Check,
+  RefreshCw,
+  User,
+  GraduationCap,
+  Flame,
   MessageSquareQuote,
   Clock,
   Search,
@@ -94,7 +96,7 @@ export default function ContributePage() {
   };
 
   const currentSubject = useMemo(() => {
-    return ALL_SUBJECTS.find(s => s.slug === subjectSlug) || ALL_SUBJECTS[0];
+    return ALL_CONTRIBUTION_SUBJECTS.find(s => s.slug === subjectSlug) || ALL_CONTRIBUTION_SUBJECTS[0];
   }, [subjectSlug]);
 
   const leaderboard = useMemo(() => {
@@ -106,8 +108,8 @@ export default function ContributePage() {
     return contributions.filter((item) => {
       const matchesSubject = browseSubject === 'all' || item.subjectSlug === browseSubject;
       const q = browseSearch.toLowerCase().trim();
-      const matchesSearch = !q || 
-        item.question?.toLowerCase().includes(q) || 
+      const matchesSearch = !q ||
+        item.question?.toLowerCase().includes(q) ||
         item.contributorName?.toLowerCase().includes(q) ||
         item.contributorCollege?.toLowerCase().includes(q) ||
         item.subjectTitle?.toLowerCase().includes(q);
@@ -219,7 +221,7 @@ export default function ContributePage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-10 animate-fadeIn">
-      
+
       {/* Header Banner */}
       <div className="text-center space-y-3 max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 text-xs font-semibold">
@@ -237,11 +239,10 @@ export default function ContributePage() {
         <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
           <button
             onClick={() => { setActiveTab('contribute'); setSubmitSuccess(false); }}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
-              activeTab === 'contribute'
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'contribute'
                 ? 'bg-sky-600 text-white shadow-md shadow-sky-600/25 scale-105'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
+              }`}
           >
             <Send className="w-4 h-4" />
             <span>Submit Question</span>
@@ -249,11 +250,10 @@ export default function ContributePage() {
 
           <button
             onClick={() => setActiveTab('browse')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
-              activeTab === 'browse'
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'browse'
                 ? 'bg-teal-600 text-white shadow-md shadow-teal-600/25 scale-105'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
+              }`}
           >
             <BookOpen className="w-4 h-4" />
             <span>Browse Contributed Qs ({contributions.length})</span>
@@ -261,11 +261,10 @@ export default function ContributePage() {
 
           <button
             onClick={() => setActiveTab('leaderboard')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
-              activeTab === 'leaderboard'
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'leaderboard'
                 ? 'bg-amber-500 text-white shadow-md shadow-amber-500/25 scale-105'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
+              }`}
           >
             <Trophy className="w-4 h-4 text-amber-300" />
             <span>Top Contributors ({leaderboard.length})</span>
@@ -274,11 +273,10 @@ export default function ContributePage() {
           {isExportUrl && (
             <button
               onClick={() => setActiveTab('export')}
-              className={`px-3 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                activeTab === 'export'
+              className={`px-3 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${activeTab === 'export'
                   ? 'bg-purple-600 text-white shadow-md shadow-purple-600/25'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-              }`}
+                }`}
               title="Admin: Export Contributed Questions to Code"
             >
               <Code2 className="w-3.5 h-3.5" />
@@ -293,10 +291,10 @@ export default function ContributePage() {
       {/* ========================================================= */}
       {activeTab === 'contribute' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left Form (7 cols) */}
           <div className="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 space-y-6">
-            
+
             {submitSuccess ? (
               <div className="text-center py-10 space-y-4 animate-fadeIn">
                 <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto shadow-xl shadow-emerald-500/20">
@@ -331,7 +329,7 @@ export default function ContributePage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                
+
                 <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
                   <h3 className="font-bold text-slate-900 dark:text-white text-base flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-sky-500" />
@@ -364,7 +362,20 @@ export default function ContributePage() {
                         </option>
                       ))}
                     </optgroup>
+                    <optgroup label="📥 Upcoming Subjects (Your questions help launch these!)">
+                      {UPCOMING_SUBJECTS.map((s) => (
+                        <option key={s.slug} value={s.slug}>
+                          {s.title}
+                        </option>
+                      ))}
+                    </optgroup>
                   </select>
+                  {UPCOMING_SUBJECTS.some(s => s.slug === subjectSlug) && (
+                    <p className="text-[11px] text-amber-600 dark:text-amber-400 flex items-center gap-1 px-1">
+                      <span>⭐</span>
+                      <span>This subject is not yet live. Your question will be stored and published when enough contributions are received!</span>
+                    </p>
+                  )}
                 </div>
 
                 {/* Question Statement */}
@@ -398,17 +409,15 @@ export default function ContributePage() {
                       <div
                         key={opt.key}
                         onClick={() => setAns(opt.key)}
-                        className={`flex items-center gap-2.5 p-2 rounded-xl border cursor-pointer transition ${
-                          ans === opt.key
+                        className={`flex items-center gap-2.5 p-2 rounded-xl border cursor-pointer transition ${ans === opt.key
                             ? 'border-emerald-500 bg-emerald-50/60 dark:bg-emerald-950/40'
                             : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 hover:bg-slate-100 dark:hover:bg-slate-800'
-                        }`}
+                          }`}
                       >
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition ${
-                          ans === opt.key
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition ${ans === opt.key
                             ? 'bg-emerald-500 text-white shadow-sm'
                             : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
-                        }`}>
+                          }`}>
                           {opt.key}
                         </div>
                         <input
@@ -511,7 +520,7 @@ export default function ContributePage() {
 
           {/* Right Live Preview & Stats (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Live MCQ Preview Card */}
             <div className="glass-card rounded-3xl p-5 sm:p-6 space-y-3 border-2 border-dashed border-sky-300 dark:border-sky-800/80">
               <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800 text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-wider">
@@ -538,15 +547,13 @@ export default function ContributePage() {
                   ].map((opt) => (
                     <div
                       key={opt.key}
-                      className={`p-2.5 rounded-xl border text-xs flex items-center gap-2.5 transition ${
-                        ans === opt.key
+                      className={`p-2.5 rounded-xl border text-xs flex items-center gap-2.5 transition ${ans === opt.key
                           ? 'border-emerald-500/60 bg-emerald-50/50 dark:bg-emerald-950/30 text-slate-900 dark:text-white font-medium'
                           : 'border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300'
-                      }`}
+                        }`}
                     >
-                      <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] ${
-                        ans === opt.key ? 'bg-emerald-500 text-white' : 'bg-slate-200 dark:bg-slate-800'
-                      }`}>
+                      <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] ${ans === opt.key ? 'bg-emerald-500 text-white' : 'bg-slate-200 dark:bg-slate-800'
+                        }`}>
                         {opt.key}
                       </span>
                       <span>{opt.text || `Option ${opt.key}`}</span>
@@ -588,7 +595,7 @@ export default function ContributePage() {
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-center">
-                <div 
+                <div
                   onClick={() => setActiveTab('browse')}
                   className="p-3 rounded-2xl bg-teal-50 dark:bg-teal-950/50 border border-teal-100 dark:border-teal-900/40 cursor-pointer hover:scale-105 transition"
                 >
@@ -599,7 +606,7 @@ export default function ContributePage() {
                     Browse Questions &rarr;
                   </div>
                 </div>
-                <div 
+                <div
                   onClick={() => setActiveTab('leaderboard')}
                   className="p-3 rounded-2xl bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900/40 cursor-pointer hover:scale-105 transition"
                 >
@@ -640,10 +647,10 @@ export default function ContributePage() {
       {/* ========================================================= */}
       {activeTab === 'browse' && (
         <div className="space-y-6 animate-fadeIn max-w-4xl mx-auto">
-          
+
           {/* Controls: Search & Filter */}
           <div className="glass-card rounded-3xl p-5 space-y-4">
-            
+
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Search Bar */}
               <div className="relative flex-1">
@@ -682,6 +689,13 @@ export default function ContributePage() {
                   </optgroup>
                   <optgroup label="PSC Loksewa Nepal GK">
                     {GK_SUBJECTS.map((s) => (
+                      <option key={s.slug} value={s.slug}>
+                        {s.title}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="📥 Upcoming Subjects">
+                    {UPCOMING_SUBJECTS.map((s) => (
                       <option key={s.slug} value={s.slug}>
                         {s.title}
                       </option>
@@ -846,11 +860,11 @@ export default function ContributePage() {
       {/* ========================================================= */}
       {activeTab === 'leaderboard' && (
         <div className="space-y-8 animate-fadeIn max-w-4xl mx-auto">
-          
+
           {/* Podium Top 3 */}
           {leaderboard.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              
+
               {/* Rank 2 (Silver) */}
               {leaderboard[1] && (
                 <div className="glass-card rounded-3xl p-5 text-center space-y-2 border border-slate-300 dark:border-slate-700 sm:order-1 sm:mt-6">
@@ -989,7 +1003,7 @@ export default function ContributePage() {
       {/* ========================================================= */}
       {activeTab === 'export' && (
         <div className="space-y-6 animate-fadeIn max-w-4xl mx-auto">
-          
+
           <div className="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
               <div>

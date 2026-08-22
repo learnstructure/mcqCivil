@@ -74,10 +74,12 @@ export default function TestRunnerPage() {
 
   const [questions, setQuestions] = useState(() => generateQuestions());
   const [answers, setAnswers] = useState({}); // { [serialno]: 'a' | 'b' | 'c' | 'd' }
-  const [minutes, setMinutes] = useState(timeMinutes);
-  const [seconds, setSeconds] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(timeMinutes * 60);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showResultsModal, setShowResultsModal] = useState(false);
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
 
   const subjectTitle = useMemo(() => {
     if (isFullMock) return 'Full Civil Engineering Mock Exam';
@@ -95,21 +97,13 @@ export default function TestRunnerPage() {
     if (isSubmitted) return;
 
     const timer = setInterval(() => {
-      setSeconds((prevSec) => {
-        if (prevSec > 0) {
-          return prevSec - 1;
-        } else {
-          setMinutes((prevMin) => {
-            if (prevMin > 0) {
-              return prevMin - 1;
-            } else {
-              clearInterval(timer);
-              handleSubmitTest();
-              return 0;
-            }
-          });
-          return 59;
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          handleSubmitTest();
+          return 0;
         }
+        return prev - 1;
       });
     }, 1000);
 
@@ -133,8 +127,7 @@ export default function TestRunnerPage() {
   const handleRetake = () => {
     setQuestions(generateQuestions());
     setAnswers({});
-    setMinutes(timeMinutes);
-    setSeconds(0);
+    setTimeLeft(timeMinutes * 60);
     setIsSubmitted(false);
     setShowResultsModal(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });

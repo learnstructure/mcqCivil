@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Trophy, CheckCircle2, XCircle, AlertCircle, RotateCcw, ArrowLeft, Award } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { Trophy, CheckCircle2, XCircle, AlertCircle, RotateCcw, ArrowLeft, Award, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +14,15 @@ export default function TestResultsModal({
   subjectTitle,
 }) {
   const percentage = Math.round((score / totalQuestions) * 100);
+
+  // Lock body scroll while modal is open
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
 
   useEffect(() => {
     if (percentage >= 60) {
@@ -58,10 +68,19 @@ export default function TestResultsModal({
     };
   }
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-lg p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-center space-y-6">
+  const modalContent = (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn overflow-y-auto">
+      <div className="relative w-full max-w-lg p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-center space-y-6 my-auto">
         
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+          aria-label="Close"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
         {/* Header Badge */}
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-emerald-500 text-white shadow-xl shadow-sky-500/20 mx-auto">
           <Trophy className="w-9 h-9" />
@@ -122,7 +141,7 @@ export default function TestResultsModal({
           <button
             type="button"
             onClick={onClose}
-            className="flex-1 py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm shadow-md shadow-sky-600/20 transition"
+            className="flex-1 py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm shadow-md shadow-sky-600/20 transition cursor-pointer"
           >
             Review All Answers
           </button>
@@ -130,7 +149,7 @@ export default function TestResultsModal({
           <button
             type="button"
             onClick={onRetake}
-            className="py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition flex items-center justify-center gap-2"
+            className="py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition flex items-center justify-center gap-2 cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
             <span>Retake</span>
@@ -150,4 +169,6 @@ export default function TestResultsModal({
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }

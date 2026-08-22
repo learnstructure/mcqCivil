@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { 
   Target, 
@@ -194,32 +195,34 @@ export default function StudyProgressWidget() {
       )}
 
       {/* Reset Confirmation Modal */}
-      {showResetConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl max-w-sm w-full border border-slate-200 dark:border-slate-800 space-y-3 shadow-2xl">
-            <h3 className="font-bold text-sm text-slate-900 dark:text-white">
-              Reset Your Study Progress?
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              This resets your solved questions count, accuracy score, and daily streak back to zero.
-            </p>
-            <div className="flex items-center justify-end gap-2 pt-1">
-              <button
-                onClick={() => setShowResetConfirm(false)}
-                className="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleReset}
-                className="px-3 py-1.5 rounded-xl text-xs font-semibold text-white bg-rose-600 hover:bg-rose-500 transition shadow-sm cursor-pointer"
-              >
-                Reset
-              </button>
+      {showResetConfirm &&
+        createPortal(
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+            <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl max-w-sm w-full border border-slate-200 dark:border-slate-800 space-y-3 shadow-2xl">
+              <h3 className="font-bold text-sm text-slate-900 dark:text-white">
+                Reset Your Study Progress?
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                This resets your solved questions count, accuracy score, and daily streak back to zero.
+              </p>
+              <div className="flex items-center justify-end gap-2 pt-1">
+                <button
+                  onClick={() => setShowResetConfirm(false)}
+                  className="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="px-3 py-1.5 rounded-xl text-xs font-semibold text-white bg-rose-600 hover:bg-rose-500 transition shadow-sm cursor-pointer"
+                >
+                  Reset
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
 
     </section>
   );

@@ -243,6 +243,63 @@ export const GK_SUBJECTS = [
 
 export const ALL_SUBJECTS = [...TECHNICAL_SUBJECTS, ...GK_SUBJECTS];
 
+export const UPCOMING_SUBJECTS = [
+  {
+    slug: 'fluid-mechanics',
+    title: 'Fluid Mechanics & Hydraulics',
+    shortTitle: 'Fluid Mechanics',
+    category: 'upcoming',
+    description: 'Fluid properties, hydrostatics, fluid kinematics, Bernoulli theorem, pipe flow, open channels, and hydraulic machines.'
+  },
+  {
+    slug: 'transportation',
+    title: 'Transportation & Highway Engineering',
+    shortTitle: 'Transportation',
+    category: 'upcoming',
+    description: 'Highway alignment, geometric design, pavement materials, traffic engineering, highway drainage, and maintenance.'
+  },
+  {
+    slug: 'environmental',
+    title: 'Environmental & Sanitary Engineering',
+    shortTitle: 'Environmental',
+    category: 'upcoming',
+    description: 'Water demand, water treatment processes, sewer design, wastewater treatment, solid waste management, and air pollution.'
+  },
+  {
+    slug: 'irrigation',
+    title: 'Irrigation Engineering & Hydrology',
+    shortTitle: 'Irrigation',
+    category: 'upcoming',
+    description: 'Crop water requirements, canal design, diversion headworks, cross drainage works, flood routing, and hydrographs.'
+  },
+  {
+    slug: 'geology',
+    title: 'Engineering Geology & Rock Mechanics',
+    shortTitle: 'Geology',
+    category: 'upcoming',
+    description: 'Mineralogy, petrology, structural geology, geological maps, rock mass classification, and landslides.'
+  },
+  {
+    slug: 'bridge-airport-railway',
+    title: 'Bridge, Airport & Railway Engineering',
+    shortTitle: 'Bridge & Airport',
+    category: 'upcoming',
+    description: 'Bridge types, IRC loadings, runway orientation, airport geometric design, railway tracks, and signalling.'
+  },
+  {
+    slug: 'law-procurement',
+    title: 'Public Procurement & Construction Law',
+    shortTitle: 'Procurement Law',
+    category: 'upcoming',
+    description: 'Public Procurement Act (PPA/PPR), contract administration, claims, disputes, and arbitration.'
+  },
+];
+
+export const ALL_CONTRIBUTION_SUBJECTS = [
+  ...ALL_SUBJECTS,
+  ...UPCOMING_SUBJECTS
+];
+
 // Cache formatted questions for performance
 const questionsCache = new Map();
 
