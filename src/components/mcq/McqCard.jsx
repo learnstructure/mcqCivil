@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, XCircle, MessageSquare, Share2, Copy, Check } from 'lucide-react';
+import { 
+  CheckCircle2, 
+  XCircle, 
+  MessageSquare, 
+  Share2, 
+  Copy, 
+  Check, 
+  GraduationCap, 
+  Sparkles, 
+  Info 
+} from 'lucide-react';
 import { useSound } from '@/context/SoundContext';
 import ShareModal from '@/components/ui/ShareModal';
 
@@ -10,9 +20,12 @@ export default function McqCard({ mcq, subjectSlug, index }) {
   const [isShareOpen, setIsShareOpen] = useState(false);
   const { playCorrectSound } = useSound();
 
+  const correctKey = (mcq.correct || mcq.ans || '').toLowerCase();
+  const contributor = mcq.contributor || mcq.contributorName;
+
   const handleSelectOption = (optKey) => {
     setSelectedOption(optKey);
-    if (optKey === mcq.correct) {
+    if (optKey === correctKey) {
       playCorrectSound();
     }
   };
@@ -43,7 +56,19 @@ export default function McqCard({ mcq, subjectSlug, index }) {
       className="glass-card rounded-2xl p-5 sm:p-6 transition-all duration-200 hover:shadow-lg dark:hover:border-slate-700/80 group"
     >
       {/* Question Header */}
-      <div className="flex items-start justify-between gap-3 mb-4">
+      <div className="flex flex-col gap-2 mb-4">
+        
+        {/* Contributor Badge if present */}
+        {contributor && (
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/60 border border-sky-200/80 dark:border-sky-800/60 px-2.5 py-1 rounded-lg w-fit">
+            <GraduationCap className="w-3.5 h-3.5" />
+            <span>
+              Contributed by <strong>{contributor}</strong>
+              {mcq.contributorCollege && ` • ${mcq.contributorCollege}`}
+            </span>
+          </div>
+        )}
+
         <div className="flex items-start gap-3">
           <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-400 font-bold text-sm">
             {mcq.serialno}
@@ -58,7 +83,7 @@ export default function McqCard({ mcq, subjectSlug, index }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 my-4">
         {options.map((opt) => {
           const isSelected = selectedOption === opt.key;
-          const isCorrect = mcq.correct === opt.key;
+          const isCorrect = correctKey === opt.key;
 
           let optionStyle =
             'border-slate-200 dark:border-slate-800 hover:border-sky-300 dark:hover:border-slate-700 bg-slate-50/70 dark:bg-slate-900/50 text-slate-700 dark:text-slate-300';
@@ -103,23 +128,36 @@ export default function McqCard({ mcq, subjectSlug, index }) {
         })}
       </div>
 
-      {/* Answer status alert if answered */}
+      {/* Answer status alert & Explanation if answered */}
       {selectedOption !== null && (
-        <div
-          className={`mt-3 p-3 rounded-xl text-xs flex items-center justify-between animate-fadeIn ${
-            selectedOption === mcq.correct
-              ? 'bg-emerald-100/70 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900'
-              : 'bg-rose-100/70 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-900'
-          }`}
-        >
-          <span>
-            {selectedOption === mcq.correct
-              ? '🎉 Correct answer! Well done.'
-              : `❌ Incorrect. The correct option is (${mcq.correct.toUpperCase()}).`}
-          </span>
-          <span className="font-semibold text-[11px] uppercase tracking-wide">
-            Correct: Option {mcq.correct.toUpperCase()}
-          </span>
+        <div className="space-y-2 mt-3 animate-fadeIn">
+          <div
+            className={`p-3 rounded-xl text-xs flex items-center justify-between ${
+              selectedOption === correctKey
+                ? 'bg-emerald-100/70 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900'
+                : 'bg-rose-100/70 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-900'
+            }`}
+          >
+            <span>
+              {selectedOption === correctKey
+                ? '🎉 Correct answer! Well done.'
+                : `❌ Incorrect. The correct option is (${correctKey.toUpperCase()}).`}
+            </span>
+            <span className="font-semibold text-[11px] uppercase tracking-wide">
+              Correct: Option {correctKey.toUpperCase()}
+            </span>
+          </div>
+
+          {/* Explanation if available */}
+          {mcq.explanation && (
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300">
+              <div className="font-bold text-sky-600 dark:text-sky-400 flex items-center gap-1 mb-1">
+                <Info className="w-3.5 h-3.5" />
+                <span>Explanation / Reference</span>
+              </div>
+              <p className="leading-relaxed">{mcq.explanation}</p>
+            </div>
+          )}
         </div>
       )}
 
@@ -135,7 +173,7 @@ export default function McqCard({ mcq, subjectSlug, index }) {
             ansB: mcq.optionB,
             ansC: mcq.optionC,
             ansD: mcq.optionD,
-            correct: mcq.correct,
+            correct: correctKey,
             path: `/${subjectSlug}`,
           }}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 hover:bg-sky-100 dark:hover:bg-sky-900/60 font-medium transition"

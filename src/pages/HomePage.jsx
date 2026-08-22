@@ -38,6 +38,7 @@ import {
   getTotalQuestionsCount,
   searchAllQuestions
 } from '@/data/subjects';
+import logoImg from '@/logo.png';
 import McqCard from '@/components/mcq/McqCard';
 
 // Map icon string names to Lucide icons
@@ -83,7 +84,13 @@ export default function HomePage() {
           <span>Loksewa, NEC & MSc Entrance Competitive Exam Prep</span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+        {/* Site Logo */}
+        <h1 className="flex items-center justify-center gap-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+          <img
+            src={logoImg}
+            alt="Civil Engineering MCQ Logo"
+            className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain rounded-2xl shadow-lg flex-shrink-0"
+          />
           <span className="text-gradient">Civil Engineering MCQ</span>
         </h1>
 

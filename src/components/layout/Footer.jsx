@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Heart, ArrowUpRight, ShieldCheck, Mail } from 'lucide-react';
+import { Heart, ArrowUpRight, ShieldCheck, Mail } from 'lucide-react';
+import logoImg from '@/logo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,10 +13,12 @@ export default function Footer() {
           
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-600 to-teal-500 flex items-center justify-center text-white">
-                <GraduationCap className="w-5 h-5" />
-              </div>
+            <div className="flex items-center gap-2.5">
+              <img 
+                src={logoImg} 
+                alt="Civil Engineering MCQ Logo" 
+                className="w-9 h-9 object-contain rounded-xl shadow-sm"
+              />
               <span className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">
                 Civil Engineering <span className="text-sky-600 dark:text-sky-400">MCQ</span>
               </span>
@@ -36,6 +39,7 @@ export default function Footer() {
               <li><Link to="/rcc" className="hover:text-sky-600 dark:hover:text-sky-400 transition">RCC Design</Link></li>
               <li><Link to="/surveying" className="hover:text-sky-600 dark:hover:text-sky-400 transition">Surveying</Link></li>
               <li><Link to="/test" className="hover:text-sky-600 dark:hover:text-sky-400 transition font-medium text-amber-600 dark:text-amber-400">Online Mock Test</Link></li>
+              <li><Link to="/community" className="hover:text-rose-600 dark:hover:text-rose-400 transition font-medium text-rose-600 dark:text-rose-400">Community & Question Bank</Link></li>
             </ul>
           </div>
 

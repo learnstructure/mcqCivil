@@ -1,22 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
-  BookOpen, 
-  Globe, 
-  Timer, 
-  Download, 
-  User, 
-  Sparkles, 
-  ExternalLink, 
+import {
+  ChevronDown,
+  Menu,
+  X,
+  BookOpen,
+  Globe,
+  Timer,
+  Download,
+  User,
+  Sparkles,
+  ExternalLink,
   GraduationCap,
-  Search
+  Search,
+  Users
 } from 'lucide-react';
 import { TECHNICAL_SUBJECTS, GK_SUBJECTS } from '@/data/subjects';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import SoundToggle from '@/components/ui/SoundToggle';
+import logoImg from '@/logo.png';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,22 +44,23 @@ export default function Navbar() {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 flex items-center gap-1.5 ${
-      isActive
-        ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/40'
-        : 'text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+    `px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors duration-150 flex items-center gap-1 xl:gap-1.5 whitespace-nowrap ${isActive
+      ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/40'
+      : 'text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
     }`;
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-16" ref={dropdownRef}>
-          
+
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
-              <GraduationCap className="w-5 h-5" />
-            </div>
+          <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
+            <img
+              src={logoImg}
+              alt="Civil Engineering MCQ Logo"
+              className="w-10 h-10 object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform flex-shrink-0"
+            />
             <div className="flex flex-col min-w-0">
               {/* Full name on mobile & xl+, abbreviated only on lg where nav links compete */}
               <div className="font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight text-base">
@@ -73,18 +76,17 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
-            
+
             {/* Technical MCQs Dropdown */}
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setActiveDropdown(prev => prev === 'technical' ? null : 'technical')}
                 onMouseEnter={() => setActiveDropdown('technical')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 flex items-center gap-1.5 ${
-                  activeDropdown === 'technical'
-                    ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/40'
-                    : 'text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
-                }`}
+                className={`px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors duration-150 flex items-center gap-1 xl:gap-1.5 whitespace-nowrap ${activeDropdown === 'technical'
+                  ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/40'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                  }`}
               >
                 <BookOpen className="w-4 h-4 text-sky-500" />
                 <span>Technical MCQs</span>
@@ -92,7 +94,7 @@ export default function Navbar() {
               </button>
 
               {activeDropdown === 'technical' && (
-                <div 
+                <div
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 mt-1 w-[480px] p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 grid grid-cols-2 gap-2 animate-fadeIn z-50"
                 >
@@ -126,11 +128,10 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setActiveDropdown(prev => prev === 'gk' ? null : 'gk')}
                 onMouseEnter={() => setActiveDropdown('gk')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 flex items-center gap-1.5 ${
-                  activeDropdown === 'gk'
-                    ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40'
-                    : 'text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
-                }`}
+                className={`px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors duration-150 flex items-center gap-1 xl:gap-1.5 whitespace-nowrap ${activeDropdown === 'gk'
+                  ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                  }`}
               >
                 <Globe className="w-4 h-4 text-emerald-500" />
                 <span>Loksewa GK</span>
@@ -138,7 +139,7 @@ export default function Navbar() {
               </button>
 
               {activeDropdown === 'gk' && (
-                <div 
+                <div
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 mt-1 w-[420px] p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1 animate-fadeIn z-50"
                 >
@@ -177,24 +178,76 @@ export default function Navbar() {
               <span>Downloads</span>
             </NavLink>
 
-            {/* About / Contact Link */}
-            <NavLink to="/contact" className={navLinkClass}>
-              <User className="w-4 h-4 text-teal-500" />
-              <span>About Me</span>
+            {/* Community Link */}
+            <NavLink to="/community" className={navLinkClass}>
+              <Users className="w-4 h-4 text-rose-500" />
+              <span>Community</span>
             </NavLink>
 
-            {/* External StructureRealm Link */}
-            <a
-              href="https://structurerealm.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-sky-500/10 to-teal-500/10 hover:from-sky-500/20 hover:to-teal-500/20 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 flex items-center gap-1 transition"
-              title="Visit StructureRealm for Structural Engineering Tools & Blogs"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-sky-500" />
-              <span>StructureRealm</span>
-              <ExternalLink className="w-3 h-3 opacity-70" />
-            </a>
+            {/* Contact & Ecosystem Dropdown */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setActiveDropdown(prev => prev === 'contact' ? null : 'contact')}
+                onMouseEnter={() => setActiveDropdown('contact')}
+                className={`px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors duration-150 flex items-center gap-1 xl:gap-1.5 whitespace-nowrap ${activeDropdown === 'contact'
+                  ? 'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                  }`}
+              >
+                <User className="w-4 h-4 text-teal-500" />
+                <span>Contact</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'contact' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {activeDropdown === 'contact' && (
+                <div
+                  onMouseLeave={() => setActiveDropdown(null)}
+                  className="absolute right-0 mt-1 w-72 p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1.5 animate-fadeIn z-50"
+                >
+                  <Link
+                    to="/contact"
+                    onClick={() => setActiveDropdown(null)}
+                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <User className="w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400">
+                        About Me & Contact
+                      </span>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
+                        Profile, research & message form
+                      </span>
+                    </div>
+                  </Link>
+
+                  <a
+                    href="https://structurerealm.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setActiveDropdown(null)}
+                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-sky-50 dark:hover:bg-slate-800 transition group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-sky-100 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-1">
+                        <span className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                          StructureRealm.com
+                        </span>
+                        <ExternalLink className="w-3 h-3 text-slate-400" />
+                      </div>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
+                        FEM calculators, design & blog
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              )}
+            </div>
 
           </nav>
 
@@ -229,24 +282,34 @@ export default function Navbar() {
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto space-y-4 animate-fadeIn">
-          
+
           <div className="flex flex-col space-y-1">
             <NavLink to="/" className={navLinkClass}>Home</NavLink>
             <NavLink to="/search" className={navLinkClass}>
               <Search className="w-4 h-4 text-sky-500" />
               <span>Search Questions</span>
             </NavLink>
+            <NavLink to="/community" className={navLinkClass}>
+              <Users className="w-4 h-4 text-rose-500" />
+              <span>Community & Contributed Qs</span>
+            </NavLink>
             <NavLink to="/test" className={navLinkClass}>Online Test</NavLink>
             <NavLink to="/downloads" className={navLinkClass}>Free Downloads</NavLink>
-            <NavLink to="/contact" className={navLinkClass}>About Me & Contact</NavLink>
+            <NavLink to="/contact" className={navLinkClass}>
+              <User className="w-4 h-4 text-teal-500" />
+              <span>About Me & Contact</span>
+            </NavLink>
             <a
               href="https://structurerealm.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 text-sm font-medium text-sky-600 dark:text-sky-400 flex items-center justify-between"
+              className="px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-between rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"
             >
-              <span>StructureRealm.com</span>
-              <ExternalLink className="w-4 h-4" />
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-sky-500" />
+                <span>StructureRealm.com</span>
+              </span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-70" />
             </a>
           </div>
 

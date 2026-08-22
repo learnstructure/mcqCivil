@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 
 // Pages
@@ -12,6 +12,7 @@ import DownloadsPage from '@/pages/DownloadsPage';
 import AboutPage from '@/pages/AboutPage';
 import ThanksPage from '@/pages/ThanksPage';
 import SearchPage from '@/pages/SearchPage';
+import ContributePage from '@/pages/ContributePage';
 import NotFoundPage from '@/pages/NotFoundPage';
 
 export default function App() {
@@ -23,6 +24,11 @@ export default function App() {
 
         {/* Global Question Search */}
         <Route path="/search" element={<SearchPage />} />
+
+        {/* Community & Question Contribution */}
+        <Route path="/community" element={<ContributePage />} />
+        <Route path="/community/export" element={<ContributePage />} />
+        <Route path="/contribute" element={<Navigate to="/community" replace />} />
 
         {/* Tests */}
         <Route path="/test" element={<TestPage />} />
