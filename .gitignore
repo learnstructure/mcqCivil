@@ -70,3 +70,6 @@ desktop.ini
 trash/
 tmp/
 temp/
+
+dist/
+.github/

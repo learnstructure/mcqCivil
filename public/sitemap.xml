@@ -4,70 +4,149 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Core pages -->
   <url>
     <loc>https://civilengineering-mcq.web.app/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://civilengineering-mcq.web.app/som</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/structure</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/rcc</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/geotechnical</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/surveying</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/buildingMaterials</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/estimation</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/constructionManagement</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/economics</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/drawing</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/professional</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-geography</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-organization</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-natural-resources</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-climate-nepal</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-periodic-plans</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-management</loc>
-  </url>
-  <url>
-    <loc>https://civilengineering-mcq.web.app/gk-government-plans</loc>
+    <loc>https://civilengineering-mcq.web.app/search</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://civilengineering-mcq.web.app/test</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://civilengineering-mcq.web.app/downloads</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://civilengineering-mcq.web.app/contact</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
+
+  <!-- Technical Civil Engineering subjects -->
+  <url>
+    <loc>https://civilengineering-mcq.web.app/som</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/structure</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/rcc</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/geotechnical</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/surveying</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/buildingMaterials</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/estimation</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/constructionManagement</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/economics</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/drawing</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/professional</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Loksewa Nepal GK subjects -->
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-geography</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-organization</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-natural-resources</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-climate-nepal</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-periodic-plans</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-management</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://civilengineering-mcq.web.app/gk-government-plans</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
